@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etkinlikler | Arel Yazılım Kulübü</title>
+    <meta name="description" content="Arel Yazılım Kulübü etkinlikleri — seminerler, hackathon'lar ve workshop'lar." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="arel_logo_colored.png" />
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="nav-brand">
+                    <img src="arel_logo_colored.png" alt="Logo" class="nav-logo" />
+                    <span class="nav-brand-name">Arel <span>Yazılım</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Ana Sayfa</a>
+                    <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                    <a href="odak-alanlari.html" class="nav-link">Odak Alanları</a>
+                    <a href="etkinlikler.html" class="nav-link active">Etkinlikler</a>
+                    <a href="ekip.html" class="nav-link">Ekip</a>
+                    <a href="iletisim.html" class="nav-link">İletişim</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="iletisim.html" class="btn btn-primary btn-sm">Bize Ulaş</a>
+                    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-mobile" id="mobileMenu">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+        <a href="odak-alanlari.html" class="nav-link">Odak Alanları</a>
+        <a href="etkinlikler.html" class="nav-link active">Etkinlikler</a>
+        <a href="ekip.html" class="nav-link">Ekip</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-breadcrumb">
+                    <a href="index.html">Ana Sayfa</a><span>›</span><span>Etkinlikler</span>
+                </div>
+                <h1 class="page-title">Etkinlik <span>Takvimi</span></h1>
+                <p class="page-desc">Seminerlerde bilgi edin, hackathon'larda yaratıcılığını sergile, workshop'larda
+                    beceri kazan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yaklaşan -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Yaklaşan</span>
+                <h2 class="section-title" style="margin-bottom:0;">Yaklaşan <span>Etkinlikler</span></h2>
+            </div>
+            <div class="events-grid">
+                <div class="event-card fade-up" style="border-top:3px solid var(--orange);">
+                    <div class="event-card-header">
+                        <span class="event-date">NİSAN 2025</span>
+                        <span class="event-badge badge-hackathon">Hackathon</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">Hackathon Hazırlık Kampı</div>
+                        <p class="event-desc">Ulusal ve uluslararası hackathon yarışmalarına hazırlık amacıyla
+                            düzenlenecek yoğun 2 günlük proje geliştirme kampı. Takım oluşturma, proje planlama ve kod
+                            yazımı süreçlerini deneyimle.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                Arel Üniversitesi · B Blok
+                            </span>
+                        </div>
+                        <div style="margin-top:12px;">
+                            <a href="iletisim.html" class="btn btn-primary btn-sm">Kayıt Ol</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up" style="border-top:3px solid #6c5ce7;">
+                    <div class="event-card-header">
+                        <span class="event-date">MAYIS 2025</span>
+                        <span class="event-badge badge-workshop">Workshop</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">React ile Modern Web Uygulamaları</div>
+                        <p class="event-desc">React, Hooks, State Management ve modern web geliştirme pratiklerini
+                            sıfırdan öğreneceğin 4 haftalık yoğun workshop serisi.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                15 Kişilik Kontenjan
+                            </span>
+                        </div>
+                        <div style="margin-top:12px;">
+                            <a href="iletisim.html" class="btn btn-primary btn-sm">Kayıt Ol</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up" style="border-top:3px solid #00b894;">
+                    <div class="event-card-header">
+                        <span class="event-date">HAZİRAN 2025</span>
+                        <span class="event-badge badge-seminar">Seminer</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">Yazılım Kariyeri Yol Haritası</div>
+                        <p class="event-desc">Sektörün tecrübeli yazılımcılarıyla buluşma fırsatı. Staj süreçleri, iş
+                            başvuruları, CV hazırlama ve mülakat teknikleri hakkında kapsamlı bilgi.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                Açık Etkinlik
+                            </span>
+                        </div>
+                        <div style="margin-top:12px;">
+                            <a href="iletisim.html" class="btn btn-primary btn-sm">Kayıt Ol</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geçmiş -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Geçmiş</span>
+                <h2 class="section-title" style="margin-bottom:0;">Geçmiş <span>Etkinlikler</span></h2>
+            </div>
+            <div class="events-grid">
+                <div class="event-card fade-up">
+                    <div class="event-card-header">
+                        <span class="event-date">MAR 2025</span>
+                        <span class="event-badge badge-seminar">Seminer</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">İşlemcilerin İsimlendirilmesi</div>
+                        <p class="event-desc">AMD Ryzen ve Intel Core işlemcilerinin isimlendirme sistemlerini anlatan
+                            kapsamlı teknik sunum. 60+ öğrenci katıldı.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                60+ Katılımcı
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-card-header">
+                        <span class="event-date">OCA 2025</span>
+                        <span class="event-badge badge-seminar">Yapay Zeka</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">AI Trendleri Semineri</div>
+                        <p class="event-desc">Büyük dil modelleri, GPT-4, Gemini ve yapay zekanın geleceği üzerine uzman
+                            konuşmacılarla interaktif seminer.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                80+ Katılımcı
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-card-header">
+                        <span class="event-date">KAS 2024</span>
+                        <span class="event-badge badge-workshop">Workshop</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">Python ile Veri Analizi</div>
+                        <p class="event-desc">Pandas, NumPy ve Matplotlib kullanarak gerçek veri setleri üzerinde analiz
+                            yapma uygulamalı workshop serisi.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                25 Katılımcı
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-card-header">
+                        <span class="event-date">EKİ 2024</span>
+                        <span class="event-badge badge-hackathon">Hackathon</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">İstanbul Üniversite Hackathonu</div>
+                        <p class="event-desc">İstanbul'daki 5 üniversitenin katıldığı hackathon'da kulübümüz 2 takımla
+                            temsil edildi. En İyi Sunum ödülünü kazandık.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">🏆 En İyi Sunum Ödülü</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-card-header">
+                        <span class="event-date">EYL 2024</span>
+                        <span class="event-badge badge-seminar">Seminer</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">Yıl Başı Tanışma Toplantısı</div>
+                        <p class="event-desc">2024-2025 akademik yılı başlangıç toplantısı. Yeni üyelerin tanışma
+                            etkinliği ve kulüp planlarının paylaşımı.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                120+ Katılımcı
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-card-header">
+                        <span class="event-date">MAY 2024</span>
+                        <span class="event-badge badge-workshop">Workshop</span>
+                    </div>
+                    <div class="event-card-body">
+                        <div class="event-title">Git & GitHub Workshop</div>
+                        <p class="event-desc">Versiyon kontrolü, branch yönetimi, pull request süreci ve açık kaynak
+                            katkı yöntemleri üzerine uygulamalı workshop.</p>
+                        <div class="event-meta">
+                            <span class="event-meta-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                </svg>
+                                30 Katılımcı
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Bir Sonraki Etkinliğe Katıl</h2>
+            <p>Takvimimizi takip et, erken kayıt fırsatını kaçırma.</p>
+            <div class="cta-actions">
+                <a href="iletisim.html" class="btn btn-white btn-lg">Kayıt Ol →</a>
+                <a href="iletisim.html" class="btn btn-lg"
+                    style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.3);">Bize
+                    Ulaş</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none;padding-top:0;">
+                <div class="footer-brand-inline">
+                    <img src="arel_logo_colored.png" alt="Logo" class="footer-logo" />
+                    <span class="footer-brand-name">Arel <span>Yazılım</span></span>
+                </div>
+                <div style="display:flex;gap:24px;flex-wrap:wrap;">
+                    <a href="index.html" style="color:rgba(255,255,255,0.5);font-size:13px;">Ana Sayfa</a>
+                    <a href="hakkimizda.html" style="color:rgba(255,255,255,0.5);font-size:13px;">Hakkımızda</a>
+                    <a href="etkinlikler.html" style="color:rgba(255,255,255,0.5);font-size:13px;">Etkinlikler</a>
+                    <a href="iletisim.html" style="color:rgba(255,255,255,0.5);font-size:13px;">İletişim</a>
+                </div>
+                <span style="font-size:12px;color:rgba(255,255,255,0.3);">© 2025 Arel Yazılım Kulübü</span>
+            </div>
+        </div>
+    </footer>
+    <button id="back-to-top" aria-label="Yukarı git"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6" />
+        </svg></button>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -6,887 +6,624 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arel Yazılım Kulübü | İstanbul Arel Üniversitesi</title>
   <meta name="description"
-    content="İstanbul Arel Üniversitesi Yazılım Kulübü — Yazılım, Yapay Zeka ve Veri Bilimi alanlarında öğrenci topluluğu. Projeler, hackathonlar ve teknik eğitimler." />
-  <meta name="keywords"
-    content="Arel Yazılım, İstanbul Arel Üniversitesi, Yazılım Kulübü, Yapay Zeka, Hackathon, Yazılım Geliştirme" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
-    rel="stylesheet" />
+    content="Arel Yazılım Kulübü — İstanbul Arel Üniversitesi'nin öğrenci yazılım topluluğu. Yapay Zeka, Yazılım Geliştirme ve Veri Bilimi alanlarında büyü." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="arel_logo_colored.png" />
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <div class="logo-icon">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="19" stroke="url(#grad1)" stroke-width="2" />
-            <path d="M14 16c0-3.3 2.7-6 6-6s6 2.7 6 6c0 2-1 3.8-2.5 4.9V26h-7v-5.1C15 19.8 14 18 14 16z"
-              fill="url(#grad1)" opacity="0.8" />
-            <path d="M17 26h6v2.5c0 .8-.7 1.5-1.5 1.5h-3c-.8 0-1.5-.7-1.5-1.5V26z" fill="url(#grad1)" />
-            <line x1="10" y1="16" x2="13" y2="16" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" />
-            <line x1="27" y1="16" x2="30" y2="16" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" />
-            <line x1="10" y1="20" x2="13" y2="20" stroke="#7c4dff" stroke-width="1.5" stroke-linecap="round" />
-            <line x1="27" y1="20" x2="30" y2="20" stroke="#7c4dff" stroke-width="1.5" stroke-linecap="round" />
-            <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#00d4ff" />
-                <stop offset="100%" style="stop-color:#7c4dff" />
-              </linearGradient>
-            </defs>
-          </svg>
+  <!-- Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="arel_logo_colored.png" alt="Arel Yazılım Logo" class="nav-logo" />
+          <span class="nav-brand-name">Arel <span>Yazılım</span></span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="index.html" class="nav-link active">Ana Sayfa</a>
+          <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+          <a href="odak-alanlari.html" class="nav-link">Odak Alanları</a>
+          <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
+          <a href="ekip.html" class="nav-link">Ekip</a>
+          <a href="iletisim.html" class="nav-link">İletişim</a>
         </div>
-        <span class="logo-text">Arel <span class="logo-accent">Yazılım</span></span>
-      </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active">Ana Sayfa</a></li>
-        <li><a href="#about" class="nav-link">Hakkımızda</a></li>
-        <li><a href="#focus" class="nav-link">Odak Alanları</a></li>
-        <li><a href="#events" class="nav-link">Etkinlikler</a></li>
-        <li><a href="#team" class="nav-link">Ekip</a></li>
-        <li><a href="#contact" class="nav-link cta-nav">İletişim</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </button>
+
+        <div class="nav-actions">
+          <a href="iletisim.html" class="btn btn-primary btn-sm">Bize Ulaş</a>
+          <button class="hamburger" id="hamburger" aria-label="Menü">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="index.html" class="nav-link active">Ana Sayfa</a>
+    <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+    <a href="odak-alanlari.html" class="nav-link">Odak Alanları</a>
+    <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
+    <a href="ekip.html" class="nav-link">Ekip</a>
+    <a href="iletisim.html" class="nav-link">İletişim</a>
+    <div style="padding:12px 16px;"><a href="iletisim.html" class="btn btn-primary"
+        style="width:100%;justify-content:center;">Bize Ulaş</a></div>
+  </div>
+
+  <!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
   <section class="hero" id="home">
-    <div class="hero-particles" id="particles"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        İstanbul Arel Üniversitesi
-      </div>
-      <h1 class="hero-title">
-        Yazılımın<br />
-        <span class="gradient-text">Geleceğini</span><br />
-        Birlikte Şekillendir
-      </h1>
-      <p class="hero-subtitle">
-        Teorik yazılım bilgisini pratik değere dönüştürüyoruz. Yapay Zeka, Veri Bilimi ve
-        Yazılım Geliştirme alanlarında öğrenci topluluğumuza katıl.
-      </p>
-      <div class="hero-buttons">
-        <a href="#about" class="btn btn-primary" id="joinBtn">
-          <span>Kulübe Katıl</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
-        <a href="#events" class="btn btn-secondary" id="eventsBtn">Etkinlikleri Keşfet</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number" data-target="197">0</span>
-          <span class="stat-label">Üye</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="20">0</span>
-          <span class="stat-label">Gönderi</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-number" data-target="10">0</span>
-          <span class="stat-label">Etkinlik</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="brain-container">
-        <div class="brain-glow"></div>
-        <img src="arel_logo_colored.png" alt="Arel Yazılım Logo" class="brain-img" />
-        <div class="orbit orbit-1">
-          <div class="orbit-dot" id="orb1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="16,18 22,12 16,6" />
-              <polyline points="8,6 2,12 8,18" />
-            </svg>
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Left: Text -->
+        <div class="hero-content">
+          <div class="hero-label">
+            <span class="hero-label-dot"></span>
+            İstanbul Arel Üniversitesi
+          </div>
+          <h1 class="hero-title">
+            Yazılımın<br />
+            <span>Geleceğini</span><br />
+            Birlikte İnşa Et
+          </h1>
+          <p class="hero-subtitle">
+            Yapay Zeka, Yazılım Geliştirme ve Veri Bilimi alanlarında kendini geliştir.
+            197+ öğrenciden oluşan topluluğumuza katıl, projeler üret, kariyerini şekillendir.
+          </p>
+          <div class="hero-actions">
+            <a href="hakkimizda.html" class="btn btn-primary btn-lg">Kulübe Katıl →</a>
+            <a href="etkinlikler.html" class="btn btn-ghost btn-lg"
+              style="color:#fff;border-color:rgba(255,255,255,0.25);">Etkinlikleri Keşfet</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num" data-target="197">0</div>
+              <div class="hero-stat-label">Aktif Üye</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num" data-target="20">0</div>
+              <div class="hero-stat-label">Etkinlik</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num" data-target="13">0</div>
+              <div class="hero-stat-label">Yönetim Ekibi</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num" data-target="3">0</div>
+              <div class="hero-stat-label">Odak Alanı</div>
+            </div>
           </div>
         </div>
-        <div class="orbit orbit-2">
-          <div class="orbit-dot" id="orb2">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="3" />
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-              <path d="M4.93 4.93a10 10 0 0 0 0 14.14" />
-            </svg>
-          </div>
-        </div>
-        <div class="orbit orbit-3">
-          <div class="orbit-dot" id="orb3">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-            </svg>
+
+        <!-- Right: Logo -->
+        <div class="hero-visual">
+          <div class="hero-logo-wrap">
+            <div class="hero-logo-glow"></div>
+            <div class="hero-logo-ring"></div>
+            <img src="arel_logo_colored.png" alt="Arel Yazılım Kulübü Logo" class="hero-img" />
           </div>
         </div>
       </div>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      <span>Keşfet</span>
     </div>
   </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section class="about" id="about">
+  <!-- Feature Strip -->
+  <div class="feature-strip">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Hakkımızda</span>
-        <h2 class="section-title">Teknoloji Tutkusunu<br /><span class="gradient-text">Toplulukla Buluşturuyoruz</span>
-        </h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-card glass-card" id="ac1">
-          <div class="about-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
+      <div class="feature-strip-inner">
+        <div class="feature-strip-item">
+          <div class="feature-strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18" />
             </svg>
           </div>
-          <h3>Misyonumuz</h3>
-          <p>Teorik yazılım bilgisini pratik değere dönüştürmek, proje kültürü oluşturmak ve üyelerimizi
-            ulusal/uluslararası yarışmalara hazırlamak.</p>
+          <div class="feature-strip-text">
+            <strong>Hackathon'lar</strong>
+            <span>Fikrinizi ürüne dönüştürün</span>
+          </div>
         </div>
-        <div class="about-card glass-card featured-card" id="ac2">
-          <div class="about-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <div class="feature-strip-item">
+          <div class="feature-strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10" />
               <path d="M12 8v4l3 3" />
             </svg>
           </div>
-          <h3>Vizyonumuz</h3>
-          <p>İstanbul Arel Üniversitesi'nin öncü öğrenci topluluğu olarak, yazılım dünyasında iz bırakan, yenilikçi
-            projeler üreten bir ekip inşa etmek.</p>
-          <div class="card-glow"></div>
+          <div class="feature-strip-text">
+            <strong>Haftalık Seminerler</strong>
+            <span>Sektör profesyonellerinden</span>
+          </div>
         </div>
-        <div class="about-card glass-card" id="ac3">
-          <div class="about-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <div class="feature-strip-item">
+          <div class="feature-strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
           </div>
-          <h3>Topluluğumuz</h3>
-          <p>197+ aktif üyemizle yazılım, yapay zeka ve veri bilimi alanlarında birlikte öğreniyor, üretiyoruz. Herkes
-            için açık kapı politikası.</p>
-        </div>
-      </div>
-      <div class="about-features">
-        <div class="feature-item" id="fi1">
-          <div class="feature-icon">🚀</div>
-          <div class="feature-text">
-            <strong>Hackathon Hazırlığı</strong>
-            <span>Ulusal & Uluslararası yarışmalar</span>
+          <div class="feature-strip-text">
+            <strong>Ağ Kurma</strong>
+            <span>Şirket ziyaretleri & staj</span>
           </div>
         </div>
-        <div class="feature-item" id="fi2">
-          <div class="feature-icon">🎓</div>
-          <div class="feature-text">
-            <strong>Teknik Eğitimler</strong>
-            <span>Pratik yazılım atölyeleri</span>
-          </div>
-        </div>
-        <div class="feature-item" id="fi3">
-          <div class="feature-icon">🤝</div>
-          <div class="feature-text">
-            <strong>Sektör Bağlantıları</strong>
-            <span>Profesyonellerle networking</span>
-          </div>
-        </div>
-        <div class="feature-item" id="fi4">
-          <div class="feature-icon">💡</div>
-          <div class="feature-text">
-            <strong>Proje Kültürü</strong>
-            <span>Fikri gerçeğe dönüştür</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOCUS AREAS SECTION ===== -->
-  <section class="focus" id="focus">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Odak Alanları</span>
-        <h2 class="section-title">Neler Öğreniyoruz,<br /><span class="gradient-text">Neler Üretiyoruz?</span></h2>
-        <p class="section-desc">Üç temel alanda uzmanlaşarak geleceğin teknoloji liderlerini yetiştiriyoruz.</p>
-      </div>
-      <div class="focus-grid">
-        <div class="focus-card" id="fc1">
-          <div class="focus-number">01</div>
-          <div class="focus-icon-wrap">
-            <svg class="focus-icon" viewBox="0 0 48 48" fill="none">
-              <rect width="48" height="48" rx="12" fill="url(#fa1)" />
-              <path d="M24 14c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z" stroke="white"
-                stroke-width="2" fill="none" />
-              <circle cx="24" cy="24" r="3" fill="white" />
-              <path d="M18 18l12 12M30 18L18 30" stroke="white" stroke-width="1.5" opacity="0.5" />
-              <defs>
-                <linearGradient id="fa1" x1="0" y1="0" x2="48" y2="48">
-                  <stop offset="0%" stop-color="#00d4ff" />
-                  <stop offset="100%" stop-color="#0088cc" />
-                </linearGradient>
-              </defs>
+        <div class="feature-strip-item">
+          <div class="feature-strip-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
             </svg>
           </div>
-          <h3>Yazılım Geliştirme</h3>
-          <p>Web, mobil ve masaüstü uygulama geliştirme. Modern framework'ler ve programlama dilleri üzerine kapsamlı
-            eğitimler ve pratik projeler.</p>
-          <ul class="focus-tags">
-            <li>Python</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Git</li>
-          </ul>
-          <div class="focus-arrow">→</div>
-        </div>
-
-        <div class="focus-card featured-focus" id="fc2">
-          <div class="focus-number">02</div>
-          <div class="focus-icon-wrap">
-            <svg class="focus-icon" viewBox="0 0 48 48" fill="none">
-              <rect width="48" height="48" rx="12" fill="url(#fa2)" />
-              <path d="M14 34l5-10 5 6 4-8 6 12H14z" stroke="white" stroke-width="1.5" fill="none"
-                stroke-linejoin="round" />
-              <circle cx="34" cy="18" r="4" stroke="white" stroke-width="2" />
-              <defs>
-                <linearGradient id="fa2" x1="0" y1="0" x2="48" y2="48">
-                  <stop offset="0%" stop-color="#7c4dff" />
-                  <stop offset="100%" stop-color="#e040fb" />
-                </linearGradient>
-              </defs>
-            </svg>
+          <div class="feature-strip-text">
+            <strong>Açık Kaynak</strong>
+            <span>GitHub'da birlikte üretin</span>
           </div>
-          <h3>Yapay Zeka</h3>
-          <p>Makine öğrenmesi, derin öğrenme ve büyük dil modelleri. AI'ın geleceğini şekillendiren teknolojileri keşfet
-            ve kendi AI projelerini geliştir.</p>
-          <ul class="focus-tags">
-            <li>TensorFlow</li>
-            <li>PyTorch</li>
-            <li>LLM</li>
-            <li>Computer Vision</li>
-          </ul>
-          <div class="focus-arrow">→</div>
-          <div class="featured-badge">En Popüler</div>
-        </div>
-
-        <div class="focus-card" id="fc3">
-          <div class="focus-number">03</div>
-          <div class="focus-icon-wrap">
-            <svg class="focus-icon" viewBox="0 0 48 48" fill="none">
-              <rect width="48" height="48" rx="12" fill="url(#fa3)" />
-              <rect x="13" y="32" width="4" height="5" rx="1" fill="white" />
-              <rect x="20" y="26" width="4" height="11" rx="1" fill="white" opacity="0.8" />
-              <rect x="27" y="20" width="4" height="17" rx="1" fill="white" />
-              <rect x="34" y="14" width="4" height="23" rx="1" fill="white" opacity="0.8" />
-              <line x1="13" y1="18" x2="38" y2="18" stroke="white" stroke-width="1" stroke-dasharray="2,2"
-                opacity="0.4" />
-              <defs>
-                <linearGradient id="fa3" x1="0" y1="0" x2="48" y2="48">
-                  <stop offset="0%" stop-color="#00e676" />
-                  <stop offset="100%" stop-color="#00bcd4" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <h3>Veri Bilimi</h3>
-          <p>Veri analizi, görselleştirme ve istatistiksel modelleme. Büyük veriyi anlamlandırmayı ve veriye dayalı
-            kararlar almayı öğren.</p>
-          <ul class="focus-tags">
-            <li>Pandas</li>
-            <li>SQL</li>
-            <li>Tableau</li>
-            <li>Statistics</li>
-          </ul>
-          <div class="focus-arrow">→</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== EVENTS SECTION ===== -->
-  <section class="events" id="events">
+  <!-- Tech Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-tag">Python</span>
+      <span class="marquee-tag">React</span>
+      <span class="marquee-tag">TensorFlow</span>
+      <span class="marquee-tag">Node.js</span>
+      <span class="marquee-tag">Docker</span>
+      <span class="marquee-tag">Machine Learning</span>
+      <span class="marquee-tag">SQL</span>
+      <span class="marquee-tag">PyTorch</span>
+      <span class="marquee-tag">Kubernetes</span>
+      <span class="marquee-tag">Vue.js</span>
+      <span class="marquee-tag">FastAPI</span>
+      <span class="marquee-tag">Git</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-tag">Python</span>
+      <span class="marquee-tag">React</span>
+      <span class="marquee-tag">TensorFlow</span>
+      <span class="marquee-tag">Node.js</span>
+      <span class="marquee-tag">Docker</span>
+      <span class="marquee-tag">Machine Learning</span>
+      <span class="marquee-tag">SQL</span>
+      <span class="marquee-tag">PyTorch</span>
+      <span class="marquee-tag">Kubernetes</span>
+      <span class="marquee-tag">Vue.js</span>
+      <span class="marquee-tag">FastAPI</span>
+      <span class="marquee-tag">Git</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+     HAKKIMIZDA — Overview
+     ============================================================ -->
+  <section class="section" id="about">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Etkinlikler</span>
-        <h2 class="section-title">Son Etkinliklerimiz &<br /><span class="gradient-text">Gelecek Planlar</span></h2>
-      </div>
-      <div class="events-timeline">
-        <div class="event-item" id="ev1">
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-day">2025</span>
-          </div>
-          <div class="event-connector">
-            <div class="connector-dot"></div>
-            <div class="connector-line"></div>
-          </div>
-          <div class="event-card glass-card">
-            <div class="event-tag tech">Teknik Eğitim</div>
-            <h4>İşlemcilerin İsimlendirilmesi</h4>
-            <p>AMD Ryzen ve Intel Core işlemcilerinin isimlendirme sistemlerini anlatan kapsamlı teknik bir sunum
-              etkinliği düzenlendi.</p>
-            <div class="event-footer">
-              <span>🎓 Teknik Seminer</span>
-              <span>📍 Arel Üniversitesi</span>
-            </div>
+      <div class="about-split">
+        <div class="about-visual fade-up">
+          <div class="about-logo-card">
+            <img src="arel_logo_colored.png" alt="Arel Yazılım Kulübü" />
           </div>
         </div>
-
-        <div class="event-item" id="ev2">
-          <div class="event-date">
-            <span class="event-month">OCA</span>
-            <span class="event-day">2025</span>
-          </div>
-          <div class="event-connector">
-            <div class="connector-dot"></div>
-            <div class="connector-line"></div>
-          </div>
-          <div class="event-card glass-card">
-            <div class="event-tag ai">Yapay Zeka</div>
-            <h4>AI Trendleri Semineri</h4>
-            <p>Yapay zekanın güncel eğilimleri, büyük dil modelleri ve geleceğin teknolojileri üzerine interaktif bir
-              seminer düzenlendi.</p>
-            <div class="event-footer">
-              <span>🤖 AI & Teknoloji</span>
-              <span>👥 Açık Etkinlik</span>
+        <div class="about-text">
+          <span class="section-label">Hakkımızda</span>
+          <h2 class="section-title">Teknoloji Üretenler<br /><span>Topluluğu</span></h2>
+          <p class="section-desc">
+            İstanbul Arel Üniversitesi Yazılım Kulübü, 2022'den bu yana öğrencileri
+            sektörün gerçek ihtiyaçlarına hazırlıyor. Teorik bilgiyi pratiğe dönüştüren
+            etkinlikler, mentorluk programları ve açık kaynak projelerle kariyer yolculuğunu hızlandır.
+          </p>
+          <div class="about-features">
+            <div class="about-feat fade-up">
+              <div class="about-feat-icon">🚀</div>
+              <div class="about-feat-text">
+                <strong>Proje Geliştirme</strong>
+                <span>Gerçek ürünler üret</span>
+              </div>
+            </div>
+            <div class="about-feat fade-up">
+              <div class="about-feat-icon">🤝</div>
+              <div class="about-feat-text">
+                <strong>Mentorluk</strong>
+                <span>Tecrübeli rehberler</span>
+              </div>
+            </div>
+            <div class="about-feat fade-up">
+              <div class="about-feat-icon">🏆</div>
+              <div class="about-feat-text">
+                <strong>Yarışmalar</strong>
+                <span>Hackathon & ödüller</span>
+              </div>
+            </div>
+            <div class="about-feat fade-up">
+              <div class="about-feat-icon">💼</div>
+              <div class="about-feat-text">
+                <strong>Kariyer</strong>
+                <span>Staj & iş bağlantıları</span>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="event-item" id="ev3">
-          <div class="event-date">
-            <span class="event-month">YAK.</span>
-            <span class="event-day">2025</span>
-          </div>
-          <div class="event-connector">
-            <div class="connector-dot upcoming"></div>
-            <div class="connector-line"></div>
-          </div>
-          <div class="event-card glass-card upcoming-event">
-            <div class="event-tag hackathon">Hackathon</div>
-            <h4>Hackathon Hazırlık Kampı</h4>
-            <p>Ulusal ve uluslararası hackathon yarışmalarına hazırlık amacıyla düzenlenecek yoğun bir proje geliştirme
-              kampı. Katılım açık!</p>
-            <div class="event-footer">
-              <span>🏆 Yarışma Hazırlığı</span>
-              <span class="upcoming-badge">Yakında!</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-item" id="ev4">
-          <div class="event-date">
-            <span class="event-month">YAK.</span>
-            <span class="event-day">2025</span>
-          </div>
-          <div class="event-connector">
-            <div class="connector-dot upcoming"></div>
-            <div class="connector-line"></div>
-          </div>
-          <div class="event-card glass-card upcoming-event">
-            <div class="event-tag networking">Networking</div>
-            <h4>Sektör Gezisi & Buluşması</h4>
-            <p>Yazılım sektöründeki profesyonellerle bir araya gelme ve sektör deneyimi kazanma fırsatı. Sektör ziyareti
-              planlanıyor.</p>
-            <div class="event-footer">
-              <span>🤝 Networking</span>
-              <span class="upcoming-badge">Planlanıyor</span>
-            </div>
+          <div style="margin-top:28px;">
+            <a href="hakkimizda.html" class="btn btn-primary">Daha Fazla Öğren →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== TEAM SECTION ===== -->
-  <section class="team" id="team">
+  <!-- ============================================================
+     ODAK ALANLARI
+     ============================================================ -->
+  <section class="section section-alt" id="focus">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Ekip</span>
-        <h2 class="section-title">Kulübü Yöneten <br /><span class="gradient-text">Ekibimiz</span></h2>
-        <p class="section-desc">Arel Yazılım Kulübü'nü bir araya getiren ve yöneten öğrenci liderlerimiz.</p>
+      <div class="section-header center">
+        <span class="section-label">Odak Alanları</span>
+        <h2 class="section-title">Ne Öğreniyoruz?</h2>
+        <p class="section-desc">Üç temel alan etrafında şekillenen eğitim ve proje programlarımız.</p>
       </div>
-      <div class="team-carousel-wrap">
-        <div class="team-grid" id="teamCarousel">
-
-          <div class="team-card glass-card" id="tm1">
-            <div class="team-avatar">
-              <div class="avatar-initials">MSG</div>
-              <div class="team-badge-ring"></div>
+      <div class="focus-cards">
+        <div class="focus-card fade-up">
+          <div class="focus-card-header">
+            <div class="focus-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+              </svg>
             </div>
-            <h4>Muhammed Sina Gün</h4>
-            <p class="team-role">Genel Koordinatör</p>
-            <p class="team-desc">Bilgisayar Müh. · 2. Sınıf · GPA 3.16</p>
-            <div class="team-socials">
-              <a href="https://github.com/msgxr" target="_blank" rel="noopener" class="team-social-btn tsb-gh">GH</a>
-              <a href="https://www.linkedin.com/in/muhammedsina" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://x.com/muhammedsinagun?s=21" target="_blank" rel="noopener"
-                class="team-social-btn tsb-x">𝕏</a>
+            <div class="focus-card-title">Yapay Zeka</div>
+            <div class="focus-card-sub">AI & Machine Learning</div>
+          </div>
+          <div class="focus-card-body">
+            <p class="focus-card-desc">
+              Makine öğrenmesi algoritmalarından derin öğrenmeye, NLP'den bilgisayarlı görüye kadar
+              yapay zekanın tüm alt dallarında uygulamalı eğitimler.
+            </p>
+            <div class="focus-card-tags">
+              <span class="focus-tag">Python</span>
+              <span class="focus-tag">TensorFlow</span>
+              <span class="focus-tag">PyTorch</span>
+              <span class="focus-tag">Scikit-learn</span>
             </div>
           </div>
-
-          <div class="team-card glass-card" id="tm2">
-            <div class="team-avatar">
-              <div class="avatar-initials">ÇÖ</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Çiçek Özdemir</h4>
-            <p class="team-role">Genel Sekreter</p>
-            <p class="team-desc">Bilgisayar Müh. · 1. Sınıf · GPA 2.8</p>
-            <div class="team-socials">
-              <a href="https://linkedin.com/in/çiçek-özdemir-b3a497374" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://www.instagram.com/_cicekozdemirr_/" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm3">
-            <div class="team-avatar">
-              <div class="avatar-initials">LAK</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Lütfiye Azra Kızılaslan</h4>
-            <p class="team-role">Etkinlik Sorumlusu</p>
-            <p class="team-desc">Yazılım Müh. · 1. Sınıf · GPA 3.6</p>
-            <div class="team-socials">
-              <a href="https://github.com/azrakizilaslan9-create" target="_blank" rel="noopener"
-                class="team-social-btn tsb-gh">GH</a>
-              <a href="https://linkedin.com/in/azra-kızılaslan-b09958387" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://www.instagram.com/azralore/" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm4">
-            <div class="team-avatar">
-              <div class="avatar-initials">ÖB</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Öztürk Bağcı</h4>
-            <p class="team-role">Eş Başkan</p>
-            <p class="team-desc">Yazılım Müh. · 2. Sınıf · GPA 2.2</p>
-            <div class="team-socials">
-              <a href="http://linkedin.com/in/öztürk-bağcı-4767a7362" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://x.com/_oztrkb?s=21" target="_blank" rel="noopener" class="team-social-btn tsb-x">𝕏</a>
-              <a href="https://www.instagram.com/yztvrk" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm5">
-            <div class="team-avatar">
-              <div class="avatar-initials">KCK</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Kerim Can Karadağ</h4>
-            <p class="team-role">Başkan</p>
-            <p class="team-desc">Yazılım Müh. · 2. Sınıf · GPA 2.19</p>
-            <div class="team-socials">
-              <a href="http://linkedin.com/in/kerim-can-karadağ-ab041a359" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm6">
-            <div class="team-avatar">
-              <div class="avatar-initials">BZY</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Berfin Zeynep Yıldırım</h4>
-            <p class="team-role">Teknik Mentör</p>
-            <p class="team-desc">Yazılım Müh. · 1. Sınıf · GPA 3.75</p>
-            <div class="team-socials">
-              <a href="https://github.com/Mida-S" target="_blank" rel="noopener" class="team-social-btn tsb-gh">GH</a>
-              <a href="https://linkedin.com/in/berfin-yıldırım-13b905392" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://www.instagram.com/berfin2134_" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm7">
-            <div class="team-avatar">
-              <div class="avatar-initials">MES</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Mert Efe Soroğlu</h4>
-            <p class="team-role">Co-CTO</p>
-            <p class="team-desc">İşletme · 1. Sınıf</p>
-            <div class="team-socials">
-              <a href="https://github.com/EfeSorogluu" target="_blank" rel="noopener"
-                class="team-social-btn tsb-gh">GH</a>
-              <a href="https://www.linkedin.com/in/mertefesoroglu/" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://x.com/MSoroglu" target="_blank" rel="noopener" class="team-social-btn tsb-x">𝕏</a>
-              <a href="https://www.instagram.com/sorogluefe" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm8">
-            <div class="team-avatar">
-              <div class="avatar-initials">YÖ</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Yağmur Özen</h4>
-            <p class="team-role">Sosyal Medya Sorumlusu</p>
-            <p class="team-desc">Bilgi Güvenliği · 1. Sınıf · GPA 1.9</p>
-            <div class="team-socials">
-              <a href="http://linkedin.com/in/yağmur-özen-05b2903a1" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://www.instagram.com/yamurrozn" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm9">
-            <div class="team-avatar">
-              <div class="avatar-initials">EB</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Eylül Başer</h4>
-            <p class="team-role">Sponsor Sorumlusu</p>
-            <p class="team-desc">Yazılım Müh. · 2. Sınıf · GPA 2.6</p>
-            <div class="team-socials">
-              <a href="https://github.com/eylulbsrr" target="_blank" rel="noopener"
-                class="team-social-btn tsb-gh">GH</a>
-              <a href="https://www.linkedin.com/in/eylul-baser" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://x.com/eylulbsrr?s=21" target="_blank" rel="noopener" class="team-social-btn tsb-x">𝕏</a>
-              <a href="https://www.instagram.com/eylulbaser0" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm10">
-            <div class="team-avatar">
-              <div class="avatar-initials">MU</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Mahsun Ulusal</h4>
-            <p class="team-role">Başkan Yardımcısı</p>
-            <p class="team-desc">Yazılım Müh. · 2. Sınıf · GPA 3.76</p>
-            <div class="team-socials">
-              <a href="https://github.com/MahsunUlusal" target="_blank" rel="noopener"
-                class="team-social-btn tsb-gh">GH</a>
-              <a href="https://www.instagram.com/mahsun_ulsl" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm11">
-            <div class="team-avatar">
-              <div class="avatar-initials">RA</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Resul Aydoğmuş</h4>
-            <p class="team-role">Topluluk Sorumlusu</p>
-            <p class="team-desc">Bilgisayar Müh. · 3. Sınıf · GPA 3.65</p>
-            <div class="team-socials">
-              <a href="https://github.com/Ustrif/" target="_blank" rel="noopener" class="team-social-btn tsb-gh">GH</a>
-              <a href="https://www.linkedin.com/in/resul-aydo%C4%9Fmu%C5%9F-4b0578159/" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="http://instagram.com/rslaydgms/" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm12">
-            <div class="team-avatar">
-              <div class="avatar-initials">ERB</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Eren Bahadır</h4>
-            <p class="team-role">CTO</p>
-            <p class="team-desc">Bilgisayar Müh. · 3. Sınıf · GPA 2.30</p>
-            <div class="team-socials">
-              <a href="mailto:erenbahadir@cloudly.com.tr" class="team-social-btn tsb-li">✉</a>
-            </div>
-          </div>
-
-          <div class="team-card glass-card" id="tm13">
-            <div class="team-avatar">
-              <div class="avatar-initials">AYS</div>
-              <div class="team-badge-ring"></div>
-            </div>
-            <h4>Ahmet Yiğit Sunar</h4>
-            <p class="team-role">Dış İlişkiler Sorumlusu</p>
-            <p class="team-desc">Yazılım Müh. · 2. Sınıf · GPA 2.6</p>
-            <div class="team-socials">
-              <a href="https://github.com/yigitsunar" target="_blank" rel="noopener"
-                class="team-social-btn tsb-gh">GH</a>
-              <a href="https://www.linkedin.com/in/ahmet-yi%C4%9Fit-sunar-5316b6321" target="_blank" rel="noopener"
-                class="team-social-btn tsb-li">in</a>
-              <a href="https://www.instagram.com/a.yigitsunar" target="_blank" rel="noopener"
-                class="team-social-btn tsb-ig">IG</a>
-            </div>
-          </div>
-
-        </div><!-- /team-grid -->
-
-        <!-- Carousel Navigation -->
-        <div class="team-carousel-nav">
-          <button class="carousel-btn" id="carouselPrev" aria-label="Önceki">&#8592;</button>
-          <div class="carousel-dots" id="carouselDots">
-            <span class="carousel-dot active" data-index="0"></span>
-            <span class="carousel-dot" data-index="1"></span>
-            <span class="carousel-dot" data-index="2"></span>
-            <span class="carousel-dot" data-index="3"></span>
-            <span class="carousel-dot" data-index="4"></span>
-            <span class="carousel-dot" data-index="5"></span>
-            <span class="carousel-dot" data-index="6"></span>
-            <span class="carousel-dot" data-index="7"></span>
-            <span class="carousel-dot" data-index="8"></span>
-            <span class="carousel-dot" data-index="9"></span>
-            <span class="carousel-dot" data-index="10"></span>
-            <span class="carousel-dot" data-index="11"></span>
-            <span class="carousel-dot" data-index="12"></span>
-          </div>
-          <button class="carousel-btn" id="carouselNext" aria-label="Sonraki">&#8594;</button>
         </div>
-      </div><!-- /team-carousel-wrap -->
+
+        <div class="focus-card fade-up">
+          <div class="focus-card-header">
+            <div class="focus-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <div class="focus-card-title">Yazılım Geliştirme</div>
+            <div class="focus-card-sub">Full Stack Development</div>
+          </div>
+          <div class="focus-card-body">
+            <p class="focus-card-desc">
+              Frontend'den backend'e, mobil uygulamalardan bulut altyapısına kadar
+              modern yazılım geliştirme pratikleri ve endüstri standartları.
+            </p>
+            <div class="focus-card-tags">
+              <span class="focus-tag">React</span>
+              <span class="focus-tag">Node.js</span>
+              <span class="focus-tag">Docker</span>
+              <span class="focus-tag">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="focus-card fade-up">
+          <div class="focus-card-header">
+            <div class="focus-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18" />
+              </svg>
+            </div>
+            <div class="focus-card-title">Veri Bilimi</div>
+            <div class="focus-card-sub">Data Science & Analytics</div>
+          </div>
+          <div class="focus-card-body">
+            <p class="focus-card-desc">
+              Veri analizi, görselleştirme ve büyük veri mühendisliği. Ham veriden
+              anlam çıkarma sanatını öğren, kararları veriye dayandır.
+            </p>
+            <div class="focus-card-tags">
+              <span class="focus-tag">Pandas</span>
+              <span class="focus-tag">SQL</span>
+              <span class="focus-tag">Tableau</span>
+              <span class="focus-tag">Spark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="odak-alanlari.html" class="btn btn-primary">Tüm Alanları Gör →</a>
+      </div>
     </div>
   </section>
 
-  <!-- ===== GITHUB / PROJECTS SECTION ===== -->
-  <section class="projects" id="projects">
+  <!-- ============================================================
+     ETKİNLİKLER — Recent
+     ============================================================ -->
+  <section class="section" id="events">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Açık Kaynak</span>
-        <h2 class="section-title">GitHub'da <span class="gradient-text">Projelerimiz</span></h2>
-        <p class="section-desc">Açık kaynak kültürüne katkıda bulunuyor, birlikte projeler geliştiriyoruz.</p>
+      <div class="section-header"
+        style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <span class="section-label">Etkinlikler</span>
+          <h2 class="section-title" style="margin-bottom:0">Son Etkinlikler</h2>
+        </div>
+        <a href="etkinlikler.html" class="btn btn-ghost">Tümünü Gör →</a>
       </div>
-      <div class="github-showcase">
-        <div class="github-card glass-card" id="gh1">
-          <div class="github-header">
-            <svg viewBox="0 0 24 24" fill="currentColor" class="github-logo">
+      <div class="events-grid">
+        <div class="event-card fade-up">
+          <div class="event-card-header">
+            <span class="event-date">MAR 2025</span>
+            <span class="event-badge badge-seminar">Seminer</span>
+          </div>
+          <div class="event-card-body">
+            <div class="event-title">İşlemcilerin İsimlendirilmesi</div>
+            <p class="event-desc">AMD Ryzen ve Intel Core işlemcilerinin isimlendirme sistemlerini anlatan kapsamlı
+              teknik sunum etkinliği.</p>
+            <div class="event-meta">
+              <span class="event-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Arel Üniversitesi
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <div class="event-card-header">
+            <span class="event-date">OCA 2025</span>
+            <span class="event-badge badge-seminar">Yapay Zeka</span>
+          </div>
+          <div class="event-card-body">
+            <div class="event-title">AI Trendleri Semineri</div>
+            <p class="event-desc">Yapay zekanın güncel eğilimleri, büyük dil modelleri ve geleceğin teknolojileri
+              üzerine interaktif seminer.</p>
+            <div class="event-meta">
+              <span class="event-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Açık Etkinlik
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-card fade-up">
+          <div class="event-card-header">
+            <span class="event-date">YAK. 2025</span>
+            <span class="event-badge badge-upcoming">Yakında</span>
+          </div>
+          <div class="event-card-body">
+            <div class="event-title">Hackathon Hazırlık Kampı</div>
+            <p class="event-desc">Ulusal ve uluslararası hackathon yarışmalarına hazırlık amacıyla düzenlenecek yoğun
+              proje geliştirme kampı.</p>
+            <div class="event-meta">
+              <span class="event-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Katılım Açık
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     EKİP — Preview (4 kişi)
+     ============================================================ -->
+  <section class="section section-alt" id="team">
+    <div class="container">
+      <div class="section-header"
+        style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <span class="section-label">Ekip</span>
+          <h2 class="section-title" style="margin-bottom:0">Yönetim Ekibimiz</h2>
+        </div>
+        <a href="ekip.html" class="btn btn-ghost">Tüm Ekibi Gör →</a>
+      </div>
+      <div class="team-grid-ms">
+        <div class="team-card-ms fade-up">
+          <div class="team-avatar-ms">KCK</div>
+          <div class="team-name-ms">Kerim Can Karadağ</div>
+          <div class="team-role-ms">Başkan</div>
+          <div class="team-dept-ms">Yazılım Müh. · 2. Sınıf</div>
+          <div class="team-socials-ms">
+            <a href="http://linkedin.com/in/kerim-can-karadağ-ab041a359" target="_blank" class="tsm-btn li">in</a>
+          </div>
+        </div>
+        <div class="team-card-ms fade-up">
+          <div class="team-avatar-ms">MSG</div>
+          <div class="team-name-ms">Muhammed Sina Gün</div>
+          <div class="team-role-ms">Genel Koordinatör</div>
+          <div class="team-dept-ms">Bilgisayar Müh. · 2. Sınıf</div>
+          <div class="team-socials-ms">
+            <a href="https://github.com/msgxr" target="_blank" class="tsm-btn gh">GH</a>
+            <a href="https://www.linkedin.com/in/muhammedsina" target="_blank" class="tsm-btn li">in</a>
+            <a href="https://x.com/muhammedsinagun" target="_blank" class="tsm-btn tw">𝕏</a>
+          </div>
+        </div>
+        <div class="team-card-ms fade-up">
+          <div class="team-avatar-ms">ERB</div>
+          <div class="team-name-ms">Eren Bahadır</div>
+          <div class="team-role-ms">CTO</div>
+          <div class="team-dept-ms">Bilgisayar Müh. · 3. Sınıf</div>
+          <div class="team-socials-ms">
+            <a href="mailto:erenbahadir@cloudly.com.tr" class="tsm-btn li">✉</a>
+          </div>
+        </div>
+        <div class="team-card-ms fade-up">
+          <div class="team-avatar-ms">MU</div>
+          <div class="team-name-ms">Mahsun Ulusal</div>
+          <div class="team-role-ms">Başkan Yardımcısı</div>
+          <div class="team-dept-ms">Yazılım Müh. · 2. Sınıf</div>
+          <div class="team-socials-ms">
+            <a href="https://github.com/MahsunUlusal" target="_blank" class="tsm-btn gh">GH</a>
+            <a href="https://www.instagram.com/mahsun_ulsl" target="_blank" class="tsm-btn ig">IG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     GITHUB BANNER
+     ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="github-banner">
+        <div class="github-banner-content">
+          <h3>GitHub'da Açık Kaynak</h3>
+          <p>Tüm projelerimize katkıda bulun, kodlarımızı inceleyin ve topluluğa katılın.</p>
+        </div>
+        <div class="github-banner-actions">
+          <a href="https://github.com/ArelSoftwareClub" target="_blank" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;">
               <path
                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
             </svg>
-            <span>ArelSoftwareClub</span>
-          </div>
-          <p>Kulübümüzün açık kaynak projeleri ve teknik kaynakları. Katkıda bulunmak için GitHub sayfamızı ziyaret
-            edin.</p>
-          <a href="https://github.com/ArelSoftwareClub" target="_blank" rel="noopener" class="btn btn-outline"
-            id="githubBtn">
-            GitHub'ı Ziyaret Et →
+            GitHub'ı Ziyaret Et
           </a>
-        </div>
-        <div class="tech-marquee">
-          <div class="marquee-track">
-            <span>Python</span><span>JavaScript</span><span>React</span><span>TensorFlow</span>
-            <span>PyTorch</span><span>SQL</span><span>Docker</span><span>Node.js</span>
-            <span>FastAPI</span><span>Vue.js</span><span>Machine Learning</span><span>Deep Learning</span>
-            <span>Python</span><span>JavaScript</span><span>React</span><span>TensorFlow</span>
-            <span>PyTorch</span><span>SQL</span><span>Docker</span><span>Node.js</span>
-          </div>
+          <a href="https://github.com/ArelSoftwareClub" target="_blank" class="btn btn-ghost"
+            style="color:#fff;border-color:rgba(255,255,255,0.2);">Projeleri İncele</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
-  <section class="contact" id="contact">
+  <!-- ============================================================
+     CTA
+     ============================================================ -->
+  <section class="cta-section" id="join">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">İletişim</span>
-        <h2 class="section-title">Bize <span class="gradient-text">Ulaşın</span></h2>
-        <p class="section-desc">Sorularınız için bize ulaşın veya sosyal medya hesaplarımızı takip edin.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-item" id="ci1">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <strong>E-posta</strong>
-              <a href="mailto:yazilimkulubu@istanbularel.edu.tr">yazilimkulubu@istanbularel.edu.tr</a>
-            </div>
-          </div>
-          <div class="contact-item" id="ci2">
-            <div class="contact-icon">🏫</div>
-            <div>
-              <strong>Üniversite</strong>
-              <span>İstanbul Arel Üniversitesi</span>
-            </div>
-          </div>
-          <div class="social-links">
-            <h4>Sosyal Medya</h4>
-            <div class="social-grid">
-              <a href="https://instagram.com/arel.yazilim" target="_blank" rel="noopener" class="social-btn instagram"
-                id="igBtn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-                Instagram
-              </a>
-              <a href="https://x.com/ArelSoftware" target="_blank" rel="noopener" class="social-btn twitter" id="twBtn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.633L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-                </svg>
-                X (Twitter)
-              </a>
-              <a href="https://www.linkedin.com/company/arelsoftwareclub/" target="_blank" rel="noopener"
-                class="social-btn linkedin" id="liBtn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-                LinkedIn
-              </a>
-              <a href="https://github.com/ArelSoftwareClub" target="_blank" rel="noopener" class="social-btn github"
-                id="ghBtn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-                GitHub
-              </a>
-              <a href="https://www.patreon.com/c/ArelSoftwareClub" target="_blank" rel="noopener"
-                class="social-btn patreon" id="ptBtn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M0 .48v23.04h4.22V.48zm15.385 0c-4.764 0-8.641 3.88-8.641 8.65 0 4.755 3.877 8.623 8.641 8.623 4.75 0 8.615-3.868 8.615-8.623C24 4.36 20.135.48 15.385.48z" />
-                </svg>
-                Patreon
-              </a>
-              <a href="https://whatsapp.com/channel/0029VbBh6oT3wtb5zsyRZ820" target="_blank" rel="noopener"
-                class="social-btn whatsapp" id="waBtn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                </svg>
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="contact-form-wrap glass-card">
-          <h3>Mesaj Gönder</h3>
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name">Ad Soyad</label>
-              <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required />
-            </div>
-            <div class="form-group">
-              <label for="email">E-posta</label>
-              <input type="email" id="email" name="email" placeholder="ornek@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Konu</label>
-              <select id="subject" name="subject">
-                <option value="">Konu Seçin</option>
-                <option value="uyelik">Üyelik Başvurusu</option>
-                <option value="etkinlik">Etkinlik Bilgisi</option>
-                <option value="proje">Proje İşbirliği</option>
-                <option value="diger">Diğer</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Mesaj</label>
-              <textarea id="message" name="message" placeholder="Mesajınızı buraya yazın..." rows="4"
-                required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary form-submit-btn" id="submitBtn">
-              <span>Mesaj Gönder</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 2L11 13" />
-                <path d="M22 2L15 22 11 13 2 9l20-7z" />
-              </svg>
-            </button>
-          </form>
-        </div>
+      <h2>Topluluğumuza Katıl</h2>
+      <p>Sınıftaki bilgileri gerçek projelere dönüştür. Kariyer yolculuğuna bugün başla.</p>
+      <div class="cta-actions">
+        <a href="iletisim.html" class="btn btn-white btn-lg">Üyelik Başvurusu →</a>
+        <a href="hakkimizda.html" class="btn btn-lg"
+          style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.3);">Daha Fazla
+          Öğren</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ============================================================
+     FOOTER
+     ============================================================ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="nav-logo">
-            <div class="logo-icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="19" stroke="url(#fgrad)" stroke-width="2" />
-                <path d="M14 16c0-3.3 2.7-6 6-6s6 2.7 6 6c0 2-1 3.8-2.5 4.9V26h-7v-5.1C15 19.8 14 18 14 16z"
-                  fill="url(#fgrad)" opacity="0.8" />
-                <path d="M17 26h6v2.5c0 .8-.7 1.5-1.5 1.5h-3c-.8 0-1.5-.7-1.5-1.5V26z" fill="url(#fgrad)" />
-                <line x1="10" y1="16" x2="13" y2="16" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" />
-                <line x1="27" y1="16" x2="30" y2="16" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" />
-                <line x1="10" y1="20" x2="13" y2="20" stroke="#7c4dff" stroke-width="1.5" stroke-linecap="round" />
-                <line x1="27" y1="20" x2="30" y2="20" stroke="#7c4dff" stroke-width="1.5" stroke-linecap="round" />
-                <defs>
-                  <linearGradient id="fgrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#00d4ff" />
-                    <stop offset="100%" style="stop-color:#7c4dff" />
-                  </linearGradient>
-                </defs>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-inline">
+            <img src="arel_logo_colored.png" alt="Logo" class="footer-logo" />
+            <span class="footer-brand-name">Arel <span>Yazılım</span></span>
+          </div>
+          <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-top:12px;max-width:220px;line-height:1.7;">
+            İstanbul Arel Üniversitesi Yazılım Kulübü. Teknoloji, Yenilik ve Topluluk.
+          </p>
+          <div class="footer-social" style="margin-top:16px;">
+            <a href="https://instagram.com/arel.yazilim" target="_blank" class="footer-social-btn"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
-            </div>
-            <span class="logo-text">Arel <span class="logo-accent">Yazılım</span></span>
+            </a>
+            <a href="https://x.com/ArelSoftware" target="_blank" class="footer-social-btn" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.633L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/company/arel-yazilim" target="_blank" class="footer-social-btn"
+              aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="https://github.com/ArelSoftwareClub" target="_blank" class="footer-social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
           </div>
-          <p>İstanbul Arel Üniversitesi Yazılım Kulübü. Teknoloji, Yenilik ve Topluluk.</p>
         </div>
-        <div class="footer-links-section">
-          <div class="footer-col">
-            <h5>Hızlı Bağlantılar</h5>
-            <ul>
-              <li><a href="#home">Ana Sayfa</a></li>
-              <li><a href="#about">Hakkımızda</a></li>
-              <li><a href="#focus">Odak Alanları</a></li>
-              <li><a href="#events">Etkinlikler</a></li>
-              <li><a href="#contact">İletişim</a></li>
-            </ul>
+
+        <div>
+          <div class="footer-col-title">Hızlı Linkler</div>
+          <div class="footer-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="odak-alanlari.html">Odak Alanları</a>
+            <a href="etkinlikler.html">Etkinlikler</a>
+            <a href="ekip.html">Ekip</a>
+            <a href="iletisim.html">İletişim</a>
           </div>
-          <div class="footer-col">
-            <h5>Sosyal Medya</h5>
-            <ul>
-              <li><a href="https://instagram.com/arel.yazilim" target="_blank" rel="noopener">Instagram</a></li>
-              <li><a href="https://x.com/ArelSoftware" target="_blank" rel="noopener">X (Twitter)</a></li>
-              <li><a href="https://www.linkedin.com/company/arelsoftwareclub/" target="_blank"
-                  rel="noopener">LinkedIn</a></li>
-              <li><a href="https://github.com/ArelSoftwareClub" target="_blank" rel="noopener">GitHub</a></li>
-              <li><a href="https://www.patreon.com/c/ArelSoftwareClub" target="_blank" rel="noopener">Patreon</a></li>
-            </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Sosyal Medya</div>
+          <div class="footer-links">
+            <a href="https://instagram.com/arel.yazilim" target="_blank">Instagram</a>
+            <a href="https://x.com/ArelSoftware" target="_blank">X (Twitter)</a>
+            <a href="https://linkedin.com/company/arel-yazilim" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ArelSoftwareClub" target="_blank">GitHub</a>
+            <a href="https://wa.me/905000000000" target="_blank">WhatsApp</a>
           </div>
-          <div class="footer-col">
-            <h5>İletişim</h5>
-            <ul>
-              <li><a href="mailto:yazilimkulubu@istanbularel.edu.tr">E-posta</a></li>
-              <li><a href="https://whatsapp.com/channel/0029VbBh6oT3wtb5zsyRZ820" target="_blank"
-                  rel="noopener">WhatsApp Kanalı</a></li>
-              <li><a href="https://linktr.ee/arelyazilim" target="_blank" rel="noopener">Linktree</a></li>
-            </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">İletişim</div>
+          <div class="footer-links">
+            <a href="mailto:yazilimkulubu@istanbularel.edu.tr">E-posta</a>
+            <a href="iletisim.html">İletişim Formu</a>
+            <a href="https://www.istanbularel.edu.tr" target="_blank">İstanbul Arel Ünv.</a>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>© 2026 İstanbul Arel Üniversitesi Yazılım Kulübü. Tüm hakları saklıdır.</p>
-        <p class="footer-tagline">Made with ❤️ by Arel Yazılım Kulübü</p>
+        <span>© 2025 Arel Yazılım Kulübü. Tüm hakları saklıdır.</span>
+        <span>İstanbul Arel Üniversitesi</span>
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Yukarı git">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
