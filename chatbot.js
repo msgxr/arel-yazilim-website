@@ -7,7 +7,7 @@
     'use strict';
 
     /* ── CONFIG ─────────────────────────────────────────────── */
-    const GEMINI_API_KEY = 'BURAYA_API_KEYI_YAZ';  // <-- replace with your key
+    const GEMINI_API_KEY = 'AIzaSyDE7E2LMtqDD2pH10OM2JXRHAsplN-FqvE';
     const GEMINI_MODEL = 'gemini-2.0-flash';
     const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
