@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İş Birlikleri | Arel Yazılım Kulübü</title>
+  <meta name="description" content="Arel Yazılım Kulübü kurumsal iş ortakları ve sponsorluklar." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style_framework.css" />
+  <link rel="icon" type="image/png" href="arel_logo_colored.png" />
+  <style>
+    .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+    .partner-card { background: #fff; padding: 40px; border-radius: 20px; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; filter: grayscale(1); opacity: 0.6; transition: all 0.3s; }
+    .partner-card:hover { filter: grayscale(0); opacity: 1; border-color: var(--arel-primary); }
+    .partner-logo { max-width: 100%; height: auto; max-height: 60px; }
+  </style>
+</head>
+<body>
+  <div class="university-bar" role="banner">
+    <div class="container">
+      <div class="university-bar-inner">
+        <div class="university-bar-left">
+          <span>Kurumsal İlişkiler & Sponsorluk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="arel_logo_colored.png" alt="Logo" class="nav-logo" />
+          <span class="nav-brand-name">Arel <span>Yazılım</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Ana Sayfa</a>
+          <a href="is-birlikleri.html" class="nav-link active">İş Birliği</a>
+          <a href="iletisim.html" class="nav-link">Sponsor Ol</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" style="padding-top:120px;">
+    <div class="container">
+      <h1 class="page-title">İş <span>Birlikleri</span></h1>
+      <p class="section-desc">Eğitim, istihdam ve teknoloji alanında birlikte çalıştığımız kurumlar.</p>
+
+      <div class="partner-grid reveal">
+          <!-- Placeholder for partners -->
+          <div class="partner-card"><strong>Arel Teknopark</strong></div>
+          <div class="partner-card"><strong>GitHub</strong></div>
+          <div class="partner-card"><strong>Microsoft</strong></div>
+          <div class="partner-card"><strong>AWS</strong></div>
+      </div>
+      
+      <div class="cta-section" style="margin-top:80px;border-radius:24px;">
+          <h2>Sponsorluk & İş Birliği</h2>
+          <p>Kulübümüzle iş birliği yaparak geleceğin yeteneklerine ulaşın.</p>
+          <a href="iletisim.html" class="btn btn-white btn-lg">Bize Ulaşın</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+        <span>© 2026 Arel Yazılım Kurumsal</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

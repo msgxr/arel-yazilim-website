@@ -17,51 +17,69 @@
   <a href="#main-content" class="skip-to-content">Ana içeriğe geç</a>
   <div id="progress-bar"></div>
 
-  <div class="university-bar">
+  <div class="university-bar" role="banner">
     <div class="container">
       <div class="university-bar-inner">
         <div class="university-bar-left">
-          <span class="university-bar-badge">🎓 Resmî Kulübü</span>
+          <span class="university-bar-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Resmî Kulüp
+          </span>
           <span class="university-bar-sep">|</span>
           <span>İstanbul Arel Üniversitesi · Girişimcilik ve Liderlik Ofisi Ekosistemi</span>
         </div>
         <div class="university-bar-right">
-          <a href="https://www.istanbularel.edu.tr" target="_blank" rel="noopener" class="university-bar-link">↗ Üniversite Ana Sayfa</a>
+          <a href="https://www.istanbularel.edu.tr" target="_blank" rel="noopener" class="university-bar-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            Üniversite Ana Sayfa
+          </a>
+          <a href="mailto:yazilimkulubu@istanbularel.edu.tr" class="university-bar-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            yazilimkulubu@istanbularel.edu.tr
+          </a>
         </div>
       </div>
     </div>
   </div>
 
-        <div class="container">
-            <div class="nav-inner">
-                <a href="index.html" class="nav-brand">
-                    <img src="arel_logo_colored.png" alt="Logo" class="nav-logo" />
-                    <span class="nav-brand-name">Arel <span>Yazılım</span></span>
-                </a>
-                <div class="nav-links">
-                    <a href="index.html" class="nav-link">Ana Sayfa</a>
-                    <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-                    <a href="odak-alanlari.html" class="nav-link">Odak Alanları</a>
-                    <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
-                    <a href="ekip.html" class="nav-link active">Ekip</a>
-                    <a href="iletisim.html" class="nav-link">İletişim</a>
-                </div>
-                <div class="nav-actions">
-                    <a href="iletisim.html" class="btn btn-primary btn-sm">Bize Ulaş</a>
-                    <button class="hamburger" id="hamburger"
-                        aria-label="Menü"><span></span><span></span><span></span></button>
-                </div>
-            </div>
+  <nav id="navbar" role="navigation" aria-label="Ana Navigasyon">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand" aria-label="Arel Yazılım Kulübü Ana Sayfa">
+          <img src="arel_logo_colored.png" alt="Logo" class="nav-logo" />
+          <span class="nav-brand-name">Arel <span>Yazılım</span></span>
+        </a>
+        <div class="nav-links" id="navLinks" role="menubar">
+          <a href="index.html" class="nav-link" role="menuitem">Ana Sayfa</a>
+          <a href="hakkimizda.html" class="nav-link" role="menuitem">Hakkımızda</a>
+          <a href="etkinlikler.html" class="nav-link" role="menuitem">Etkinlikler</a>
+          <a href="duyurular.html" class="nav-link" role="menuitem">Duyurular</a>
+          <a href="projeler.html" class="nav-link" role="menuitem">Projeler</a>
+          <a href="ekip.html" class="nav-link active" role="menuitem">Ekip</a>
+          <a href="iletisim.html" class="nav-link" role="menuitem">İletişim</a>
         </div>
-    </nav>
-    <div class="nav-mobile" id="mobileMenu">
-        <a href="index.html" class="nav-link">Ana Sayfa</a>
-        <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-        <a href="odak-alanlari.html" class="nav-link">Odak Alanları</a>
-        <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
-        <a href="ekip.html" class="nav-link active">Ekip</a>
-        <a href="iletisim.html" class="nav-link">İletişim</a>
+        <div class="nav-actions">
+          <a href="uyelik.html" class="btn btn-primary btn-sm">Üye Ol</a>
+          <button class="hamburger" id="hamburger" aria-label="Mobil menüyü aç/kapat" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
     </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobileMenu" role="menu">
+    <a href="index.html" class="nav-link" role="menuitem">Ana Sayfa</a>
+    <a href="hakkimizda.html" class="nav-link" role="menuitem">Hakkımızda</a>
+    <a href="etkinlikler.html" class="nav-link" role="menuitem">Etkinlikler</a>
+    <a href="duyurular.html" class="nav-link" role="menuitem">Duyurular</a>
+    <a href="projeler.html" class="nav-link" role="menuitem">Projeler</a>
+    <a href="ekip.html" class="nav-link active" role="menuitem">Ekip</a>
+    <a href="belgeler.html" class="nav-link" role="menuitem">Belgeler / SSS</a>
+    <a href="iletisim.html" class="nav-link" role="menuitem">İletişim</a>
+    <div style="padding:12px 16px;"><a href="uyelik.html" class="btn btn-primary" style="width:100%;justify-content:center;">Üye Ol</a></div>
+  </div>
 
   <main id="main-content">
     <section class="page-hero-light" style="padding-top:calc(var(--nav-h) + 40px);">
@@ -82,7 +100,7 @@
         <div class="team-grid-ms" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));">
 
                 <!-- 1 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">KCK</div>
                     <div class="team-name-ms">Kerim Can Karadağ</div>
                     <div class="team-role-ms">Başkan</div>
@@ -94,7 +112,7 @@
                 </div>
 
                 <!-- 2 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">ÖB</div>
                     <div class="team-name-ms">Öztürk Bağcı</div>
                     <div class="team-role-ms">Eş Başkan</div>
@@ -109,7 +127,7 @@
                 </div>
 
                 <!-- 3 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">MSG</div>
                     <div class="team-name-ms">Muhammed Sina Gün</div>
                     <div class="team-role-ms">Genel Koordinatör</div>
@@ -123,7 +141,7 @@
                 </div>
 
                 <!-- 4 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">MU</div>
                     <div class="team-name-ms">Mahsun Ulusal</div>
                     <div class="team-role-ms">Başkan Yardımcısı</div>
@@ -137,7 +155,7 @@
                 </div>
 
                 <!-- 5 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">ERB</div>
                     <div class="team-name-ms">Eren Bahadır</div>
                     <div class="team-role-ms">CTO</div>
@@ -148,7 +166,7 @@
                 </div>
 
                 <!-- 6 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">MES</div>
                     <div class="team-name-ms">Mert Efe Soroğlu</div>
                     <div class="team-role-ms">Co-CTO</div>
@@ -165,7 +183,7 @@
                 </div>
 
                 <!-- 7 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">ÇÖ</div>
                     <div class="team-name-ms">Çiçek Özdemir</div>
                     <div class="team-role-ms">Genel Sekreter</div>
@@ -179,7 +197,7 @@
                 </div>
 
                 <!-- 8 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">BZY</div>
                     <div class="team-name-ms">Berfin Zeynep Yıldırım</div>
                     <div class="team-role-ms">Teknik Mentör</div>
@@ -194,7 +212,7 @@
                 </div>
 
                 <!-- 9 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">LAK</div>
                     <div class="team-name-ms">Lütfiye Azra Kızılaslan</div>
                     <div class="team-role-ms">Etkinlik Sorumlusu</div>
@@ -210,7 +228,7 @@
                 </div>
 
                 <!-- 10 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">YÖ</div>
                     <div class="team-name-ms">Yağmur Özen</div>
                     <div class="team-role-ms">Sosyal Medya Sorumlusu</div>
@@ -224,7 +242,7 @@
                 </div>
 
                 <!-- 11 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">EB</div>
                     <div class="team-name-ms">Eylül Başer</div>
                     <div class="team-role-ms">Sponsor Sorumlusu</div>
@@ -240,7 +258,7 @@
                 </div>
 
                 <!-- 12 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">RA</div>
                     <div class="team-name-ms">Resul Aydoğmuş</div>
                     <div class="team-role-ms">Topluluk Sorumlusu</div>
@@ -255,7 +273,7 @@
                 </div>
 
                 <!-- 13 -->
-                <div class="team-card-ms fade-up">
+                <div class="team-card-ms reveal reveal-delay-1">
                     <div class="team-avatar-ms">AYS</div>
                     <div class="team-name-ms">Ahmet Yiğit Sunar</div>
                     <div class="team-role-ms">Dış İlişkiler Sorumlusu</div>

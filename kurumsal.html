@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kurumsal | Arel Yazılım Kulübü</title>
+  <meta name="description" content="Arel Yazılım Kulübü kurumsal yapısı - misyon, vizyon, organizasyon şeması ve yönetim ilkeleri." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style_framework.css" />
+  <link rel="stylesheet" href="style_themes.css" />
+  <link rel="stylesheet" href="component_library.css" />
+  <link rel="icon" type="image/png" href="arel_logo_colored.png" />
+  <meta name="theme-color" content="#E8531D" />
+  <style>
+    .governance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+    .gov-card { background: var(--surface-1); padding: 30px; border-radius: 20px; border: 1px solid var(--border-light); text-align: center; }
+    .gov-icon { font-size: 32px; margin-bottom: 20px; display: block; }
+    .org-chart { padding: 40px; background: #fff; border-radius: 24px; box-shadow: var(--shadow-md); margin-top: 40px; overflow-x: auto; }
+    .chart-container { min-width: 800px; display: flex; flex-direction: column; align-items: center; }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Ana içeriğe geç</a>
+  <div id="progress-bar"></div>
+
+  <div class="university-bar" role="banner">
+    <div class="container">
+      <div class="university-bar-inner">
+        <div class="university-bar-left">
+          <span class="university-bar-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            Resmî Kulüp
+          </span>
+          <span class="university-bar-sep">|</span>
+          <span>İstanbul Arel Üniversitesi · Girişimcilik ve Liderlik Ofisi Ekosistemi</span>
+        </div>
+        <div class="university-bar-right">
+          <a href="https://www.istanbularel.edu.tr" target="_blank" rel="noopener" class="university-bar-link">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            Üniversite Ana Sayfa
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav id="navbar" role="navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-brand">
+          <img src="arel_logo_colored.png" alt="Logo" class="nav-logo" />
+          <span class="nav-brand-name">Arel <span>Yazılım</span></span>
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html" class="nav-link">Ana Sayfa</a>
+          <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+          <a href="etkinlikler.html" class="nav-link">Etkinlikler</a>
+          <a href="duyurular.html" class="nav-link">Duyurular</a>
+          <a href="projeler.html" class="nav-link">Projeler</a>
+          <a href="ekip.html" class="nav-link">Ekip</a>
+          <a href="iletisim.html" class="nav-link">İletişim</a>
+        </div>
+        <div class="nav-actions">
+          <a href="uyelik.html" class="btn btn-primary btn-sm">Üye Ol</a>
+          <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="page-hero-light">
+      <div class="container">
+        <div class="page-breadcrumb-light">
+          <a href="index.html">Ana Sayfa</a><span>›</span><span>Kurumsal</span>
+        </div>
+        <h1 class="page-title-light">Kurumsal <span>Yapı</span></h1>
+        <p class="page-desc-light">Arel Yazılım Kulübü'nün kurumsal kimliği, yönetim şeması ve gelecek vizyonu.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <h2 class="section-title">Misyonumuz</h2>
+            <p>Üniversitemiz öğrencilerinin yazılım ve teknoloji alanındaki yetkinliklerini artırmak, projeler üreterek teoriği pratiğe dökmelerini sağlamak ve sektörle güçlü bağlar kuran bir ekosistem yaratmaktır.</p>
+          </div>
+          <div class="reveal reveal-delay-1">
+            <h2 class="section-title">Vizyonumuz</h2>
+            <p>Türkiye'nin en aktif ve üretken üniversite yazılım topluluklarından biri olarak, geleceğin teknoloji liderlerini yetiştiren ve açık kaynak dünyasına yön veren bir merkez haline gelmek.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-label">Yönetim</span>
+          <h2 class="section-title">Organizasyon <span>Şeması</span></h2>
+        </div>
+        <div class="org-chart reveal">
+          <div class="chart-container">
+            <div class="gov-card" style="width:240px;margin-bottom:40px;border:2px solid var(--arel-primary);">
+              <span class="gov-icon">👔</span>
+              <strong>Yönetim Kurulu Başkanı</strong>
+              <p style="font-size:12px;margin-top:8px;">Kulüp Temsili & Strateji</p>
+            </div>
+            <div style="display:flex;gap:40px;">
+                <div class="gov-card" style="width:200px;">
+                    <span class="gov-icon">💻</span>
+                    <strong>Teknik Birim Sorumlusu</strong>
+                </div>
+                <div class="gov-card" style="width:200px;">
+                    <span class="gov-icon">📢</span>
+                    <strong>İletişim & Sosyal Medya</strong>
+                </div>
+                <div class="gov-card" style="width:200px;">
+                    <span class="gov-icon">🎨</span>
+                    <strong>Tasarım & UX</strong>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-grid-5">
+            <div class="reveal">
+                <div class="footer-brand-inline">
+                    <img src="arel_logo_colored.png" alt="Logo" class="footer-logo" />
+                    <span class="footer-brand-name">Arel <span>Yazılım</span></span>
+                </div>
+                <p class="footer-logo-desc">Resmî öğrenci topluluğu.</p>
+            </div>
+            <div>
+                <div class="footer-title">Menü</div>
+                <a href="index.html" class="footer-link">Ana Sayfa</a>
+                <a href="kurumsal.html" class="footer-link">Kurumsal</a>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="portal_logic.js"></script>
+  <script src="accessibility_engine.js"></script>
+</body>
+</html>

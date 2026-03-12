@@ -155,6 +155,23 @@ const Toast = (() => {
    STAGGERED FADE-UP ANIMATIONS
    Cards in same parent get sequential delays (0, 80ms, 160ms…)
 ────────────────────────────────────────────── */
+/* ──────────────────────────────────────────────
+   REVEAL ON SCROLL (The Smooth Flow)
+   ────────────────────────────────────────────── */
+(function initReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { entry.target.classList.toggle('active', entry.isIntersecting); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => obs.observe(el));
+})();
+
+/* ──────────────────────────────────────────────
+   STAGGERED FADE-UP ANIMATIONS (Legacy Support)
+   ────────────────────────────────────────────── */
 (function initFadeUp() {
   const els = document.querySelectorAll('.fade-up');
   if (!els.length) return;
