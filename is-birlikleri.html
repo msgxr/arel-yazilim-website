@@ -26,21 +26,43 @@
     </div>
   </div>
 
-  <nav id="navbar">
+  <nav id="navbar" role="navigation" aria-label="Ana Navigasyon">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="nav-brand">
+        <a href="index.html" class="nav-brand" aria-label="Arel Yazılım Kulübü Ana Sayfa">
           <img src="arel_logo_colored.png" alt="Logo" class="nav-logo" />
           <span class="nav-brand-name">Arel <span>Yazılım</span></span>
         </a>
-        <div class="nav-links">
-          <a href="index.html" class="nav-link">Ana Sayfa</a>
-          <a href="is-birlikleri.html" class="nav-link active">İş Birliği</a>
-          <a href="iletisim.html" class="nav-link">Sponsor Ol</a>
+        <div class="nav-links" id="navLinks" role="menubar">
+          <a href="index.html" class="nav-link" role="menuitem">Ana Sayfa</a>
+          <a href="kurumsal.html" class="nav-link" role="menuitem">Kurumsal</a>
+          <a href="etkinlikler.html" class="nav-link" role="menuitem">Etkinlikler</a>
+          <a href="projeler.html" class="nav-link" role="menuitem">Projeler</a>
+          <a href="kariyer.html" class="nav-link" role="menuitem">Kariyer</a>
+          <a href="ekip.html" class="nav-link" role="menuitem">Ekip</a>
+          <a href="iletisim.html" class="nav-link" role="menuitem">İletişim</a>
+        </div>
+        <div class="nav-actions">
+          <a href="uyelik.html" class="btn btn-primary btn-sm">Üye Ol</a>
+          <button class="hamburger" id="hamburger" aria-label="Mobil menüyü aç/kapat" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobileMenu" role="menu">
+    <a href="index.html" class="nav-link" role="menuitem">Ana Sayfa</a>
+    <a href="kurumsal.html" class="nav-link" role="menuitem">Kurumsal</a>
+    <a href="etkinlikler.html" class="nav-link" role="menuitem">Etkinlikler</a>
+    <a href="projeler.html" class="nav-link" role="menuitem">Projeler</a>
+    <a href="kariyer.html" class="nav-link" role="menuitem">Kariyer</a>
+    <a href="ekip.html" class="nav-link" role="menuitem">Ekip</a>
+    <a href="iletisim.html" class="nav-link" role="menuitem">İletişim</a>
+    <div style="padding:12px 16px;"><a href="uyelik.html" class="btn btn-primary" style="width:100%;justify-content:center;">Üye Ol</a></div>
+  </div>
 
   <main id="main-content" style="padding-top:120px;">
     <div class="container">
