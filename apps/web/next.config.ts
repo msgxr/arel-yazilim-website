@@ -1,6 +1,9 @@
-import type { NextConfig } from 'next';const isProd = process.env.NODE_ENV === 'production' || !!process.env.GITHUB_ACTIONS;
-const isProd = process.env.NODE_ENV === 'production';
+import type { NextConfig } from 'next';
+
+const isProd = process.env.NODE_ENV === 'production' || !!process.env.GITHUB_ACTIONS;
+
 const nextConfig: NextConfig = {
+  
   // Strict React mode
   reactStrictMode: true,
 
