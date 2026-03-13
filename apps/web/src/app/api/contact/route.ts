@@ -1,4 +1,5 @@
-import { type NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';export const dynamic = 'force-static';
+
 
 export async function POST(req: NextRequest) {
   try {
