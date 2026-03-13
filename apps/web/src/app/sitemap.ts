@@ -1,0 +1,32 @@
+import type { MetadataRoute } from 'next';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = 'https://arelsoftwareclub.github.io';
+  const now = new Date();
+
+  const staticRoutes = [
+    { url: '/', priority: 1.0 },
+    { url: '/hakkimizda', priority: 0.9 },
+    { url: '/etkinlikler', priority: 0.9 },
+    { url: '/duyurular', priority: 0.9 },
+    { url: '/projeler', priority: 0.8 },
+    { url: '/ekip', priority: 0.8 },
+    { url: '/iletisim', priority: 0.8 },
+    { url: '/uyelik', priority: 0.9 },
+    { url: '/belgeler', priority: 0.7 },
+    { url: '/kariyer', priority: 0.7 },
+    { url: '/is-birlikleri', priority: 0.7 },
+    { url: '/odak-alanlari', priority: 0.7 },
+    { url: '/ari-lab', priority: 0.8 },
+    { url: '/kurumsal', priority: 0.7 },
+    { url: '/gizlilik', priority: 0.3 },
+    { url: '/yonetmelik', priority: 0.3 },
+  ];
+
+  return staticRoutes.map(({ url, priority }) => ({
+    url: `${base}${url}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority,
+  }));
+}

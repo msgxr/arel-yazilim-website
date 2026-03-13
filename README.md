@@ -1,77 +1,51 @@
-# 🧠 İstanbul Arel Üniversitesi Yazılım Kulübü — Resmi Web Sitesi
+# Arel Yazılım Kulübü Web Portalı
 
-> Official website of the Istanbul Arel University Software Club (Arel Yazılım Kulübü)
+> **Next.js 15 + TypeScript + Tailwind CSS + pnpm Monorepo**
 
-![Arel Yazılım](https://img.shields.io/badge/Arel%20Yaz%C4%B1l%C4%B1m-Kul%C3%BCb%C3%BC-00d4ff?style=for-the-badge&logo=github)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
----
-
-## 📖 Hakkında
-
-İstanbul Arel Üniversitesi Yazılım Kulübü'nün resmi web sitesi. Teorik yazılım bilgisini pratik değere dönüştürmek, proje kültürü oluşturmak ve üyelerimizi ulusal/uluslararası yarışmalara hazırlamak amacıyla kurulmuş bir öğrenci topluluğudur.
-
-## 🌐 Özellikler
-
-- **Tam Responsive** — Mobil, tablet ve masaüstü uyumlu
-- **Koyu Tema** — Glassmorphism ve modern dark mode tasarım
-- **Animasyonlar** — Partiküller, orbital efektler, scroll animasyonları
-- **Bölümler:**
-  - 🏠 Hero — Animasyonlu giriş & istatistikler
-  - ℹ️ Hakkımızda — Misyon, Vizyon, Topluluk
-  - 🎯 Odak Alanları — Yazılım, Yapay Zeka, Veri Bilimi
-  - 📅 Etkinlikler — Geçmiş & yaklaşan etkinlikler
-  - 💻 Projeler — GitHub & teknoloji marquee
-  - 📬 İletişim — Sosyal medya & iletişim formu
-
-## 📁 Proje Yapısı
+## Yapı
 
 ```
-arel-yazilim-website/
-├── index.html        # Ana sayfa
-├── style.css         # Tüm stiller ve animasyonlar
-├── script.js         # İnteraktif özellikler
-├── brain_logo.png    # Kulüp logosu
-└── README.md         # Bu dosya
+website/
+├── apps/web/          ← Next.js 15 public site
+├── server/            ← Express.js backend (Railway)
+├── pnpm-workspace.yaml
+├── turbo.json
+└── tsconfig.base.json
 ```
 
-## 🚀 Nasıl Çalıştırılır?
+## Hızlı Başlangıç
 
-### Basit yöntem (tarayıcıda aç):
-```
-index.html dosyasına çift tıkla
-```
-
-### Local sunucu ile:
 ```bash
-# Python varsa:
-python -m http.server 8080
+# 1. Bağımlılıkları kur
+pnpm install
 
-# Node.js varsa:
-npx serve . -p 8080
+# 2. Web uygulamasını çalıştır
+pnpm --filter @arel/web dev
 ```
 
-Sonra tarayıcıda → `http://localhost:8080`
+## Komutlar
 
-## 🔗 Bağlantılar
+| Komut | Açıklama |
+|-------|----------|
+| `pnpm --filter @arel/web dev` | Next.js dev server (localhost:3000) |
+| `pnpm --filter @arel/web build` | Production build |
+| `pnpm --filter @arel/web lint` | ESLint |
+| `pnpm --filter @arel/web type-check` | TypeScript check |
+| `cd server && npm run dev` | Express backend |
 
-| Platform | Link |
-|---|---|
-| 🌐 Linktree | [linktr.ee/arelyazilim](https://linktr.ee/arelyazilim) |
-| 📸 Instagram | [@arel.yazilim](https://instagram.com/arel.yazilim) |
-| 🐦 X/Twitter | [@ArelSoftware](https://x.com/ArelSoftware) |
-| 💼 LinkedIn | [Arel Software Club](https://www.linkedin.com/company/arelsoftwareclub/) |
-| 🐙 GitHub | [ArelSoftwareClub](https://github.com/ArelSoftwareClub) |
-| 🎭 Patreon | [ArelSoftwareClub](https://www.patreon.com/c/ArelSoftwareClub) |
-| 💬 WhatsApp | [Kanal](https://whatsapp.com/channel/0029VbBh6oT3wtb5zsyRZ820) |
-| ✉️ E-posta | yazilimkulubu@istanbularel.edu.tr |
+## Ortam Değişkenleri
 
-## 📜 Lisans
+`apps/web/.env.local` dosyası oluşturun:
 
-Bu proje İstanbul Arel Üniversitesi Yazılım Kulübü'ne aittir.
+```env
+BACKEND_API_URL=http://localhost:5000   # Express backend URL'i
+```
 
----
+## Teknoloji Yığını
 
-*Made with ❤️ by Arel Yazılım Kulübü*
+- **Framework:** Next.js 15 App Router
+- **Dil:** TypeScript (strict mode)
+- **Stil:** Tailwind CSS 3 + CSS Variables
+- **Paket Yöneticisi:** pnpm + Turborepo
+- **Backend:** Express.js + SQLite (Railway'de)
+- **Deploy:** Vercel (frontend) + Railway (backend)

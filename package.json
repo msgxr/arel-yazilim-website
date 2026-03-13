@@ -1,21 +1,16 @@
 {
-  "name": "website",
-  "version": "1.0.0",
-  "description": "> Official website of the Istanbul Arel University Software Club (Arel Yazılım Kulübü)",
-  "main": "script.js",
+  "name": "arel-software-club",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean && find . -name node_modules -type d -prune -exec rm -rf '{}' + 2>/dev/null; rm -rf .turbo"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ArelSoftwareClub/website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ArelSoftwareClub/website/issues"
-  },
-  "homepage": "https://github.com/ArelSoftwareClub/website#readme"
+  "devDependencies": {
+    "turbo": "latest"
+  }
 }
