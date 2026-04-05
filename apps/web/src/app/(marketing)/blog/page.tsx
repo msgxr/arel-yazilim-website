@@ -9,15 +9,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/blog' },
 };
 
-const categoryColors: Record<string, string> = {
-  'Yapay Zeka': 'badge-purple',
-  'Web Geliştirme': 'badge-orange',
-  'Veri Bilimi': 'badge-blue',
-  'Siber Güvenlik': 'badge-red',
-  'Kariyer': 'badge-yellow',
-  'Açık Kaynak': 'badge-green',
-};
-
 const categories = ['Tümü', 'Yapay Zeka', 'Web Geliştirme', 'Veri Bilimi', 'Siber Güvenlik', 'Kariyer', 'Açık Kaynak'];
 
 export default function BlogPage() {

@@ -6,15 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import MobileMenu from './MobileMenu';
 
-const NAV_LINKS = [
-  { href: '/', label: 'Ana Sayfa' },
-  { href: '/hakkimizda', label: 'Kurumsal' },
-  { href: '/etkinlikler', label: 'Etkinlikler' },
-  { href: '/projeler', label: 'Projeler' },
-  { href: '/kariyer', label: 'Kariyer' },
-  { href: '/ekip', label: 'Ekip' },
-  { href: '/iletisim', label: 'İletişim' },
-];
+import { navLinks as NAV_LINKS } from '@/content/site';
 
 export default function Navbar() {
   const pathname = usePathname();

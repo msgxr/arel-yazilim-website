@@ -4,15 +4,7 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-const NAV_LINKS = [
-  { href: '/', label: 'Ana Sayfa' },
-  { href: '/hakkimizda', label: 'Kurumsal' },
-  { href: '/etkinlikler', label: 'Etkinlikler' },
-  { href: '/projeler', label: 'Projeler' },
-  { href: '/kariyer', label: 'Kariyer' },
-  { href: '/ekip', label: 'Yönetim Ekibi' },
-  { href: '/iletisim', label: 'İletişim' },
-];
+import { mobileNavLinks as NAV_LINKS } from '@/content/site';
 
 interface MobileMenuProps {
   isOpen: boolean;
