@@ -31,12 +31,12 @@ export default function ProfilimPage() {
         {/* Profile card */}
         <div>
           <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', overflow: 'hidden', marginBottom: '16px' }}>
-            <div style={{ height: '80px', background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)' }} />
+            <div style={{ height: '80px', background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)' }} />
             <div style={{ padding: '0 24px 24px', marginTop: '-28px' }}>
               <div
                 style={{
                   width: '56px', height: '56px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)',
+                  background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '18px', fontWeight: 900, color: '#fff',
                   border: '3px solid #fff', marginBottom: '12px',
@@ -45,7 +45,7 @@ export default function ProfilimPage() {
                 {mockUser.initials}
               </div>
               <div style={{ fontWeight: 900, color: 'var(--text)', fontSize: '18px', marginBottom: '2px' }}>{mockUser.name}</div>
-              <div style={{ fontSize: '13px', color: 'var(--orange)', fontWeight: 600, marginBottom: '12px' }}>{mockUser.role}</div>
+              <div style={{ fontSize: '13px', color: 'var(--brand)', fontWeight: 600, marginBottom: '12px' }}>{mockUser.role}</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {[
                   { icon: '🎓', label: mockUser.faculty },
@@ -92,7 +92,7 @@ export default function ProfilimPage() {
             <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)', marginBottom: '14px' }}>İlgi Alanları</h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {mockUser.interests.map((interest) => (
-                <span key={interest} style={{ padding: '6px 14px', borderRadius: '999px', background: 'var(--orange-soft)', color: 'var(--orange)', fontSize: '13px', fontWeight: 600, border: '1px solid rgba(232,83,29,0.15)' }}>
+                <span key={interest} style={{ padding: '6px 14px', borderRadius: '999px', background: 'var(--brand-soft)', color: 'var(--brand)', fontSize: '13px', fontWeight: 600, border: '1px solid rgba(232,83,29,0.15)' }}>
                   {interest}
                 </span>
               ))}

@@ -21,7 +21,7 @@ export default function DuyurularPage() {
       <div className="container-site">
         <SectionHeader
           label="Güncel"
-          title={<>Son <span className="text-orange-DEFAULT">Duyurular</span></>}
+          title={<>Son <span className="text-brand-DEFAULT">Duyurular</span></>}
           description="Üyelik, etkinlik, yarışma ve kulüp haberleri."
           id="duyurular-heading"
         />
@@ -31,22 +31,22 @@ export default function DuyurularPage() {
           <Link
             key={ann.id}
             href={ann.url ?? '#'}
-            className="group mb-6 flex items-start gap-5 rounded-xl border border-orange-DEFAULT/30 bg-orange-soft p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            className="group mb-6 flex items-start gap-5 rounded-xl border border-brand-DEFAULT/30 bg-brand-soft p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
           >
             <div className="flex-1 min-w-0">
               <div className="mb-2 flex flex-wrap items-center gap-2 text-[12px]">
                 <AnnouncementBadge category={ann.category as 'Üyelik' | 'Yarışma' | 'Workshop' | 'Etkinlik' | 'Genel'} />
                 <span className="text-slate-400">{formatDate(ann.date)}</span>
                 {ann.deadline && (
-                  <span className="font-bold text-orange-DEFAULT">Son Başvuru: {formatDate(ann.deadline)}</span>
+                  <span className="font-bold text-brand-DEFAULT">Son Başvuru: {formatDate(ann.deadline)}</span>
                 )}
               </div>
-              <div className="mb-2 text-lg font-extrabold text-slate-800 group-hover:text-orange-DEFAULT transition-colors">
+              <div className="mb-2 text-lg font-extrabold text-slate-800 group-hover:text-brand-DEFAULT transition-colors">
                 {ann.title}
               </div>
               <p className="text-sm leading-relaxed text-slate-500">{ann.summary}</p>
             </div>
-            <span className="shrink-0 font-bold text-orange-DEFAULT">Başvur →</span>
+            <span className="shrink-0 font-bold text-brand-DEFAULT">Başvur →</span>
           </Link>
         ))}
 
@@ -56,22 +56,22 @@ export default function DuyurularPage() {
             <Link
               key={ann.id}
               href={ann.url ?? '#'}
-              className="group flex items-start gap-5 rounded-xl border border-slate-200 bg-white p-5 transition-all hover:border-orange-DEFAULT/30 hover:shadow-md"
+              className="group flex items-start gap-5 rounded-xl border border-slate-200 bg-white p-5 transition-all hover:border-brand-DEFAULT/30 hover:shadow-md"
             >
               <div className="flex-1 min-w-0">
                 <div className="mb-1.5 flex flex-wrap items-center gap-2 text-[12px]">
                   <AnnouncementBadge category={ann.category as 'Üyelik' | 'Yarışma' | 'Workshop' | 'Etkinlik' | 'Genel'} />
                   <span className="text-slate-400">{formatDate(ann.date)}</span>
                   {ann.deadline && (
-                    <span className="font-semibold text-orange-DEFAULT">Son Başvuru: {formatDate(ann.deadline)}</span>
+                    <span className="font-semibold text-brand-DEFAULT">Son Başvuru: {formatDate(ann.deadline)}</span>
                   )}
                 </div>
-                <div className="font-bold text-slate-800 group-hover:text-orange-DEFAULT transition-colors">
+                <div className="font-bold text-slate-800 group-hover:text-brand-DEFAULT transition-colors">
                   {ann.title}
                 </div>
                 <p className="mt-1 text-sm text-slate-500">{ann.summary}</p>
               </div>
-              <span className="shrink-0 text-sm font-bold text-orange-DEFAULT opacity-0 transition-opacity group-hover:opacity-100">
+              <span className="shrink-0 text-sm font-bold text-brand-DEFAULT opacity-0 transition-opacity group-hover:opacity-100">
                 İncele →
               </span>
             </Link>

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const typeColor: Record<string, string> = {
-  Workshop: 'var(--orange)',
+  Workshop: 'var(--brand)',
   Hackathon: '#7C3AED',
   Seminar: '#15803D',
   Panel: '#0EA5E9',
@@ -32,7 +32,7 @@ const typeColor: Record<string, string> = {
   Social: '#EC4899',
 };
 const typeBadge: Record<string, string> = {
-  Workshop: 'badge-orange',
+  Workshop: 'badge-brand',
   Hackathon: 'badge-purple',
   Seminar: 'badge-green',
   Panel: 'badge-blue',
@@ -45,7 +45,7 @@ export default async function EtkinlikDetayPage({ params }: Props) {
   const event = events.find((e) => e.slug === slug);
   if (!event) notFound();
 
-  const accent = typeColor[event.type] ?? 'var(--orange)';
+  const accent = typeColor[event.type] ?? 'var(--brand)';
   const related = events.filter((e) => e.slug !== slug && e.type === event.type && e.status !== 'past').slice(0, 2);
 
   return (
@@ -63,7 +63,7 @@ export default async function EtkinlikDetayPage({ params }: Props) {
             </Link>
           </div>
           <div style={{ display: 'flex', gap: '10px', marginBottom: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
-            <span className={`badge ${typeBadge[event.type] ?? 'badge-orange'}`}>{event.type}</span>
+            <span className={`badge ${typeBadge[event.type] ?? 'badge-brand'}`}>{event.type}</span>
             {event.status === 'upcoming' && (
               <span style={{ padding: '3px 10px', borderRadius: '999px', background: 'rgba(21,128,61,0.15)', color: '#4ADE80', fontSize: '11px', fontWeight: 700, border: '1px solid rgba(21,128,61,0.3)' }}>
                 🟢 Kayıt Açık

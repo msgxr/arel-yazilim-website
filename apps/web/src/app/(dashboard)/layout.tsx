@@ -49,8 +49,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             style={{
               padding: '4px 12px',
               borderRadius: '999px',
-              background: 'var(--orange-soft)',
-              color: 'var(--orange)',
+              background: 'var(--brand-soft)',
+              color: 'var(--brand)',
               fontSize: '11px',
               fontWeight: 700,
             }}
@@ -60,7 +60,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div
             style={{
               width: '34px', height: '34px', borderRadius: '50%',
-              background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)',
+              background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '12px', fontWeight: 900, color: '#fff',
             }}
@@ -92,7 +92,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div
             style={{
               padding: '20px',
-              background: 'var(--orange-soft)',
+              background: 'var(--brand-soft)',
               borderRadius: 'var(--radius-lg)',
               marginBottom: '24px',
               border: '1px solid rgba(232,83,29,0.12)',
@@ -102,7 +102,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               <div
                 style={{
                   width: '44px', height: '44px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)',
+                  background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '14px', fontWeight: 900, color: '#fff', flexShrink: 0,
                 }}
@@ -136,8 +136,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     fontSize: '14px',
                     fontWeight: 600,
                     textDecoration: 'none',
-                    color: isActive ? 'var(--orange)' : 'var(--text-2)',
-                    background: isActive ? 'var(--orange-soft)' : 'transparent',
+                    color: isActive ? 'var(--brand)' : 'var(--text-2)',
+                    background: isActive ? 'var(--brand-soft)' : 'transparent',
                     transition: 'var(--transition)',
                   }}
                 >

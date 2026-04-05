@@ -13,7 +13,7 @@ export default function DashboardPage() {
   const activeProjects = projects.filter((p) => p.status === 'active' || p.status === 'development').slice(0, 3);
 
   const stats = [
-    { label: 'Katıldığım Etkinlik', value: '7', icon: '📅', color: 'var(--orange)' },
+    { label: 'Katıldığım Etkinlik', value: '7', icon: '📅', color: 'var(--brand)' },
     { label: 'Aktif Proje', value: '2', icon: '🚀', color: '#7C3AED' },
     { label: 'Üyelik Süresi', value: '6 ay', icon: '🏅', color: '#15803D' },
     { label: 'Puan', value: '240', icon: '⭐', color: '#D97706' },
@@ -59,7 +59,7 @@ export default function DashboardPage() {
         <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', overflow: 'hidden' }}>
           <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)' }}>📅 Yaklaşan Etkinlikler</h2>
-            <Link href="/etkinlikler" style={{ fontSize: '12px', fontWeight: 700, color: 'var(--orange)', textDecoration: 'none' }}>
+            <Link href="/etkinlikler" style={{ fontSize: '12px', fontWeight: 700, color: 'var(--brand)', textDecoration: 'none' }}>
               Tümü →
             </Link>
           </div>
@@ -81,7 +81,7 @@ export default function DashboardPage() {
                   <div
                     style={{
                       width: '38px', height: '38px', borderRadius: '10px',
-                      background: 'var(--orange-soft)', color: 'var(--orange)',
+                      background: 'var(--brand-soft)', color: 'var(--brand)',
                       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                       flexShrink: 0,
                     }}
@@ -111,7 +111,7 @@ export default function DashboardPage() {
         <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', overflow: 'hidden' }}>
           <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)' }}>🚀 Aktif Projeler</h2>
-            <Link href="/projeler" style={{ fontSize: '12px', fontWeight: 700, color: 'var(--orange)', textDecoration: 'none' }}>
+            <Link href="/projeler" style={{ fontSize: '12px', fontWeight: 700, color: 'var(--brand)', textDecoration: 'none' }}>
               Tümü →
             </Link>
           </div>
@@ -146,7 +146,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Quick actions */}
-      <div style={{ marginTop: '24px', padding: '24px', background: 'var(--orange-soft)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(232,83,29,0.12)' }}>
+      <div style={{ marginTop: '24px', padding: '24px', background: 'var(--brand-soft)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(232,83,29,0.12)' }}>
         <div style={{ fontWeight: 800, color: 'var(--text)', marginBottom: '14px', fontSize: '15px' }}>⚡ Hızlı İşlemler</div>
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <Link href="/etkinlikler" className="btn btn-primary btn-sm">Etkinliklere Göz At</Link>

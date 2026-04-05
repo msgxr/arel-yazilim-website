@@ -32,7 +32,7 @@ export default function ScrollProgress() {
       ref={barRef}
       aria-hidden="true"
       id="progress-bar"
-      className="fixed left-0 top-0 z-[9999] h-[3px] bg-gradient-to-r from-orange-DEFAULT to-orange-vibrant transition-[width_0.05s_linear]"
+      className="fixed left-0 top-0 z-[9999] h-[3px] bg-gradient-to-r from-brand-DEFAULT to-brand-vibrant transition-[width_0.05s_linear]"
       style={{ width: '0%' }}
     />
   );

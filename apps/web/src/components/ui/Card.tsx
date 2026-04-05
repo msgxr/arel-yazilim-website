@@ -28,7 +28,7 @@ export function Card({
         'rounded-xl p-6 transition-all duration-200',
         variantClasses[variant],
         interactive &&
-          'hover:-translate-y-0.5 hover:border-orange-DEFAULT/30 hover:shadow-lg',
+          'hover:-translate-y-0.5 hover:border-brand-DEFAULT/30 hover:shadow-lg',
         className,
       )}
       {...props}

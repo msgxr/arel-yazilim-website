@@ -4,7 +4,7 @@ type BadgeVariant = 'default' | 'workshop' | 'hackathon' | 'seminar' | 'panel' |
 
 const variantClasses: Record<BadgeVariant, string> = {
   default:     'bg-slate-100 text-slate-600',
-  workshop:    'bg-orange-soft text-orange-DEFAULT',
+  workshop:    'bg-brand-soft text-brand-DEFAULT',
   hackathon:   'bg-purple-100 text-purple-700',
   seminar:     'bg-blue-100 text-blue-700',
   panel:       'bg-cyan-100 text-cyan-700',
@@ -13,7 +13,7 @@ const variantClasses: Record<BadgeVariant, string> = {
   active:      'bg-green-100 text-green-700',
   development: 'bg-yellow-100 text-yellow-700',
   completed:   'bg-slate-100 text-slate-500',
-  upcoming:    'bg-orange-soft text-orange-DEFAULT',
+  upcoming:    'bg-brand-soft text-brand-DEFAULT',
   past:        'bg-slate-100 text-slate-500',
 };
 

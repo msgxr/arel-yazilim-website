@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section
         style={{
-          background: post.coverGradient ?? 'linear-gradient(135deg, var(--orange) 0%, #FF7043 100%)',
+          background: post.coverGradient ?? 'linear-gradient(135deg, var(--brand) 0%, #FF7043 100%)',
           padding: '80px 0 60px',
           position: 'relative',
           overflow: 'hidden',
@@ -134,7 +134,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Prose content */}
             <div
-              className="prose prose-slate max-w-none prose-headings:font-black prose-headings:tracking-tight prose-a:text-orange-DEFAULT prose-code:bg-slate-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm"
+              className="prose prose-slate max-w-none prose-headings:font-black prose-headings:tracking-tight prose-a:text-brand-DEFAULT prose-code:bg-slate-100 prose-code:rounded prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -179,7 +179,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div
                   style={{
                     width: '48px', height: '48px', borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)',
+                    background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: '14px', fontWeight: 900, color: '#fff', flexShrink: 0,
                   }}

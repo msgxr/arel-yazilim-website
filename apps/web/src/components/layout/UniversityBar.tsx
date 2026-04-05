@@ -28,8 +28,8 @@ export default function UniversityBar() {
               gap: '6px',
               padding: '2px 8px',
               borderRadius: '4px',
-              background: 'var(--orange-soft)',
-              color: 'var(--orange)',
+              background: 'var(--brand-soft)',
+              color: 'var(--brand)',
               fontWeight: 800,
             }}>
               {/* Graduation cap icon */}

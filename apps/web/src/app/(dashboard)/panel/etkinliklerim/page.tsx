@@ -36,7 +36,7 @@ export default function EtkinliklerimPage() {
       {/* Summary stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '32px' }}>
         {[
-          { label: 'Toplam Kayıt', value: registeredEventIds.length, icon: '📋', color: 'var(--orange)' },
+          { label: 'Toplam Kayıt', value: registeredEventIds.length, icon: '📋', color: 'var(--brand)' },
           { label: 'Katıldım', value: attendedEventIds.length, icon: '✅', color: '#15803D' },
           { label: 'Yaklaşan', value: myUpcoming.length, icon: '⏳', color: '#7C3AED' },
         ].map(({ label, value, icon, color }) => (
@@ -66,16 +66,16 @@ export default function EtkinliklerimPage() {
                     background: '#fff',
                     borderRadius: 'var(--radius-lg)',
                     border: '1.5px solid var(--border)',
-                    borderLeft: '4px solid var(--orange)',
+                    borderLeft: '4px solid var(--brand)',
                     transition: 'var(--transition)',
                   }}
                   className="card"
                 >
-                  <div style={{ flexShrink: 0, textAlign: 'center', minWidth: '52px', padding: '8px', background: 'var(--orange-soft)', borderRadius: 'var(--radius-md)' }}>
-                    <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--orange)', textTransform: 'uppercase' }}>
+                  <div style={{ flexShrink: 0, textAlign: 'center', minWidth: '52px', padding: '8px', background: 'var(--brand-soft)', borderRadius: 'var(--radius-md)' }}>
+                    <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--brand)', textTransform: 'uppercase' }}>
                       {new Date(event.date).toLocaleDateString('tr-TR', { month: 'short' })}
                     </div>
-                    <div style={{ fontSize: '22px', fontWeight: 900, color: 'var(--orange)', lineHeight: 1 }}>
+                    <div style={{ fontSize: '22px', fontWeight: 900, color: 'var(--brand)', lineHeight: 1 }}>
                       {new Date(event.date).getDate()}
                     </div>
                   </div>

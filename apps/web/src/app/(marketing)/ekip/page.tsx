@@ -16,7 +16,7 @@ export default function EkipPage() {
         <div className="container-site">
           <SectionHeader
             label="Kadro"
-            title={<>Yönetim <span className="text-orange-DEFAULT">Kurulu</span></>}
+            title={<>Yönetim <span className="text-brand-DEFAULT">Kurulu</span></>}
             description={`${siteConfig.academicYear} döneminde kulübümüzü yöneten liderler.`}
             id="yonetim-heading"
           />
@@ -24,13 +24,13 @@ export default function EkipPage() {
             {managementTeam.map((member) => (
               <div
                 key={member.id}
-                className="group flex flex-col items-center rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-orange-DEFAULT hover:shadow-lg"
+                className="group flex flex-col items-center rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-brand-DEFAULT hover:shadow-lg"
               >
-                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-DEFAULT to-orange-vibrant text-2xl font-extrabold text-white shadow-orange-lg">
+                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-brand-DEFAULT to-brand-vibrant text-2xl font-extrabold text-white shadow-brand-lg">
                   {member.initials}
                 </div>
                 <div className="mb-1 text-lg font-extrabold text-slate-800">{member.name}</div>
-                <div className="mb-1 text-sm font-bold text-orange-DEFAULT">{member.role}</div>
+                <div className="mb-1 text-sm font-bold text-brand-DEFAULT">{member.role}</div>
                 <div className="mb-4 text-xs text-slate-400">
                   {member.faculty} · {member.year}
                 </div>
@@ -47,7 +47,7 @@ export default function EkipPage() {
                   )}
                   {member.email && (
                     <a href={`mailto:${member.email}`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-[11px] text-slate-500 transition-all hover:border-orange-DEFAULT hover:bg-orange-soft hover:text-orange-DEFAULT"
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-[11px] text-slate-500 transition-all hover:border-brand-DEFAULT hover:bg-brand-soft hover:text-brand-DEFAULT"
                       aria-label={`${member.name} e-posta`}>✉</a>
                   )}
                 </div>
@@ -61,7 +61,7 @@ export default function EkipPage() {
         <div className="container-site">
           <SectionHeader
             label="Departmanlar"
-            title={<>Kulüp <span className="text-orange-DEFAULT">Yapılanması</span></>}
+            title={<>Kulüp <span className="text-brand-DEFAULT">Yapılanması</span></>}
             id="departmanlar-heading"
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -72,7 +72,7 @@ export default function EkipPage() {
                   <ul className="flex flex-col gap-3" role="list">
                     {dept.members.map((m) => (
                       <li key={m.id} className="flex items-center gap-3">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-soft text-xs font-bold text-orange-DEFAULT">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-soft text-xs font-bold text-brand-DEFAULT">
                           {m.initials}
                         </div>
                         <div>

@@ -197,7 +197,7 @@ export default function ToplulukPage() {
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '17px', maxWidth: '480px', margin: '0 auto 36px', lineHeight: 1.7 }}>
             Üye ol ve ilgi alanına uygun ekibe katılmak için sana özel yönlendirme al.
           </p>
-          <Link href="/uyelik" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 36px', borderRadius: '14px', background: '#fff', color: 'var(--orange)', fontWeight: 800, fontSize: '15px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', textDecoration: 'none' }}>
+          <Link href="/uyelik" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 36px', borderRadius: '14px', background: '#fff', color: 'var(--brand)', fontWeight: 800, fontSize: '15px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', textDecoration: 'none' }}>
             Üyelik Başvurusu
           </Link>
         </div>

@@ -20,7 +20,7 @@ export default function ProjelerPage() {
         <div className="container-site">
           <SectionHeader
             label="Teknik Üretim"
-            title={<>Aktif <span className="text-orange-DEFAULT">Projeler</span></>}
+            title={<>Aktif <span className="text-brand-DEFAULT">Projeler</span></>}
             description="Kulübümüzün açık kaynak projeleri ve araştırma çalışmaları."
             id="projeler-heading"
           />
@@ -28,10 +28,10 @@ export default function ProjelerPage() {
             {active.map((project) => (
               <article
                 key={project.id}
-                className="flex flex-col rounded-xl border border-slate-200 bg-white/85 p-6 shadow-glass backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-orange-DEFAULT hover:shadow-xl"
+                className="flex flex-col rounded-xl border border-slate-200 bg-white/85 p-6 shadow-glass backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-brand-DEFAULT hover:shadow-xl"
               >
                 <div className="mb-4 flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-soft text-orange-DEFAULT">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-soft text-brand-DEFAULT">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-6 w-6" aria-hidden="true">
                       <path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/>
                     </svg>
@@ -56,7 +56,7 @@ export default function ProjelerPage() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-md border border-slate-200 px-3 py-1.5 text-[13px] font-bold text-slate-700 transition-all hover:border-orange-DEFAULT hover:text-orange-DEFAULT"
+                      className="rounded-md border border-slate-200 px-3 py-1.5 text-[13px] font-bold text-slate-700 transition-all hover:border-brand-DEFAULT hover:text-brand-DEFAULT"
                       aria-label={`${project.title} GitHub sayfası (yeni sekmede açılır)`}
                     >
                       GitHub
@@ -74,7 +74,7 @@ export default function ProjelerPage() {
           <div className="container-site">
             <SectionHeader
               label="Arşiv"
-              title={<>Tamamlanan <span className="text-orange-DEFAULT">Projeler</span></>}
+              title={<>Tamamlanan <span className="text-brand-DEFAULT">Projeler</span></>}
               id="completed-projects-heading"
             />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

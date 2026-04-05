@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
 
   // GitHub Pages hosting paths (always /website for this repo)
   basePath: '/website',
-  assetPrefix: '/website/',
   trailingSlash: true,
 
   // Static export for GitHub Pages

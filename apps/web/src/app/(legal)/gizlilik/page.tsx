@@ -37,7 +37,7 @@ export default function GizlilikPage() {
       <div className="container-site">
         <SectionHeader
           label="Politika"
-          title={<>Gizlilik & <span className="text-orange-DEFAULT">KVKK</span></>}
+          title={<>Gizlilik & <span className="text-brand-DEFAULT">KVKK</span></>}
           description={`Son güncelleme: Mart ${new Date().getFullYear()}`}
           id="gizlilik-heading"
         />
@@ -50,7 +50,7 @@ export default function GizlilikPage() {
                 {s.id === 'iletisim' && (
                   <a
                     href={`mailto:${siteConfig.email}?subject=Gizlilik Talebi`}
-                    className="mt-4 inline-flex items-center gap-2 rounded-md bg-orange-DEFAULT px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-orange-vibrant"
+                    className="mt-4 inline-flex items-center gap-2 rounded-md bg-brand-DEFAULT px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-brand-vibrant"
                   >
                     E-posta Gönder
                   </a>

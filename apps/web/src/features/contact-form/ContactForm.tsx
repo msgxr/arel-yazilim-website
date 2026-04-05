@@ -64,22 +64,22 @@ export default function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-[13px] font-semibold text-slate-700">
-            Ad Soyad <span aria-hidden="true" className="text-orange-DEFAULT">*</span>
+            Ad Soyad <span aria-hidden="true" className="text-brand-DEFAULT">*</span>
           </label>
           <input
             id="name" name="name" type="text" required autoComplete="name"
             placeholder="Adınız Soyadınız"
-            className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-orange-DEFAULT focus:ring-2 focus:ring-orange-soft"
+            className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-brand-DEFAULT focus:ring-2 focus:ring-brand-soft"
           />
         </div>
         <div>
           <label htmlFor="email" className="mb-1.5 block text-[13px] font-semibold text-slate-700">
-            E-posta <span aria-hidden="true" className="text-orange-DEFAULT">*</span>
+            E-posta <span aria-hidden="true" className="text-brand-DEFAULT">*</span>
           </label>
           <input
             id="email" name="email" type="email" required autoComplete="email"
             placeholder="ornek@email.com"
-            className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-orange-DEFAULT focus:ring-2 focus:ring-orange-soft"
+            className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-brand-DEFAULT focus:ring-2 focus:ring-brand-soft"
           />
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function ContactForm() {
         <label htmlFor="subject" className="mb-1.5 block text-[13px] font-semibold text-slate-700">Konu</label>
         <select
           id="subject" name="subject"
-          className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all focus:border-orange-DEFAULT focus:ring-2 focus:ring-orange-soft"
+          className="w-full rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all focus:border-brand-DEFAULT focus:ring-2 focus:ring-brand-soft"
         >
           <option value="">Konu seçin (opsiyonel)</option>
           <option value="Üyelik">Üyelik Bilgisi</option>
@@ -101,12 +101,12 @@ export default function ContactForm() {
 
       <div className="mt-5">
         <label htmlFor="message" className="mb-1.5 block text-[13px] font-semibold text-slate-700">
-          Mesajınız <span aria-hidden="true" className="text-orange-DEFAULT">*</span>
+          Mesajınız <span aria-hidden="true" className="text-brand-DEFAULT">*</span>
         </label>
         <textarea
           id="message" name="message" rows={5} required
           placeholder="Mesajınızı buraya yazın..."
-          className="w-full resize-none rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-orange-DEFAULT focus:ring-2 focus:ring-orange-soft"
+          className="w-full resize-none rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-brand-DEFAULT focus:ring-2 focus:ring-brand-soft"
         />
       </div>
 
@@ -128,7 +128,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state.status === 'loading'}
-        className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-md bg-orange-DEFAULT py-4 text-[15px] font-bold text-white transition-all hover:bg-orange-vibrant disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-md bg-brand-DEFAULT py-4 text-[15px] font-bold text-white transition-all hover:bg-brand-vibrant disabled:cursor-not-allowed disabled:opacity-60"
       >
         {state.status === 'loading' ? (
           <>

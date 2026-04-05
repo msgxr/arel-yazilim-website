@@ -39,7 +39,7 @@ export default function SponsorlarPage() {
             Arel Yazılım Kulübü büyümesini destekleyen teknoloji şirketleri ve kurumsal ortaklar.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#paketler" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 32px', borderRadius: '12px', background: 'var(--orange)', color: '#fff', fontWeight: 700, fontSize: '14px', boxShadow: '0 4px 14px var(--orange-glow)', textDecoration: 'none' }}>
+            <a href="#paketler" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 32px', borderRadius: '12px', background: 'var(--brand)', color: '#fff', fontWeight: 700, fontSize: '14px', boxShadow: '0 4px 14px var(--brand-glow)', textDecoration: 'none' }}>
               Sponsor Ol
             </a>
             <a href="mailto:yazilimkulubu@istanbularel.edu.tr" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 32px', borderRadius: '12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', fontWeight: 700, fontSize: '14px', textDecoration: 'none' }}>
@@ -269,7 +269,7 @@ export default function SponsorlarPage() {
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '17px', maxWidth: '460px', margin: '0 auto 32px', lineHeight: 1.7 }}>
             Sponsorluk detayları ve özel teklifler için ekibimizle iletişime geçin.
           </p>
-          <Link href="/iletisim" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 36px', borderRadius: '14px', background: '#fff', color: 'var(--orange)', fontWeight: 800, fontSize: '15px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', textDecoration: 'none' }}>
+          <Link href="/iletisim" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '16px 36px', borderRadius: '14px', background: '#fff', color: 'var(--brand)', fontWeight: 800, fontSize: '15px', boxShadow: '0 8px 24px rgba(0,0,0,0.15)', textDecoration: 'none' }}>
             İletişim Formu
           </Link>
         </div>

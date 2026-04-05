@@ -237,7 +237,7 @@ export default function HomePage() {
                     <AnnouncementBadge category={ann.category as 'Üyelik' | 'Yarışma' | 'Workshop' | 'Etkinlik' | 'Genel'} />
                     <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{formatDate(ann.date)}</span>
                     {ann.deadline && (
-                      <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--orange)' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--brand)' }}>
                         Son Başvuru: {formatDate(ann.deadline)}
                       </span>
                     )}
@@ -245,7 +245,7 @@ export default function HomePage() {
                   <div style={{ fontWeight: 700, color: 'var(--text)', marginBottom: '4px' }}>{ann.title}</div>
                   <div style={{ fontSize: '14px', color: 'var(--text-2)', lineHeight: 1.6 }}>{ann.summary}</div>
                 </div>
-                <span style={{ flexShrink: 0, fontWeight: 700, color: 'var(--orange)', fontSize: '13px' }}>
+                <span style={{ flexShrink: 0, fontWeight: 700, color: 'var(--brand)', fontSize: '13px' }}>
                   Detay →
                 </span>
               </Link>
@@ -277,7 +277,7 @@ export default function HomePage() {
                     <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--text-muted)' }}>
                       {formatEventDate(event.date)}
                     </span>
-                    <span className={`badge ${event.type === 'Workshop' ? 'badge-orange' : event.type === 'Hackathon' ? 'badge-purple' : 'badge-green'}`}>
+                    <span className={`badge ${event.type === 'Workshop' ? 'badge-brand' : event.type === 'Hackathon' ? 'badge-purple' : 'badge-green'}`}>
                       {event.type}
                     </span>
                   </div>
@@ -315,7 +315,7 @@ export default function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '16px' }}>
                   <div style={{
                     width: '48px', height: '48px', borderRadius: '12px',
-                    background: 'var(--orange-soft)', color: 'var(--orange)',
+                    background: 'var(--brand-soft)', color: 'var(--brand)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
                     <CodeIcon size={22} />

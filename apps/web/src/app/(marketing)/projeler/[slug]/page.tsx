@@ -132,7 +132,7 @@ export default async function ProjeDetayPage({ params }: Props) {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
                   {project.highlights.map((h) => (
                     <div key={h} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', padding: '16px 18px', background: '#fff', borderRadius: 'var(--radius-md)', border: '1.5px solid var(--border)' }}>
-                      <span style={{ color: 'var(--orange)', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                      <span style={{ color: 'var(--brand)', fontWeight: 700, flexShrink: 0 }}>✓</span>
                       <span style={{ fontSize: '13px', color: 'var(--text)', fontWeight: 600 }}>{h}</span>
                     </div>
                   ))}
@@ -197,7 +197,7 @@ export default async function ProjeDetayPage({ params }: Props) {
             </div>
 
             {/* Contributing CTA */}
-            <div style={{ background: 'var(--orange-soft)', border: '1.5px solid rgba(232,83,29,0.15)', borderRadius: 'var(--radius-lg)', padding: '20px' }}>
+            <div style={{ background: 'var(--brand-soft)', border: '1.5px solid rgba(232,83,29,0.15)', borderRadius: 'var(--radius-lg)', padding: '20px' }}>
               <div style={{ fontWeight: 800, color: 'var(--text)', marginBottom: '6px', fontSize: '14px' }}>Katkıda Bulunmak İster misin?</div>
               <p style={{ fontSize: '12px', color: 'var(--text-2)', lineHeight: 1.6, marginBottom: '14px' }}>
                 Ekibimize katıl ve bu projeye katkıda bulun.

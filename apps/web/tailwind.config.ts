@@ -11,18 +11,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        orange: {
-          DEFAULT: '#E8531D',
-          vibrant: '#FF5722',
-          dark: '#BF360C',
-          soft: 'rgba(232, 83, 29, 0.08)',
-          glow: 'rgba(232, 83, 29, 0.4)',
-          light: '#FF7043',
-        },
         brand: {
-          dark: '#0F1115',
-          darker: '#08090B',
-          card: 'rgba(255, 255, 255, 0.85)',
+          DEFAULT: '#2563eb', // Cobalt Blue
+          vibrant: '#3b82f6',
+          dark: '#1e40af',
+          soft: 'rgba(37, 99, 235, 0.08)',
+          glow: 'rgba(37, 99, 235, 0.4)',
+          light: '#60a5fa',
+        },
+        midnight: {
+          DEFAULT: '#020617',
+          card: 'rgba(2, 6, 23, 0.85)',
+          dark: '#0f172a',
+          darker: '#0a0f1c',
         },
         slate: {
           50: '#F8F9FB',
@@ -52,14 +53,14 @@ const config: Config = {
         md: '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03)',
         lg: '0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.02)',
         xl: '0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02)',
-        glow: '0 0 20px rgba(232,83,29,0.4)',
-        'orange-lg': '0 12px 24px -6px rgba(232,83,29,0.4)',
+        glow: '0 0 20px rgba(37,99,235,0.4)',
+        'brand-lg': '0 12px 24px -6px rgba(37,99,235,0.4)',
         glass: '0 8px 32px 0 rgba(31,38,135,0.07)',
       },
       backgroundImage: {
         'hero-gradient':
-          'radial-gradient(circle at 20% 30%, rgba(232,83,29,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(232,83,29,0.1) 0%, transparent 50%)',
-        'orange-gradient': 'linear-gradient(135deg, #E8531D 0%, #FF5722 100%)',
+          'radial-gradient(circle at 20% 30%, rgba(37,99,235,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(37,99,235,0.1) 0%, transparent 50%)',
+        'brand-gradient': 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
       },
       animation: {
         blink: 'blink 1.5s ease-in-out infinite',

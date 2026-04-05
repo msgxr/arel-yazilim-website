@@ -52,7 +52,7 @@ export default function UyelikPage() {
             <div>
               <SectionHeader
                 label="Başvuru"
-                title={<>Aramıza <span className="text-orange-DEFAULT">Katıl</span></>}
+                title={<>Aramıza <span className="text-brand-DEFAULT">Katıl</span></>}
                 description="Üyelik tamamen ücretsiz ve tüm İstanbul Arel Üniversitesi öğrencilerine açıktır."
                 id="uyelik-heading"
               />
@@ -71,7 +71,7 @@ export default function UyelikPage() {
 
             {/* Sidebar CTA */}
             <aside aria-label="Üyelik Başvurusu">
-              <div className="sticky top-24 rounded-2xl border border-orange-DEFAULT/30 bg-orange-soft p-8">
+              <div className="sticky top-24 rounded-2xl border border-brand-DEFAULT/30 bg-brand-soft p-8">
                 <div className="mb-4 text-4xl" aria-hidden="true">🎓</div>
                 <h2 className="mb-3 text-2xl font-extrabold text-slate-800">
                   Hemen Başvur
@@ -81,14 +81,14 @@ export default function UyelikPage() {
                 </p>
                 <a
                   href={`mailto:${siteConfig.email}?subject=Üyelik Başvurusu&body=Merhaba, üyelik başvurusunda bulunmak istiyorum.%0A%0AAdım:%0ABölüm:%0ASınıf:%0AMotivasyonum:`}
-                  className="mb-5 flex w-full items-center justify-center gap-2.5 rounded-md bg-orange-DEFAULT px-6 py-4 text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-orange-vibrant hover:shadow-orange-lg"
+                  className="mb-5 flex w-full items-center justify-center gap-2.5 rounded-md bg-brand-DEFAULT px-6 py-4 text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-vibrant hover:shadow-brand-lg"
                 >
                   E-posta ile Başvur
                 </a>
                 <p className="text-center text-xs text-slate-400">veya</p>
                 <Link
                   href="/iletisim"
-                  className="mt-5 flex w-full items-center justify-center gap-2.5 rounded-md border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 transition-all hover:border-orange-DEFAULT"
+                  className="mt-5 flex w-full items-center justify-center gap-2.5 rounded-md border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 transition-all hover:border-brand-DEFAULT"
                 >
                   İletişim Formu
                 </Link>
@@ -106,7 +106,7 @@ export default function UyelikPage() {
         <div className="container-site">
           <SectionHeader
             label="SSS"
-            title={<>Sık Sorulan <span className="text-orange-DEFAULT">Sorular</span></>}
+            title={<>Sık Sorulan <span className="text-brand-DEFAULT">Sorular</span></>}
             id="faq-heading"
             center
           />
@@ -116,7 +116,7 @@ export default function UyelikPage() {
                 key={i}
                 className="group mb-3 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
               >
-                <summary className="flex cursor-pointer select-none items-center justify-between gap-4 p-5 font-bold text-slate-800 hover:text-orange-DEFAULT">
+                <summary className="flex cursor-pointer select-none items-center justify-between gap-4 p-5 font-bold text-slate-800 hover:text-brand-DEFAULT">
                   {item.question}
                   <svg
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"

@@ -23,7 +23,7 @@ export default function AriLabPage() {
         <div className="container-site">
           <SectionHeader
             label="Araştırma Kolu"
-            title={<>ARI <span className="text-orange-DEFAULT">Araştırma Laboratuvarı</span></>}
+            title={<>ARI <span className="text-brand-DEFAULT">Araştırma Laboratuvarı</span></>}
             description="Arel Yazılım Kulübü'nün araştırma ve geliştirme birimi. Yapay zekâ, veri bilimi ve akademik projelerin yürütüldüğü merkez."
             id="ari-heading"
           />
@@ -52,7 +52,7 @@ export default function AriLabPage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/uyelik"
-              className="inline-flex items-center gap-2.5 rounded-md bg-orange-DEFAULT px-9 py-[18px] text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-orange-vibrant hover:shadow-orange-lg"
+              className="inline-flex items-center gap-2.5 rounded-md bg-brand-DEFAULT px-9 py-[18px] text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-vibrant hover:shadow-brand-lg"
             >
               Başvur
             </Link>

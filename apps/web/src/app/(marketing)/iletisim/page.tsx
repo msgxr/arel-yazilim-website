@@ -42,7 +42,7 @@ export default function IletisimPage() {
       <div className="container-site">
         <SectionHeader
           label="İletişim"
-          title={<>Bize <span className="text-orange-DEFAULT">Ulaşın</span></>}
+          title={<>Bize <span className="text-brand-DEFAULT">Ulaşın</span></>}
           description="İş birliği, üyelik, etkinlik veya genel sorularınız için bize yazın."
           id="iletisim-heading"
         />
@@ -58,7 +58,7 @@ export default function IletisimPage() {
               <ul className="flex flex-col gap-4" role="list">
                 {contacts.map((c) => (
                   <li key={c.label} className="flex items-start gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-orange-soft text-base" aria-hidden="true">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-base" aria-hidden="true">
                       {c.icon}
                     </span>
                     <div>
@@ -67,7 +67,7 @@ export default function IletisimPage() {
                         href={c.href}
                         target={c.href.startsWith('http') ? '_blank' : undefined}
                         rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-sm font-medium text-slate-700 transition-colors hover:text-orange-DEFAULT"
+                        className="text-sm font-medium text-slate-700 transition-colors hover:text-brand-DEFAULT"
                       >
                         {c.value}
                       </a>
@@ -77,14 +77,14 @@ export default function IletisimPage() {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-orange-DEFAULT/30 bg-orange-soft p-6">
-              <h3 className="mb-2 font-extrabold text-orange-DEFAULT">🤝 Kurumsal İş Birliği</h3>
+            <div className="rounded-2xl border border-brand-DEFAULT/30 bg-brand-soft p-6">
+              <h3 className="mb-2 font-extrabold text-brand-DEFAULT">🤝 Kurumsal İş Birliği</h3>
               <p className="mb-4 text-sm leading-relaxed text-slate-600">
                 Etkinlik sponsorluğu, teknik mentörlük veya kurumsal ortaklık için:
               </p>
               <a
                 href={`mailto:${siteConfig.email}?subject=Kurumsal İş Birliği`}
-                className="inline-flex items-center gap-2 rounded-md bg-orange-DEFAULT px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-orange-vibrant"
+                className="inline-flex items-center gap-2 rounded-md bg-brand-DEFAULT px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-brand-vibrant"
               >
                 İş Birliği Teklifi Gönder
               </a>

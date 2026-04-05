@@ -24,7 +24,7 @@ export default function HakkimizdaPage() {
         <div className="container-site">
           <SectionHeader
             label="Kimiz?"
-            title={<>Arel <span className="text-orange-DEFAULT">Yazılım Kulübü</span></>}
+            title={<>Arel <span className="text-brand-DEFAULT">Yazılım Kulübü</span></>}
             id="hakkimizda-heading"
           />
           <div className="grid gap-12 lg:grid-cols-2">
@@ -51,7 +51,7 @@ export default function HakkimizdaPage() {
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                   <div className="mb-2 text-2xl" aria-hidden="true">{item.icon}</div>
-                  <div className="mb-1 text-sm font-bold uppercase tracking-wider text-orange-DEFAULT">{item.label}</div>
+                  <div className="mb-1 text-sm font-bold uppercase tracking-wider text-brand-DEFAULT">{item.label}</div>
                   <p className="text-sm leading-relaxed text-slate-600">{item.text}</p>
                 </div>
               ))}
@@ -64,7 +64,7 @@ export default function HakkimizdaPage() {
         <div className="container-site">
           <SectionHeader
             label="Değerlerimiz"
-            title={<>Bizi <span className="text-orange-DEFAULT">Şekillendiren</span> İlkeler</>}
+            title={<>Bizi <span className="text-brand-DEFAULT">Şekillendiren</span> İlkeler</>}
             id="degerler-heading"
             center
           />

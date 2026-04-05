@@ -6,14 +6,14 @@ interface SectionProps {
   className?: string | undefined;
   id?: string | undefined;
   'aria-labelledby'?: string | undefined;
-  variant?: 'default' | 'alt' | 'dark' | 'orange';
+  variant?: 'default' | 'alt' | 'dark' | 'brand';
 }
 
 const variantClasses = {
   default: 'bg-[var(--bg-premium)]',
   alt: 'bg-slate-100',
   dark: 'bg-brand-dark text-white',
-  orange: 'bg-orange-DEFAULT text-white',
+  brand: 'bg-brand-DEFAULT text-white',
 };
 
 export default function Section({
@@ -63,7 +63,7 @@ export function SectionHeader({
     >
       <div>
         {label && (
-          <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-orange-DEFAULT">
+          <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-brand-DEFAULT">
             {label}
           </span>
         )}

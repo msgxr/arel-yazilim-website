@@ -33,7 +33,7 @@ export default function AyarlarPage() {
                 <div
                   style={{
                     width: '44px', height: '24px', borderRadius: '999px',
-                    background: defaultOn ? 'var(--orange)' : '#E5E7EB',
+                    background: defaultOn ? 'var(--brand)' : '#E5E7EB',
                     position: 'relative', cursor: 'pointer', transition: 'var(--transition)',
                   }}
                 >
@@ -68,7 +68,7 @@ export default function AyarlarPage() {
                 <div
                   style={{
                     width: '44px', height: '24px', borderRadius: '999px',
-                    background: defaultOn ? 'var(--orange)' : '#E5E7EB',
+                    background: defaultOn ? 'var(--brand)' : '#E5E7EB',
                     position: 'relative', cursor: 'pointer',
                   }}
                 >

@@ -21,7 +21,7 @@ export default function KariyerPage() {
       <div className="container-site">
         <SectionHeader
           label="Kariyer"
-          title={<>Kariyer <span className="text-orange-DEFAULT">Fırsatları</span></>}
+          title={<>Kariyer <span className="text-brand-DEFAULT">Fırsatları</span></>}
           description="Arel Yazılım Kulübü üyeleri için staj, kariyer danışmanlığı ve networking imkânları."
           id="kariyer-heading"
         />
@@ -37,14 +37,14 @@ export default function KariyerPage() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-orange-DEFAULT/30 bg-orange-soft p-8 text-center">
+        <div className="rounded-2xl border border-brand-DEFAULT/30 bg-brand-soft p-8 text-center">
           <h2 className="mb-2 text-2xl font-extrabold text-slate-800">İş İlanı Paylaşımı</h2>
           <p className="mx-auto mb-5 max-w-[440px] text-sm text-slate-600">
             Öğrencilerimize yönelik staj veya iş ilanı paylaşmak isteyen firmalar e-posta ile iletişime geçebilir.
           </p>
           <a
             href={`mailto:${siteConfig.email}?subject=İş İlanı Paylaşımı`}
-            className="inline-flex items-center gap-2.5 rounded-md bg-orange-DEFAULT px-8 py-3.5 font-bold text-white transition-all hover:bg-orange-vibrant"
+            className="inline-flex items-center gap-2.5 rounded-md bg-brand-DEFAULT px-8 py-3.5 font-bold text-white transition-all hover:bg-brand-vibrant"
           >
             İlan Gönder
           </a>

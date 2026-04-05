@@ -22,7 +22,7 @@ export default function EtkinliklerPage() {
         <div className="container-site">
           <SectionHeader
             label="Takvim"
-            title={<>Yaklaşan <span className="text-orange-DEFAULT">Etkinlikler</span></>}
+            title={<>Yaklaşan <span className="text-brand-DEFAULT">Etkinlikler</span></>}
             description="Workshop, hackathon, seminer ve panel etkinlikleri."
             id="etkinlikler-heading"
           />
@@ -38,7 +38,7 @@ export default function EtkinliklerPage() {
         <div className="container-site">
           <SectionHeader
             label="Arşiv"
-            title={<>Geçmiş <span className="text-orange-DEFAULT">Etkinlikler</span></>}
+            title={<>Geçmiş <span className="text-brand-DEFAULT">Etkinlikler</span></>}
             id="gecmis-etkinlikler-heading"
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,7 +57,7 @@ export default function EtkinliklerPage() {
                 </div>
                 <h3 className="font-extrabold text-slate-700">{event.title}</h3>
                 {event.featured && (
-                  <span className="mt-2 inline-block text-[12px] font-semibold text-orange-DEFAULT">🏆 Ödüllü</span>
+                  <span className="mt-2 inline-block text-[12px] font-semibold text-brand-DEFAULT">🏆 Ödüllü</span>
                 )}
               </article>
             ))}
@@ -70,7 +70,7 @@ export default function EtkinliklerPage() {
 
 function EventCard({ event }: { event: (typeof events)[number] }) {
   const borderColor = event.type === 'Workshop'
-    ? 'border-orange-DEFAULT'
+    ? 'border-brand-DEFAULT'
     : event.type === 'Hackathon'
       ? 'border-purple-500'
       : 'border-green-500';
@@ -108,13 +108,13 @@ function EventCard({ event }: { event: (typeof events)[number] }) {
         <div className="flex items-center gap-2">
           <Link
             href={`/etkinlikler/${event.slug}`}
-            className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 px-4 py-2 text-[13px] font-bold text-slate-600 transition-all hover:border-orange-DEFAULT hover:text-orange-DEFAULT"
+            className="inline-flex items-center gap-1.5 rounded-md border border-slate-200 px-4 py-2 text-[13px] font-bold text-slate-600 transition-all hover:border-brand-DEFAULT hover:text-brand-DEFAULT"
           >
             Detay
           </Link>
           <Link
             href="/uyelik"
-            className="inline-flex items-center gap-1.5 rounded-md bg-orange-DEFAULT px-5 py-2 text-[13px] font-bold text-white transition-all hover:bg-orange-vibrant"
+            className="inline-flex items-center gap-1.5 rounded-md bg-brand-DEFAULT px-5 py-2 text-[13px] font-bold text-white transition-all hover:bg-brand-vibrant"
           >
             Kayıt Ol
           </Link>

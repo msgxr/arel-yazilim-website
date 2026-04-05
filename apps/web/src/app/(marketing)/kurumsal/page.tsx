@@ -25,7 +25,7 @@ export default function KurumsalPage() {
         <div className="container-site">
           <SectionHeader
             label="Organizasyon"
-            title={<>Kurumsal <span className="text-orange-DEFAULT">Yapı</span></>}
+            title={<>Kurumsal <span className="text-brand-DEFAULT">Yapı</span></>}
             description={`${siteConfig.name} organizasyon şeması ve departman tanımları.`}
             id="kurumsal-heading"
           />
@@ -40,12 +40,12 @@ export default function KurumsalPage() {
               </div>
             ))}
           </div>
-          <div className="rounded-2xl border border-orange-DEFAULT/30 bg-orange-soft p-8 text-center">
+          <div className="rounded-2xl border border-brand-DEFAULT/30 bg-brand-soft p-8 text-center">
             <h2 className="mb-3 text-2xl font-extrabold text-slate-800">Kurumsal İş Birliği</h2>
             <p className="mx-auto mb-6 max-w-[480px] text-slate-600">
               Etkinlik sponsorluğu, teknik mentörlük veya uzun vadeli kurumsal ortaklık için bize ulaşın.
             </p>
-            <Link href="/iletisim" className="inline-flex items-center gap-2.5 rounded-md bg-orange-DEFAULT px-8 py-3.5 font-bold text-white transition-all hover:bg-orange-vibrant">
+            <Link href="/iletisim" className="inline-flex items-center gap-2.5 rounded-md bg-brand-DEFAULT px-8 py-3.5 font-bold text-white transition-all hover:bg-brand-vibrant">
               Teklif Gönder
             </Link>
           </div>

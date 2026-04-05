@@ -116,7 +116,7 @@ export default async function TeamDetailPage({ params }: Props) {
                 </div>
               </div>
               {team.contactEmail && (
-                <a href={`mailto:${team.contactEmail}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 16px', background: 'var(--orange-soft)', borderRadius: 'var(--radius-md)', color: 'var(--orange)', fontWeight: 700, fontSize: '13px', textDecoration: 'none', transition: 'var(--transition)' }}>
+                <a href={`mailto:${team.contactEmail}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 16px', background: 'var(--brand-soft)', borderRadius: 'var(--radius-md)', color: 'var(--brand)', fontWeight: 700, fontSize: '13px', textDecoration: 'none', transition: 'var(--transition)' }}>
                   ✉ İletişime Geç
                 </a>
               )}

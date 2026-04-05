@@ -65,10 +65,10 @@ export default function BlogPage() {
                   borderRadius: '999px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  background: cat === 'Tümü' ? 'var(--orange)' : 'rgba(255,255,255,0.07)',
+                  background: cat === 'Tümü' ? 'var(--brand)' : 'rgba(255,255,255,0.07)',
                   color: cat === 'Tümü' ? '#fff' : 'rgba(255,255,255,0.6)',
                   border: '1px solid',
-                  borderColor: cat === 'Tümü' ? 'var(--orange)' : 'rgba(255,255,255,0.12)',
+                  borderColor: cat === 'Tümü' ? 'var(--brand)' : 'rgba(255,255,255,0.12)',
                   cursor: 'pointer',
                 }}
               >
@@ -141,7 +141,7 @@ export default function BlogPage() {
                         <div
                           style={{
                             width: '32px', height: '32px', borderRadius: '50%',
-                            background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)',
+                            background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             fontSize: '11px', fontWeight: 900, color: '#fff',
                           }}
@@ -153,7 +153,7 @@ export default function BlogPage() {
                           <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{post.readTime} dk okuma</div>
                         </div>
                       </div>
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--orange)' }}>Oku →</span>
+                      <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--brand)' }}>Oku →</span>
                     </div>
                   </div>
                 </article>
@@ -180,12 +180,12 @@ export default function BlogPage() {
                   <div
                     style={{
                       height: '4px', borderRadius: '999px',
-                      background: post.coverGradient ?? 'var(--orange)',
+                      background: post.coverGradient ?? 'var(--brand)',
                       marginBottom: '18px',
                     }}
                   />
                   <div style={{ marginBottom: '10px' }}>
-                    <span className={`badge badge-orange`} style={{ fontSize: '10px' }}>
+                    <span className={`badge badge-brand`} style={{ fontSize: '10px' }}>
                       {post.category}
                     </span>
                   </div>
@@ -210,7 +210,7 @@ export default function BlogPage() {
                       <div
                         style={{
                           width: '26px', height: '26px', borderRadius: '50%',
-                          background: 'linear-gradient(135deg, var(--orange) 0%, var(--orange-v) 100%)',
+                          background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
                           fontSize: '9px', fontWeight: 900, color: '#fff',
                         }}
