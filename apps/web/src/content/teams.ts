@@ -60,8 +60,8 @@ export const subTeams: SubTeam[] = [
       'Modern web teknolojileri ile full-stack projeler geliştiren ve kulübün dijital altyapısını yöneten ekip.',
     longDescription:
       'Web Ekibi, Next.js ve React ekosisteminden backend Node.js/Express çözümlerine kadar geniş bir spektrumda çalışır. Kulübün kendi web portalı, üye sistemleri ve açık kaynak araçlar bu ekip tarafından geliştirilir. Hem frontend hem backend deneyimi kazanmak isteyenler için ideal.',
-    color: '#E8531D',
-    gradient: 'linear-gradient(135deg, #E8531D 0%, #FF7043 100%)',
+    color: '#2563eb',
+    gradient: 'linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)',
     icon: '🌐',
     focus: [
       'Next.js & React',

@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     tags: ['Next.js', 'React', 'TypeScript', 'Web'],
     category: 'Web Geliştirme',
     featured: true,
-    coverGradient: 'linear-gradient(135deg, #E8531D 0%, #FF7043 100%)',
+    coverGradient: 'linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)',
   },
   {
     id: 'blog-003',

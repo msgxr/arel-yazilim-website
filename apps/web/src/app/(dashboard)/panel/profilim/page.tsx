@@ -92,7 +92,7 @@ export default function ProfilimPage() {
             <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)', marginBottom: '14px' }}>İlgi Alanları</h2>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {mockUser.interests.map((interest) => (
-                <span key={interest} style={{ padding: '6px 14px', borderRadius: '999px', background: 'var(--brand-soft)', color: 'var(--brand)', fontSize: '13px', fontWeight: 600, border: '1px solid rgba(232,83,29,0.15)' }}>
+                <span key={interest} style={{ padding: '6px 14px', borderRadius: '999px', background: 'var(--brand-soft)', color: 'var(--brand)', fontSize: '13px', fontWeight: 600, border: '1px solid rgba(37,99,235,0.15)' }}>
                   {interest}
                 </span>
               ))}

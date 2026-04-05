@@ -27,7 +27,7 @@ export default function SponsorlarPage() {
       >
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px)', backgroundSize: '48px 48px' }} aria-hidden="true" />
         <div className="container-site" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-          <span className="label-tag" style={{ color: '#FF7755' }}>Ortaklar</span>
+          <span className="label-tag" style={{ color: '#60a5fa' }}>Ortaklar</span>
           <h1
             id="sponsorlar-heading"
             style={{ fontSize: 'clamp(40px, 5.5vw, 68px)', fontWeight: 900, letterSpacing: '-2.5px', color: '#fff', lineHeight: 1.08, marginBottom: '20px' }}
@@ -152,7 +152,7 @@ export default function SponsorlarPage() {
       <section id="paketler" style={{ background: 'var(--bg-dark)', padding: '80px 0' }} aria-labelledby="packages-heading">
         <div className="container-site">
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <span className="label-tag" style={{ color: '#FF7755' }}>Sponsorluk</span>
+            <span className="label-tag" style={{ color: '#60a5fa' }}>Sponsorluk</span>
             <h2 id="packages-heading" style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 900, letterSpacing: '-1.5px', color: '#fff', lineHeight: 1.1, marginBottom: '14px' }}>
               Sponsorluk <span className="gradient-text">Paketleri</span>
             </h2>

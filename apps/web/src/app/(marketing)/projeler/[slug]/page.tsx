@@ -46,7 +46,7 @@ export default async function ProjeDetayPage({ params }: Props) {
         style={{ background: 'var(--bg-dark)', padding: '80px 0 60px', position: 'relative', overflow: 'hidden' }}
         aria-labelledby="proj-heading"
       >
-        <div style={{ position: 'absolute', width: '600px', height: '600px', top: '-200px', left: '-100px', background: 'radial-gradient(circle, rgba(232,83,29,0.12) 0%, transparent 65%)', filter: 'blur(40px)', pointerEvents: 'none' }} aria-hidden="true" />
+        <div style={{ position: 'absolute', width: '600px', height: '600px', top: '-200px', left: '-100px', background: 'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%)', filter: 'blur(40px)', pointerEvents: 'none' }} aria-hidden="true" />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px)', backgroundSize: '48px 48px' }} aria-hidden="true" />
         <div className="container-site" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ marginBottom: '16px' }}>
@@ -197,7 +197,7 @@ export default async function ProjeDetayPage({ params }: Props) {
             </div>
 
             {/* Contributing CTA */}
-            <div style={{ background: 'var(--brand-soft)', border: '1.5px solid rgba(232,83,29,0.15)', borderRadius: 'var(--radius-lg)', padding: '20px' }}>
+            <div style={{ background: 'var(--brand-soft)', border: '1.5px solid rgba(37,99,235,0.15)', borderRadius: 'var(--radius-lg)', padding: '20px' }}>
               <div style={{ fontWeight: 800, color: 'var(--text)', marginBottom: '6px', fontSize: '14px' }}>Katkıda Bulunmak İster misin?</div>
               <p style={{ fontSize: '12px', color: 'var(--text-2)', lineHeight: 1.6, marginBottom: '14px' }}>
                 Ekibimize katıl ve bu projeye katkıda bulun.

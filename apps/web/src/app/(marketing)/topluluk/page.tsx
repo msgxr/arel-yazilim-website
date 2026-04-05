@@ -33,9 +33,9 @@ export default function ToplulukPage() {
           }}
           aria-hidden="true"
         />
-        <div style={{ position: 'absolute', width: '600px', height: '600px', top: '-200px', left: '-100px', background: 'radial-gradient(circle, rgba(232,83,29,0.12) 0%, transparent 65%)', filter: 'blur(40px)', pointerEvents: 'none' }} aria-hidden="true" />
+        <div style={{ position: 'absolute', width: '600px', height: '600px', top: '-200px', left: '-100px', background: 'radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 65%)', filter: 'blur(40px)', pointerEvents: 'none' }} aria-hidden="true" />
         <div className="container-site" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-          <span className="label-tag" style={{ color: '#FF7755' }}>Berkeley Modeli</span>
+          <span className="label-tag" style={{ color: '#60a5fa' }}>Berkeley Modeli</span>
           <h1
             id="topluluk-heading"
             style={{

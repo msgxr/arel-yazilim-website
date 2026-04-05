@@ -269,7 +269,7 @@ export default function HomePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
             {upcomingEvents.map((event) => {
-              const accent = event.type === 'Workshop' ? '#E8531D'
+              const accent = event.type === 'Workshop' ? '#2563eb'
                 : event.type === 'Hackathon' ? '#7C3AED' : '#15803D';
               return (
                 <article key={event.id} className="event-card" style={{ borderTop: `3px solid ${accent}` }}>

@@ -107,7 +107,7 @@ export default function BlogPage() {
                   <div
                     style={{
                       height: '160px',
-                      background: post.coverGradient ?? 'linear-gradient(135deg, #E8531D 0%, #FF7043 100%)',
+                      background: post.coverGradient ?? 'linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)',
                       display: 'flex',
                       alignItems: 'flex-end',
                       padding: '20px',

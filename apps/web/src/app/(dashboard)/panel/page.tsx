@@ -146,7 +146,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Quick actions */}
-      <div style={{ marginTop: '24px', padding: '24px', background: 'var(--brand-soft)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(232,83,29,0.12)' }}>
+      <div style={{ marginTop: '24px', padding: '24px', background: 'var(--brand-soft)', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(37,99,235,0.12)' }}>
         <div style={{ fontWeight: 800, color: 'var(--text)', marginBottom: '14px', fontSize: '15px' }}>⚡ Hızlı İşlemler</div>
         <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
           <Link href="/etkinlikler" className="btn btn-primary btn-sm">Etkinliklere Göz At</Link>

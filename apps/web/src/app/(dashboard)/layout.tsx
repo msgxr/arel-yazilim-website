@@ -95,7 +95,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               background: 'var(--brand-soft)',
               borderRadius: 'var(--radius-lg)',
               marginBottom: '24px',
-              border: '1px solid rgba(232,83,29,0.12)',
+              border: '1px solid rgba(37,99,235,0.12)',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>

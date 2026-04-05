@@ -187,7 +187,7 @@
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
-  .badge-orange { background: var(--orange-soft); color: var(--orange); border: 1px solid rgba(232,83,29,0.15); }
+  .badge-orange { background: var(--orange-soft); color: var(--orange); border: 1px solid rgba(37,99,235,0.15); }
   .badge-purple { background: #EDE9FE; color: #7C3AED; }
   .badge-blue   { background: #DBEAFE; color: #1D4ED8; }
   .badge-green  { background: #DCFCE7; color: #15803D; }
@@ -286,7 +286,7 @@
   position: absolute;
   width: 700px; height: 700px;
   top: -200px; left: -100px;
-  background: radial-gradient(circle, rgba(232,83,29,0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 65%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -294,7 +294,7 @@
   position: absolute;
   width: 500px; height: 500px;
   bottom: -100px; right: -50px;
-  background: radial-gradient(circle, rgba(232,83,29,0.10) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 65%);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -313,7 +313,7 @@
   position: absolute;
   inset: -30px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232,83,29,0.20) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37,99,235,0.20) 0%, transparent 70%);
   filter: blur(20px);
   animation: pulse-glow 4s ease-in-out infinite;
 }
@@ -419,8 +419,8 @@
   box-shadow: 0 12px 28px rgba(0,0,0,0.08);
 }
 .ann-card.featured {
-  background: linear-gradient(135deg, rgba(232,83,29,0.06) 0%, rgba(255,87,34,0.03) 100%);
-  border-color: rgba(232,83,29,0.25);
+  background: linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(255,87,34,0.03) 100%);
+  border-color: rgba(37,99,235,0.25);
 }
 .ann-icon {
   width: 48px; height: 48px; flex-shrink: 0;

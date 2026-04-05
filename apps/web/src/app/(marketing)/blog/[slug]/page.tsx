@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section
         style={{
-          background: post.coverGradient ?? 'linear-gradient(135deg, var(--brand) 0%, #FF7043 100%)',
+          background: post.coverGradient ?? 'linear-gradient(135deg, var(--brand) 0%, #60a5fa 100%)',
           padding: '80px 0 60px',
           position: 'relative',
           overflow: 'hidden',
