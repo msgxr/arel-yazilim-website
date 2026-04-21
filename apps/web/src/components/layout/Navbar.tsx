@@ -20,8 +20,7 @@ export default function Navbar() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
-  const isHomePage = pathname === '/';
-  const shouldBeTransparent = isHomePage && !scrolled && !open;
+  const shouldBeTransparent = false; // Forced solid for better visibility
 
   return (
     <>

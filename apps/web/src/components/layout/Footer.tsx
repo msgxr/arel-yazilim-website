@@ -250,9 +250,9 @@ export default function Footer() {
             </div>
             <div style={{ display: 'flex', gap: '28px' }}>
               {[
-                { href: '/gizlilik',    label: 'Gizlilik' },
-                { href: '/yonetmelik', label: 'KVKK' },
-                { href: '/belgeler',   label: 'Kullanım Koşulları' },
+                { href: '/gizlilik',      label: 'Gizlilik' },
+                { href: '/gizlilik#kvkk', label: 'KVKK' },
+                { href: '/belgeler',      label: 'Tüzük & Yönetmelik' },
               ].map(({ href, label }) => (
                 <Link
                   key={label}

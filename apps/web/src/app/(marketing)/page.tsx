@@ -60,7 +60,7 @@ export default function HomePage() {
     <>
       {/* ── HERO SECTION ───────────────────────────────────────────── */}
       <section 
-        className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"
+        className="relative min-h-[92vh] flex items-center overflow-hidden bg-slate-900 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"
         aria-label="Ana Bölüm"
         id="home"
       >
@@ -132,18 +132,26 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Stats row */}
-              <div className="flex flex-wrap gap-8 border-t border-white/10 pt-8">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="group">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-black text-white">{stat.value}</span>
-                      <span className="text-lg font-bold text-blue-400">{stat.suffix}</span>
-                    </div>
-                    <div className="mt-1 text-xs font-medium text-slate-400">{stat.label}</div>
+          {/* Stats row with Legal Links */}
+          <div className="flex flex-wrap items-center gap-x-12 gap-y-6 border-t border-white/10 pt-8">
+            <div className="flex flex-wrap gap-8">
+              {stats.map((stat) => (
+                <div key={stat.label} className="group">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-black text-white">{stat.value}</span>
+                    <span className="text-lg font-bold text-blue-400">{stat.suffix}</span>
                   </div>
-                ))}
-              </div>
+                  <div className="mt-1 text-xs font-medium text-slate-400">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Quick Access Legal Links in Hero */}
+            <div className="flex flex-wrap gap-4 border-l border-white/10 pl-8 hidden md:flex">
+              <Link href="/belgeler" className="text-[11px] font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-colors">Tüzük & Yönetmelik</Link>
+              <Link href="/gizlilik#kvkk" className="text-[11px] font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-colors">KVKK</Link>
+            </div>
+          </div>
             </div>
 
             {/* Right: Visual */}
@@ -208,6 +216,7 @@ await community.join();`}</code>
             </div>
           </div>
         </div>
+      </section>
       {/* ── PARTNERS SECTION (NEW) ─────────────────────────────────── */}
       <section className="bg-slate-50 border-y border-slate-200 py-12 overflow-hidden">
         <div className="container-site text-center">

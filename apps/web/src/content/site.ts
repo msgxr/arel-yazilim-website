@@ -66,7 +66,8 @@ export const footerLinks = {
   katilim: [
     { href: '/uyelik', label: 'Üyelik Başvurusu' },
     { href: '/ari-lab', label: 'ARI Lab' },
-    { href: '/belgeler', label: 'Belgeler & Tüzük' },
+    { href: '/belgeler', label: 'Tüzük & Yönetmelik' },
+    { href: '/belgeler', label: 'Resmi Belgeler' },
     { href: '/sponsorlar', label: 'Kurumsal Ortaklık' },
   ],
   iletisim: [
@@ -78,10 +79,10 @@ export const footerLinks = {
   ],
   yasal: [
     { href: '/gizlilik', label: 'Gizlilik Politikası' },
-    { href: '/gizlilik#kvkk', label: 'KVKK Aydınlatma' },
+    { href: '/gizlilik#kvkk', label: 'KVKK Aydınlatma Metni' },
     { href: '/gizlilik#kullanim', label: 'Kullanım Koşulları' },
     { href: '/gizlilik#cerez', label: 'Çerez Politikası' },
-    { href: 'https://www.istanbularel.edu.tr', label: 'Arel Üniversitesi', external: true },
+    { href: 'https://www.istanbularel.edu.tr', label: 'İstanbul Arel Üniversitesi', external: true },
   ],
 } as const;
 
