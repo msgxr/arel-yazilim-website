@@ -15,247 +15,294 @@ export const metadata: Metadata = {
   alternates: { canonical: '/website' },
 };
 
-const quickAccessItems = [
-  { href: '/uyelik',      Icon: UserPlusIcon,  label: 'Üyelik Başvurusu' },
-  { href: '/etkinlikler', Icon: CalendarIcon,  label: 'Etkinlik Takvimi' },
-  { href: '/duyurular',   Icon: BellIcon,      label: 'Duyurular' },
-  { href: '/projeler',    Icon: CodeIcon,      label: 'Projeler' },
-  { href: 'https://github.com/ArelSoftwareClub', Icon: GithubIcon, label: 'GitHub', external: true },
-  { href: 'https://linkedin.com/company/arel-yazilim', Icon: LinkedinIcon, label: 'LinkedIn', external: true },
-  { href: '/ekip',        Icon: UsersIcon,     label: 'Yönetim Ekibi' },
-  { href: '/belgeler',    Icon: FileTextIcon,  label: 'Belgeler / SSS' },
-  { href: 'https://www.istanbularel.edu.tr', Icon: UniversityIcon, label: 'Arel Üniversitesi', external: true },
-  { href: '/iletisim',    Icon: MailIcon,      label: 'İletişim' },
+const stats = [
+  { value: '250+', label: 'Aktif Üye', suffix: '' },
+  { value: '15+', label: 'Proje', suffix: '' },
+  { value: '40+', label: 'Etkinlik', suffix: '' },
+  { value: '%100', label: 'Ücretsiz', suffix: '' },
+];
+
+const values = [
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" class="w-5 h-5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+    title: 'Gerçek Projeler',
+    description: 'Portfolyona değer katacak açık kaynak projelerde çalış',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" class="w-5 h-5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    title: 'Kariyer Ağı',
+    description: 'Sektör profesyonelleriyle networking fırsatları',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" class="w-5 h-5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+    title: 'Eğitimler',
+    description: 'Sektör profesyonellerinden ücretsiz teknik workshoplar',
+  },
+  {
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" class="w-5 h-5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`,
+    title: 'Hackathonlar',
+    description: 'TEKNOFEST ve ulusal yarışmalarda takım kur',
+  },
+];
+
+const socialProof = [
+  { metric: '12+', label: 'GitHub Stars', icon: '⭐' },
+  { metric: '6+', label: 'Aktif Geliştirici', icon: '👥' },
+  { metric: '3+', label: 'Yıllık Tecrübe', icon: '📅' },
 ];
 
 export default function HomePage() {
   const upcomingEvents = events.filter((e) => e.status === 'upcoming').slice(0, 3);
-  const featuredAnnouncements = announcements.slice(0, 3);
+  const featuredAnnouncements = announcements.slice(0, 2);
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
   const heroTeam = managementTeam.filter((m) => m.featured).slice(0, 4);
 
   return (
     <>
-      {/* ── HERO ──────────────────────────────────────────────── */}
-      <section className="hero-section" aria-label="Ana Hero Bölümü" id="home">
-        <div className="hero-grid-bg" aria-hidden="true" />
-        <div className="hero-glow-1" aria-hidden="true" />
-        <div className="hero-glow-2" aria-hidden="true" />
+      {/* ── HERO SECTION ───────────────────────────────────────────── */}
+      <section 
+        className="relative min-h-[92vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800"
+        aria-label="Ana Bölüm"
+        id="home"
+      >
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          {/* Grid pattern */}
+          <div className="absolute inset-0 opacity-[0.03]" 
+            style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '64px 64px' }} 
+          />
+          
+          {/* Glow orbs */}
+          <div className="absolute -top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-indigo-500/10 blur-[100px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-blue-600/5 blur-[150px]" />
+          
+          {/* Floating code elements */}
+          <div className="absolute top-[15%] right-[10%] opacity-10 text-white font-mono text-xs leading-relaxed">
+            <div className="animate-pulse">{`{`}</div>
+            <div className="ml-4 animate-pulse delay-75">{`"tech": "future"`}</div>
+            <div className="ml-2 animate-pulse delay-150">{`"community": true`}</div>
+            <div className="animate-pulse delay-200">{`}`}</div>
+          </div>
+        </div>
 
-        <div className="container-site relative z-10 w-full">
-          <div className="grid grid-cols-1 items-center gap-12 py-20 lg:grid-cols-[1fr_auto]">
-            {/* Content */}
-            <div>
-              {/* Academic year pill */}
-              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-brand-DEFAULT/30 bg-brand-DEFAULT/10 px-5 py-2 text-[12px] font-extrabold uppercase tracking-[1.2px] text-brand-DEFAULT backdrop-blur-sm">
-                <span
-                  className="blink-dot block h-2 w-2 shrink-0 rounded-full bg-brand-DEFAULT"
-                  aria-hidden="true"
-                />
+        <div className="container-site relative z-10 py-20">
+          <div className="grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            {/* Left: Content */}
+            <div className="max-w-2xl">
+              {/* Top badge */}
+              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[1.5px] text-blue-400 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
+                </span>
                 {siteConfig.academicYear} Akademik Yılı Aktif
               </div>
 
-              {/* Heading */}
-              <h1 className="mb-6 text-[clamp(40px,6.5vw,84px)] font-black leading-[1.04] tracking-[-3px] text-white">
-                Yazılım, Üretim
-                <br />ve{' '}
-                <span className="gradient-text">Topluluk</span>
-                <br />Bir Arada
+              {/* Main heading */}
+              <h1 className="mb-6 text-[clamp(38px,5.5vw,72px)] font-black leading-[1.05] tracking-[-2.5px] text-white">
+                Kod Yaz,
+                <br />
+                <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                  Topluluk Oluştur
+                </span>
               </h1>
 
-              <p className="mb-10 max-w-[480px] text-lg leading-[1.75] text-white/65">
-                İstanbul Arel Üniversitesi Yazılım Kulübü; yapay zekâ, yazılım ve veri bilimi
-                alanlarında proje üreten, etkinlikler düzenleyen kariyer odaklı öğrenci topluluğudur.
+              <p className="mb-8 text-lg leading-[1.75] text-slate-300 max-w-xl">
+                İstanbul Arel Üniversitesi'nin lider yazılım topluluğu. 
+                Yapay zeka, web ve veri bilimi alanında gerçek projeler üretiyor, 
+                kariyerine yön vermek isteyen öğrencileri bir araya getiriyoruz.
               </p>
 
               {/* CTA buttons */}
-              <div className="mb-14 flex flex-wrap gap-3.5">
-                <Link href="/uyelik" className="btn btn-primary btn-lg">
-                  Üye Ol Hemen
+              <div className="mb-10 flex flex-wrap gap-4">
+                <Link 
+                  href="/uyelik" 
+                  className="group inline-flex items-center gap-2.5 rounded-xl bg-blue-500 px-7 py-4 text-[15px] font-bold text-white shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1 hover:bg-blue-600 hover:shadow-xl hover:shadow-blue-500/40"
+                >
+                  Hemen Üye Ol
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-4 w-4 transition-transform group-hover:translate-x-1">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
                 </Link>
-                <Link href="/etkinlikler" className="btn btn-outline-white btn-lg">
-                  Etkinlikler
+                <Link 
+                  href="/etkinlikler" 
+                  className="inline-flex items-center gap-2.5 rounded-xl border border-white/20 bg-white/5 px-7 py-4 text-[15px] font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/30"
+                >
+                  Etkinlikleri Keşfet
                 </Link>
               </div>
 
-              {/* Stats */}
-              <div className="flex flex-wrap gap-10 border-t border-white/10 pt-8">
-                {[
-                  { num: `${siteConfig.stats.members}+`, label: 'Aktif Üye' },
-                  { num: `${siteConfig.stats.projects}+`, label: 'Açık Kaynak Proje' },
-                  { num: `${siteConfig.stats.events}+`, label: 'Yıllık Etkinlik' },
-                ].map(({ num, label }) => (
-                  <div key={label}>
-                    <div className="bg-gradient-to-b from-white to-white/50 bg-clip-text text-4xl font-black leading-none text-transparent">
-                      {num}
+              {/* Stats row */}
+              <div className="flex flex-wrap gap-8 border-t border-white/10 pt-8">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="group">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl font-black text-white">{stat.value}</span>
+                      <span className="text-lg font-bold text-blue-400">{stat.suffix}</span>
                     </div>
-                    <div className="mt-1.5 text-[13px] text-white/45">{label}</div>
+                    <div className="mt-1 text-xs font-medium text-slate-400">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Logo ring — hidden on mobile to save space */}
-            <div className="hidden items-center justify-center lg:flex">
-              <div className="logo-ring">
-                <Image
-                  src="/website/images/arel-logo-main.jpg"
-                  alt="Arel Yazılım Kulübü logosu"
-                  width={220}
-                  height={220}
-                  priority
-                  className="float-anim"
-                  style={{ objectFit: 'contain', borderRadius: '24px', boxShadow: '0 0 60px rgba(37,99,235,0.2)' }}
-                />
+            {/* Right: Visual */}
+            <div className="hidden lg:block relative">
+              <div className="relative mx-auto w-full max-w-md">
+                {/* Floating cards effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-30 animate-pulse" />
+                
+                {/* Main card */}
+                <div className="relative rounded-2xl border border-white/10 bg-slate-800/50 backdrop-blur-xl p-6 shadow-2xl">
+                  {/* Code preview */}
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="h-3 w-3 rounded-full bg-red-500/80" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
+                      <div className="h-3 w-3 rounded-full bg-green-500/80" />
+                    </div>
+                    <span className="ml-2 text-xs text-slate-500 font-mono">app.tsx</span>
+                  </div>
+                  
+                  <pre className="text-xs leading-relaxed font-mono text-slate-300 overflow-x-auto">
+                    <code>{`// Arel Software Club
+const community = {
+  founded: 2022,
+  members: 250,
+  focus: ['AI', 'Web', 'Data'],
+  join: async () => {
+    await startJourney();
+    return await buildFuture();
+  }
+};
+
+// Sen de katıl!
+await community.join();`}</code>
+                  </pre>
+
+                  {/* Floating badge */}
+                  <div className="absolute -right-4 -top-4 rounded-xl border border-white/10 bg-slate-900/80 px-4 py-3 shadow-xl backdrop-blur-md">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/20 text-green-400">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-5 w-5">
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                          <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-white">Aktif Topluluk</div>
+                        <div className="text-xs text-slate-400">Her hafta yeni etkinlik</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom floating badges */}
+                  <div className="absolute -bottom-3 -left-3 flex gap-2">
+                    <div className="rounded-lg border border-white/10 bg-slate-800/90 px-3 py-2 shadow-lg backdrop-blur-md">
+                      <div className="text-xs text-slate-400">GitHub</div>
+                      <div className="text-sm font-bold text-white">⭐ 12+ Stars</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FEATURE STRIP ─────────────────────────────────────── */}
-      <div className="border-y border-slate-200 bg-white py-7">
+      {/* ── VALUES SECTION ─────────────────────────────────────────── */}
+      <section className="bg-white py-20" aria-labelledby="values-heading">
         <div className="container-site">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {[
-              { Icon: UsersIcon,    strong: `${siteConfig.stats.members}+ Üye`,    span: 'Aktif Topluluk' },
-              { Icon: CodeIcon,     strong: `${siteConfig.stats.projects}+ Proje`,  span: 'Açık Kaynak' },
-              { Icon: CalendarIcon, strong: `${siteConfig.stats.events}+ Etkinlik`, span: 'Yıllık Takvim' },
-              { Icon: ShieldIcon,   strong: siteConfig.stats.status,                span: 'GLO Onaylı Kulüp' },
-            ].map(({ Icon, strong, span }) => (
-              <div key={strong} className="flex items-center gap-4 rounded-xl border-[1.5px] border-transparent bg-[var(--bg-premium)] p-4 transition-all hover:-translate-y-0.5 hover:border-brand-DEFAULT hover:bg-white hover:shadow-md">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand-DEFAULT">
-                  <Icon size={20} />
-                </div>
-                <div>
-                  <strong className="block text-[15px] font-extrabold text-slate-900">{strong}</strong>
-                  <span className="text-xs text-slate-500">{span}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ── QUICK ACCESS ──────────────────────────────────────── */}
-      <section className="bg-[var(--bg-alt)] py-20" aria-labelledby="qa-heading">
-        <div className="container-site">
-          <div className="mb-10 text-center">
-            <span className="label-tag">Portal</span>
-            <h2 className="section-title" id="qa-heading">
-              Hızlı <span className="gradient-text">Erişim</span>
+          <div className="mb-12 max-w-2xl">
+            <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-600">
+              Neden Katılmalısın?
+            </span>
+            <h2 id="values-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-slate-900">
+              Sadece <span className="text-blue-600">Üye</span> Değil, <span className="text-blue-600">Gelecek</span> Kur
             </h2>
-            <p className="mx-auto mt-3 max-w-[480px] text-slate-600">
-              Kulübün tüm alanlarına tek tıkla ulaşın.
-            </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {quickAccessItems.map(({ href, Icon, label, external }) => {
-              const Tag = external ? 'a' : Link;
-              const extraProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
-              return (
-                <Tag
-                  key={label}
-                  href={href}
-                  {...(extraProps as Record<string, string>)}
-                  className="flex flex-col items-center gap-3 rounded-xl border-[1.5px] border-slate-200 bg-white px-4 py-6 text-center text-slate-800 shadow-sm transition-all hover:-translate-y-1 hover:border-brand-DEFAULT hover:text-brand-DEFAULT hover:shadow-lg"
-                >
-                  <div className="flex h-13 w-13 items-center justify-center rounded-[14px] bg-brand-soft text-brand-DEFAULT transition-all">
-                    <Icon size={24} />
-                  </div>
-                  <span className="text-[13px] font-bold">{label}</span>
-                </Tag>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ANNOUNCEMENTS ─────────────────────────────────────── */}
-      <section className="bg-[var(--bg-premium)] py-20" aria-labelledby="ann-heading">
-        <div className="container-site">
-          <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <span className="label-tag">Güncel</span>
-              <h2 className="section-title" id="ann-heading">
-                Son <span className="gradient-text">Duyurular</span>
-              </h2>
-            </div>
-            <Link href="/duyurular" className="btn btn-ghost btn-sm">Tümünü Gör →</Link>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            {featuredAnnouncements.map((ann, i) => (
-              <Link
-                key={ann.id}
-                href={ann.url ?? '/duyurular'}
-                className={`ann-card ${i === 0 ? 'featured' : ''}`}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {values.map((item, i) => (
+              <div 
+                key={item.title}
+                className="group relative rounded-2xl border border-slate-100 bg-slate-50/50 p-6 transition-all hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-500/5"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="ann-icon">
-                  <BellIcon size={20} />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                  <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                 </div>
-                <div className="min-w-0 flex-1">
-                  <div className="mb-1.5 flex flex-wrap items-center gap-2">
-                    <AnnouncementBadge category={ann.category as 'Üyelik' | 'Yarışma' | 'Workshop' | 'Etkinlik' | 'Genel'} />
-                    <span className="text-xs text-slate-400">{formatDate(ann.date)}</span>
-                    {ann.deadline && (
-                      <span className="text-xs font-bold text-brand-DEFAULT">
-                        Son Başvuru: {formatDate(ann.deadline)}
-                      </span>
-                    )}
-                  </div>
-                  <div className="mb-1 font-bold text-slate-900">{ann.title}</div>
-                  <div className="text-sm leading-relaxed text-slate-600">{ann.summary}</div>
-                </div>
-                <span className="shrink-0 text-[13px] font-bold text-brand-DEFAULT">Detay →</span>
-              </Link>
+                <h3 className="mb-2 text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-500">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── EVENTS ────────────────────────────────────────────── */}
-      <section className="bg-[var(--bg-alt)] py-20" aria-labelledby="events-heading">
+      {/* ── UPCOMING EVENTS ───────────────────────────────────────── */}
+      <section className="bg-slate-50 py-20" aria-labelledby="events-heading">
         <div className="container-site">
-          <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="label-tag">Takvim</span>
-              <h2 className="section-title" id="events-heading">
-                Yaklaşan <span className="gradient-text">Etkinlikler</span>
+              <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-600">
+                Yaklaşan Etkinlikler
+              </span>
+              <h2 id="events-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-slate-900">
+                Önümüzdeki <span className="text-blue-600">Etkinlikler</span>
               </h2>
             </div>
-            <Link href="/etkinlikler" className="btn btn-ghost btn-sm">Tümünü Gör →</Link>
+            <Link href="/etkinlikler" className="btn btn-ghost btn-sm">
+              Tüm Etkinlikler →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((event) => {
-              const accent = event.type === 'Workshop' ? '#2563eb'
-                : event.type === 'Hackathon' ? '#7C3AED' : '#15803D';
+              const accentColor = event.type === 'Workshop' ? '#2563eb' : event.type === 'Hackathon' ? '#7C3AED' : '#15803D';
               return (
                 <article
                   key={event.id}
-                  className="event-card"
-                  style={{ borderTop: `3px solid ${accent}` }}
+                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-1 hover:shadow-xl"
+                  style={{ borderTop: `3px solid ${accentColor}` }}
                 >
-                  <div className="event-header">
-                    <span className="text-[11px] font-extrabold uppercase tracking-[1px] text-slate-500">
+                  <div className="flex items-center justify-between border-b border-slate-100 px-5 py-3">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
                       {formatEventDate(event.date)}
                     </span>
-                    <span className={`badge ${event.type === 'Workshop' ? 'badge-brand' : event.type === 'Hackathon' ? 'badge-purple' : 'badge-green'}`}>
+                    <span 
+                      className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider"
+                      style={{ backgroundColor: `${accentColor}15`, color: accentColor }}
+                    >
                       {event.type}
                     </span>
                   </div>
                   <div className="p-5">
-                    <h3 className="mb-2 text-[17px] font-extrabold text-slate-900">{event.title}</h3>
-                    <p className="mb-4 text-sm leading-relaxed text-slate-600">{event.description}</p>
-                    <div className="mb-5 flex items-center gap-1.5 text-xs text-slate-400">
-                      <MapPinIcon size={12} aria-hidden="true" />
-                      {event.location} {event.capacity ? `· ${event.capacity} Kontenjan` : ''}
+                    <h3 className="mb-2 text-[17px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      {event.title}
+                    </h3>
+                    <p className="mb-4 text-sm leading-relaxed text-slate-500 line-clamp-2">
+                      {event.description}
+                    </p>
+                    <div className="mb-4 flex items-center gap-1.5 text-xs text-slate-400">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                      {event.location}
                     </div>
                     {event.registrationUrl ? (
-                      <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+                      <a 
+                        href={event.registrationUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2.5 text-sm font-bold text-white transition-all hover:bg-blue-600"
+                      >
                         Kayıt Ol
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                        </svg>
                       </a>
                     ) : (
                       <Link href="/iletisim" className="btn btn-ghost btn-sm">
@@ -270,44 +317,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PROJECTS ──────────────────────────────────────────── */}
-      <section className="bg-[var(--bg-premium)] py-20" aria-labelledby="proj-heading">
+      {/* ── FEATURED PROJECTS ────────────────────────────────────── */}
+      <section className="bg-white py-20" aria-labelledby="proj-heading">
         <div className="container-site">
-          <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <span className="label-tag">Teknik Üretim</span>
-              <h2 className="section-title" id="proj-heading">
-                Projeler &amp; <span className="gradient-text">Açık Kaynak</span>
+              <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-600">
+                Açık Kaynak
+              </span>
+              <h2 id="proj-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-slate-900">
+                Öne Çıkan <span className="text-blue-600">Projeler</span>
               </h2>
             </div>
-            <Link href="/projeler" className="btn btn-ghost btn-sm">Tüm Projeler →</Link>
+            <Link href="/projeler" className="btn btn-ghost btn-sm">
+              Tüm Projeler →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
-              <article key={project.id} className="proj-card">
+              <article 
+                key={project.id} 
+                className="group relative flex flex-col rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+              >
                 <div className="mb-4 flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-soft text-brand-DEFAULT">
-                    <CodeIcon size={22} />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
+                      <polyline points="16 18 22 12 16 6" />
+                      <polyline points="8 6 2 12 8 18" />
+                    </svg>
                   </div>
-                  <span className={`badge ${project.status === 'active' ? 'badge-green' : project.status === 'development' ? 'badge-yellow' : 'badge-gray'}`}>
+                  <span className={`badge ${
+                    project.status === 'active' ? 'badge-green' : 
+                    project.status === 'development' ? 'badge-yellow' : 'badge-gray'
+                  }`}>
                     {project.status === 'active' ? 'Aktif' : project.status === 'development' ? 'Geliştiriliyor' : 'Tamamlandı'}
                   </span>
                 </div>
-                <h3 className="mb-2 text-[17px] font-extrabold text-slate-900">{project.title}</h3>
-                <p className="mb-4 flex-1 text-sm leading-relaxed text-slate-600">{project.description}</p>
+                <h3 className="mb-2 text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="mb-4 flex-1 text-sm leading-relaxed text-slate-500">
+                  {project.description}
+                </p>
                 <div className="mb-4 flex flex-wrap gap-1.5">
-                  {project.techStack.map((t) => (
+                  {project.techStack.slice(0, 4).map((t) => (
                     <span key={t} className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center justify-between border-t border-slate-100 pt-3.5">
+                <div className="flex items-center justify-between border-t border-slate-100 pt-4">
                   <span className="text-xs text-slate-400">👥 {project.team}</span>
                   {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
-                      GitHub ↗
+                    <a 
+                      href={project.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-sm font-semibold text-slate-600 transition-colors hover:text-blue-600"
+                    >
+                      GitHub
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-3.5 w-3.5">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+                      </svg>
                     </a>
                   )}
                 </div>
@@ -317,72 +389,163 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TEAM ──────────────────────────────────────────────── */}
-      <section className="bg-[var(--bg-alt)] py-20" aria-labelledby="team-heading">
+      {/* ── SOCIAL PROOF / TEAM ───────────────────────────────────── */}
+      <section className="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 py-20" aria-labelledby="team-heading">
         <div className="container-site">
-          <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <span className="label-tag">Ekip</span>
-              <h2 className="section-title" id="team-heading">
-                Yönetim <span className="gradient-text">Kadrosu</span>
-              </h2>
-            </div>
-            <Link href="/ekip" className="btn btn-ghost btn-sm">Tüm Ekibi Gör →</Link>
+          <div className="mb-12 text-center">
+            <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-400">
+              Yönetim Kadromuz
+            </span>
+            <h2 id="team-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-white">
+              Birlikte <span className="text-blue-400">Büyüyoruz</span>
+            </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-6 sm:grid-cols-4">
             {heroTeam.map((member) => (
-              <div key={member.id} className="team-card">
-                <div className="avatar">{member.initials}</div>
-                <div className="text-[15px] font-extrabold text-slate-900">{member.name}</div>
-                <div className="mb-0.5 mt-1 text-[13px] font-semibold text-brand-DEFAULT">{member.role}</div>
-                <div className="mb-4 text-xs text-slate-400">{member.faculty} · {member.year}</div>
-                <div className="flex gap-2">
+              <div key={member.id} className="group text-center">
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-2xl font-black text-white shadow-lg shadow-blue-500/30 transition-transform group-hover:scale-105">
+                  {member.initials}
+                </div>
+                <div className="text-[15px] font-bold text-white">{member.name}</div>
+                <div className="mb-3 mt-1 text-[13px] font-semibold text-blue-400">{member.role}</div>
+                <div className="flex justify-center gap-2">
                   {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer"
-                      aria-label={`${member.name} LinkedIn`} className="social-btn">
-                      <LinkedinSmIcon size={12} />
+                    <a 
+                      href={member.linkedin} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name} LinkedIn`}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/60 transition-all hover:border-blue-500 hover:text-blue-400"
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
                     </a>
                   )}
                   {member.github && (
-                    <a href={member.github} target="_blank" rel="noopener noreferrer"
-                      aria-label={`${member.name} GitHub`} className="social-btn">
-                      <GithubSmIcon size={12} />
-                    </a>
-                  )}
-                  {member.email && (
-                    <a href={`mailto:${member.email}`} aria-label={`${member.name} e-posta`}
-                      className="social-btn">
-                      <MailSmIcon size={12} />
+                    <a 
+                      href={member.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name} GitHub`}
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/60 transition-all hover:border-blue-500 hover:text-blue-400"
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
                     </a>
                   )}
                 </div>
               </div>
             ))}
           </div>
+
+          {/* Social proof stats */}
+          <div className="mt-12 flex flex-wrap justify-center gap-8 border-t border-white/10 pt-10">
+            {socialProof.map((item) => (
+              <div key={item.label} className="text-center">
+                <div className="text-2xl">
+                  <span className="mr-1">{item.icon}</span>
+                  <span className="text-3xl font-black text-white">{item.metric}</span>
+                </div>
+                <div className="mt-1 text-sm text-slate-400">{item.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="cta-section" aria-labelledby="cta-heading">
-        <div className="cta-glow" style={{ top: '-100px', left: '-100px' }} aria-hidden="true" />
-        <div className="cta-glow" style={{ bottom: '-100px', right: '-100px' }} aria-hidden="true" />
+      {/* ── ANNOUNCEMENTS ─────────────────────────────────────────── */}
+      {featuredAnnouncements.length > 0 && (
+        <section className="bg-slate-50 py-20" aria-labelledby="ann-heading">
+          <div className="container-site">
+            <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-600">
+                  Güncel
+                </span>
+                <h2 id="ann-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-slate-900">
+                  Son <span className="text-blue-600">Duyurular</span>
+                </h2>
+              </div>
+              <Link href="/duyurular" className="btn btn-ghost btn-sm">
+                Tümünü Gör →
+              </Link>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              {featuredAnnouncements.map((ann, i) => (
+                <Link
+                  key={ann.id}
+                  href={ann.url ?? '/duyurular'}
+                  className={`group flex items-start gap-5 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg ${
+                    i === 0 ? 'border-l-4 border-l-blue-500' : ''
+                  }`}
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-2 flex flex-wrap items-center gap-2">
+                      <AnnouncementBadge category={ann.category as 'Üyelik' | 'Yarışma' | 'Workshop' | 'Etkinlik' | 'Genel'} />
+                      <span className="text-xs text-slate-400">{formatDate(ann.date)}</span>
+                      {ann.deadline && (
+                        <span className="text-xs font-bold text-blue-600">
+                          Son Başvuru: {formatDate(ann.deadline)}
+                        </span>
+                      )}
+                    </div>
+                    <div className="mb-1 font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      {ann.title}
+                    </div>
+                    <div className="text-sm leading-relaxed text-slate-500">{ann.summary}</div>
+                  </div>
+                  <span className="shrink-0 text-sm font-semibold text-blue-600 transition-transform group-hover:translate-x-1">
+                    Detay →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── CTA SECTION ───────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 py-24" aria-labelledby="cta-heading">
+        {/* Background elements */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        </div>
+        
         <div className="container-site relative z-10 text-center">
-          <h2 id="cta-heading" className="mb-4 text-[clamp(30px,4.5vw,52px)] font-black tracking-[-2px] text-white">
-            Topluluğumuza Katıl
+          <h2 id="cta-heading" className="mb-4 text-[clamp(32px,4.5vw,52px)] font-black tracking-tight text-white">
+            Hayalindeki Kariyere <br className="hidden sm:block" />
+            <span className="text-blue-300">Bugün Başla</span>
           </h2>
-          <p className="mx-auto mb-10 max-w-[500px] text-lg leading-[1.7] text-white/82">
-            Sınıftaki bilgileri gerçek projelere dönüştür. Etkinliklere katıl, ekip kur,
-            kariyer yolculuğuna bugün başla.
+          <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-blue-100">
+            250+ aktif üye, 15+ proje, 40+ etkinlik. 
+            Sınıftaki bilgilerini gerçek dünya projelerine dönüştür.
           </p>
-          <div className="flex flex-wrap justify-center gap-3.5">
-            <Link href="/uyelik" className="btn btn-lg btn-outline-white" style={{
-              background: '#fff', color: 'var(--brand)',
-              borderColor: '#fff', boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-            }}>
-              Üyelik Başvurusu
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              href="/uyelik" 
+              className="inline-flex items-center gap-2.5 rounded-xl bg-white px-8 py-4 text-[16px] font-bold text-blue-600 shadow-xl transition-all hover:-translate-y-1 hover:shadow-2xl"
+            >
+              Ücretsiz Üye Ol
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-4 w-4">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
             </Link>
-            <Link href="/hakkimizda" className="btn btn-lg btn-outline-white">
+            <Link 
+              href="/hakkimizda" 
+              className="inline-flex items-center gap-2.5 rounded-xl border-2 border-white/30 bg-white/10 px-8 py-4 text-[16px] font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+            >
               Daha Fazla Öğren
             </Link>
           </div>
@@ -391,52 +554,3 @@ export default function HomePage() {
     </>
   );
 }
-
-/* ── Announcement card style helper ─────────────────────────── */
-// .ann-card CSS class handles full layout; see globals.css
-
-/* ── Icon components ──────────────────────────────────────────
-   Inline icons remain for tree-shaking without adding a dependency.
-   These are used only on the homepage hero section.           */
-type IconProps = { size?: number };
-
-function UserPlusIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>;
-}
-function CalendarIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>;
-}
-function BellIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>;
-}
-function CodeIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>;
-}
-function UsersIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>;
-}
-function FileTextIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>;
-}
-function ShieldIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>;
-}
-function UniversityIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>;
-}
-function MailIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>;
-}
-function MapPinIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>;
-}
-function GithubIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>;
-}
-function LinkedinIcon({ size = 24 }: IconProps) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>;
-}
-// Small icon variants for team social buttons
-function LinkedinSmIcon({ size = 12 }: IconProps) { return <LinkedinIcon size={size} />; }
-function GithubSmIcon({ size = 12 }: IconProps) { return <GithubIcon size={size} />; }
-function MailSmIcon({ size = 12 }: IconProps) { return <MailIcon size={size} />; }

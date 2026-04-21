@@ -23,18 +23,21 @@ export const metadata: Metadata = {
     template: '%s | Arel Yazılım Kulübü',
   },
   description:
-    'İstanbul Arel Üniversitesi Yazılım Kulübü — yapay zekâ, yazılım geliştirme ve veri bilimi alanlarında proje üreten, etkinlikler düzenleyen resmî öğrenci topluluğu.',
+    'İstanbul Arel Üniversitesi Yazılım Kulübü — yapay zekâ, yazılım geliştirme ve veri bilimi alanlarında proje üreten, etkinlikler düzenleyen resmî öğrenci topluluğu. 250+ aktif üye.',
   keywords: [
     'Arel Yazılım Kulübü',
     'İstanbul Arel Üniversitesi',
-    'yazılım',
+    'yazılım kulübü',
     'yapay zeka',
+    'web geliştirme',
     'veri bilimi',
+    'hackathon',
+    'teknofest',
     'öğrenci kulübü',
-    'AYK',
   ],
   authors: [{ name: 'Arel Yazılım Kulübü' }],
   creator: 'Arel Yazılım Kulübü',
+  publisher: 'Arel Yazılım Kulübü',
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
@@ -80,13 +83,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
-      <body className={`${inter.variable} antialiased font-sans`}>
-        <a href="#main-content" className="skip-to-content focus:not-sr-only">
+    <html lang="tr" className="scroll-smooth">
+      <body className={`${inter.variable} antialiased font-sans bg-slate-50 text-slate-900`}>
+        <a href="#main-content" className="skip-to-content">
           Ana içeriğe geç
         </a>
         <ScrollProgress />
-        <main id="main-content">
+        <main id="main-content" tabIndex={-1}>
           {children}
         </main>
         <BackToTop />
