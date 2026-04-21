@@ -75,7 +75,7 @@ export default async function AdminPage() {
                 <p className="text-sm text-slate-500">Bekleyen başvuru yok</p>
               </div>
             ) : (
-              recentApplications.map((app) => (
+              recentApplications.map((app: { id: string; fullName: string; email: string; department: string; year: string }) => (
                 <div key={app.id} className="flex items-center justify-between rounded-lg p-4 border-b border-slate-800 last:border-0">
                   <div>
                     <div className="text-sm font-semibold text-white">{app.fullName}</div>

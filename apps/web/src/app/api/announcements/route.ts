@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
         authorId: session.user.id,
         publishedAt: validated.publishedAt ? new Date(validated.publishedAt) : new Date(),
       },
-    }).catch((e) => {
+    }).catch((e: unknown) => {
       console.error('Announcement create error:', e);
       throw e;
     });

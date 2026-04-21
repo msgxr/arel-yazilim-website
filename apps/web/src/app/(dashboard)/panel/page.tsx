@@ -54,7 +54,7 @@ export default async function DashboardPage() {
     { label: 'Etkinlik', value: userAttendances.length, icon: '📅', color: 'bg-blue-50 text-blue-600' },
     { label: 'Başvuru', value: userApplications.length, icon: '📋', color: 'bg-purple-50 text-purple-600' },
     { label: 'Görev', value: userTasks.length, icon: '✅', color: 'bg-green-50 text-green-600' },
-    { label: 'Puan', value: userTasks.filter(t => t.status === 'DONE').reduce((acc, t) => acc + t.points, 0), icon: '⭐', color: 'bg-yellow-50 text-yellow-600' },
+    { label: 'Puan', value: userTasks.filter((t: { status: string; points: number }) => t.status === 'DONE').reduce((acc: number, t: { status: string; points: number }) => acc + t.points, 0), icon: '⭐', color: 'bg-yellow-50 text-yellow-600' },
   ];
 
   return (
@@ -105,7 +105,7 @@ export default async function DashboardPage() {
                 </Link>
               </div>
             ) : (
-              upcomingEvents.map((event) => (
+              upcomingEvents.map((event: { id: string; slug: string; date: Date; title: string; type: string; location: string }) => (
                 <Link
                   key={event.id}
                   href={`/etkinlikler/${event.slug}`}
@@ -143,7 +143,7 @@ export default async function DashboardPage() {
                 <p className="text-sm text-slate-500">Aktif görevin yok!</p>
               </div>
             ) : (
-              userTasks.map((task) => (
+              userTasks.map((task: { id: string; status: string; title: string; points: number }) => (
                 <div key={task.id} className="flex items-center gap-3 rounded-lg p-3">
                   <div className={`h-5 w-5 shrink-0 rounded-full border-2 ${task.status === 'DONE' ? 'border-green-500 bg-green-500' : 'border-slate-300'}`} />
                   <div className="min-w-0 flex-1">
@@ -164,7 +164,7 @@ export default async function DashboardPage() {
             <h2 className="text-base font-extrabold text-slate-900">📋 Başvurularım</h2>
           </div>
           <div className="p-2">
-            {userApplications.map((app) => (
+            {userApplications.map((app: { id: string; fullName: string; createdAt: Date; status: string }) => (
               <div key={app.id} className="flex items-center justify-between rounded-lg p-3 border-b border-slate-100 last:border-0">
                 <div>
                   <div className="text-[13px] font-medium text-slate-700">{app.fullName}</div>
