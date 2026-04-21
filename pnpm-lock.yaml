@@ -7,6 +7,19 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@prisma/client':
+        specifier: ^6.19.3
+        version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
+      bcryptjs:
+        specifier: ^3.0.3
+        version: 3.0.3
+      next-auth:
+        specifier: ^4.24.14
+        version: 4.24.14(next@15.2.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      sonner:
+        specifier: ^1.7.4
+        version: 1.7.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
     devDependencies:
       turbo:
         specifier: latest
@@ -15,10 +28,10 @@ importers:
   apps/web:
     dependencies:
       '@prisma/client':
-        specifier: ^6.4.1
+        specifier: ^6.19.3
         version: 6.19.3(prisma@6.19.3(typescript@5.9.3))(typescript@5.9.3)
       bcryptjs:
-        specifier: ^3.0.2
+        specifier: ^3.0.3
         version: 3.0.3
       clsx:
         specifier: ^2.1.1
@@ -30,7 +43,7 @@ importers:
         specifier: 15.2.8
         version: 15.2.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       next-auth:
-        specifier: ^4.24.11
+        specifier: ^4.24.14
         version: 4.24.14(next@15.2.8(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react:
         specifier: ^19.0.0
