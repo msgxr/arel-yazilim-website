@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Section, { SectionHeader } from '@/components/ui/Section';
-import ContactForm from '@/features/contact-form/ContactForm';
+import ContactForm from '@/features/contact/ContactForm';
+
 import { siteConfig } from '@/content/site';
 
 export const metadata: Metadata = {

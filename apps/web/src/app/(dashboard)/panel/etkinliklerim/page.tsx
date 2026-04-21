@@ -5,140 +5,128 @@ import { formatDate } from '@/lib/utils';
 
 export const metadata: Metadata = { title: 'Etkinliklerim | Üye Paneli' };
 
-// Mock: which events this user has registered for
-const registeredEventIds = ['evt-001', 'evt-002', 'evt-006', 'evt-007', 'evt-008'];
-const attendedEventIds = ['evt-006', 'evt-007', 'evt-008'];
+/* ── Mock: user's registered events ──────────────────────────── */
+const REGISTERED_IDS = ['evt-001', 'evt-002', 'evt-006', 'evt-007', 'evt-008'];
+const ATTENDED_IDS   = ['evt-006', 'evt-007', 'evt-008'];
 
+/* ─────────────────────────────────────────────────────────────── */
 export default function EtkinliklerimPage() {
   const myUpcoming = events.filter(
-    (e) => registeredEventIds.includes(e.id) && (e.status === 'upcoming' || e.status === 'ongoing'),
+    (e) => REGISTERED_IDS.includes(e.id) && (e.status === 'upcoming' || e.status === 'ongoing'),
   );
   const myPast = events.filter(
-    (e) => registeredEventIds.includes(e.id) && e.status === 'past',
+    (e) => REGISTERED_IDS.includes(e.id) && e.status === 'past',
   );
 
+  const STATS = [
+    { label: 'Toplam Kayıt', value: REGISTERED_IDS.length, icon: '📋', textColor: 'text-brand-DEFAULT' },
+    { label: 'Katıldım',     value: ATTENDED_IDS.length,   icon: '✅', textColor: 'text-green-700'     },
+    { label: 'Yaklaşan',     value: myUpcoming.length,      icon: '⏳', textColor: 'text-purple-600'    },
+  ] as const;
+
   return (
-    <div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '28px' }}>
+    <div className="space-y-8">
+
+      {/* ── Header ── */}
+      <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 style={{ fontSize: '24px', fontWeight: 900, color: 'var(--text)', marginBottom: '6px', letterSpacing: '-0.5px' }}>
+          <h1 className="mb-1.5 text-2xl font-black tracking-tight text-slate-900">
             Etkinliklerim
           </h1>
-          <p style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
-            Kayıt olduğun ve katıldığın etkinlikler.
-          </p>
+          <p className="text-sm text-slate-500">Kayıt olduğun ve katıldığın etkinlikler.</p>
         </div>
-        <Link href="/etkinlikler" className="btn btn-primary btn-sm">
+        <Link href="/etkinlikler" className="btn btn-primary btn-sm shrink-0">
           Yeni Etkinlik Bul
         </Link>
       </div>
 
-      {/* Summary stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '32px' }}>
-        {[
-          { label: 'Toplam Kayıt', value: registeredEventIds.length, icon: '📋', color: 'var(--brand)' },
-          { label: 'Katıldım', value: attendedEventIds.length, icon: '✅', color: '#15803D' },
-          { label: 'Yaklaşan', value: myUpcoming.length, icon: '⏳', color: '#7C3AED' },
-        ].map(({ label, value, icon, color }) => (
-          <div key={label} style={{ padding: '20px', background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)' }}>
-            <div style={{ fontSize: '24px', marginBottom: '8px' }}>{icon}</div>
-            <div style={{ fontSize: '28px', fontWeight: 900, color, lineHeight: 1, marginBottom: '4px' }}>{value}</div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{label}</div>
+      {/* ── Summary stats ── */}
+      <div className="grid grid-cols-3 gap-4">
+        {STATS.map(({ label, value, icon, textColor }) => (
+          <div key={label} className="rounded-xl border border-slate-200 bg-white p-5">
+            <div className="mb-2 text-[22px]" aria-hidden="true">{icon}</div>
+            <div className={`text-[28px] font-black leading-none ${textColor}`}>{value}</div>
+            <div className="mt-1 text-[12px] text-slate-500">{label}</div>
           </div>
         ))}
       </div>
 
-      {/* Upcoming */}
+      {/* ── Upcoming ── */}
       {myUpcoming.length > 0 && (
-        <div style={{ marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text)', marginBottom: '16px' }}>
+        <section aria-labelledby="upcoming-heading">
+          <h2 id="upcoming-heading" className="mb-4 text-[18px] font-extrabold text-slate-900">
             📅 Yaklaşan Etkinlikler
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div className="space-y-3">
             {myUpcoming.map((event) => (
-              <Link key={event.id} href={`/etkinlikler/${event.slug}`} style={{ textDecoration: 'none' }}>
-                <article
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '16px',
-                    padding: '18px 22px',
-                    background: '#fff',
-                    borderRadius: 'var(--radius-lg)',
-                    border: '1.5px solid var(--border)',
-                    borderLeft: '4px solid var(--brand)',
-                    transition: 'var(--transition)',
-                  }}
-                  className="card"
-                >
-                  <div style={{ flexShrink: 0, textAlign: 'center', minWidth: '52px', padding: '8px', background: 'var(--brand-soft)', borderRadius: 'var(--radius-md)' }}>
-                    <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--brand)', textTransform: 'uppercase' }}>
-                      {new Date(event.date).toLocaleDateString('tr-TR', { month: 'short' })}
-                    </div>
-                    <div style={{ fontSize: '22px', fontWeight: 900, color: 'var(--brand)', lineHeight: 1 }}>
-                      {new Date(event.date).getDate()}
-                    </div>
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 800, color: 'var(--text)', fontSize: '15px', marginBottom: '4px' }}>{event.title}</div>
-                    <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                      {event.type} · {event.location}
-                    </div>
-                  </div>
-                  <span style={{ padding: '5px 12px', borderRadius: '999px', background: '#DCFCE7', color: '#15803D', fontSize: '11px', fontWeight: 700, flexShrink: 0 }}>
-                    Kayıtlısın
+              <Link
+                key={event.id}
+                href={`/etkinlikler/${event.slug}`}
+                className="card flex items-center gap-4 rounded-xl border-l-4 border-l-brand-DEFAULT px-6 py-4 no-underline"
+              >
+                {/* Date chip */}
+                <div className="flex shrink-0 min-w-[52px] flex-col items-center rounded-lg bg-brand-soft px-2 py-1.5 text-center">
+                  <span className="text-[11px] font-extrabold uppercase text-brand-DEFAULT leading-none">
+                    {new Date(event.date).toLocaleDateString('tr-TR', { month: 'short' })}
                   </span>
-                </article>
+                  <span className="text-[22px] font-black leading-none text-brand-DEFAULT">
+                    {new Date(event.date).getDate()}
+                  </span>
+                </div>
+                {/* Meta */}
+                <div className="flex-1 min-w-0">
+                  <div className="text-[15px] font-extrabold text-slate-900">{event.title}</div>
+                  <div className="mt-1 text-[13px] text-slate-500">
+                    {event.type} · {event.location}
+                  </div>
+                </div>
+                {/* Status badge */}
+                <span className="shrink-0 rounded-full bg-green-100 px-3 py-1 text-[11px] font-bold text-green-700">
+                  Kayıtlısın
+                </span>
               </Link>
             ))}
           </div>
-        </div>
+        </section>
       )}
 
-      {/* Past */}
+      {/* ── Past ── */}
       {myPast.length > 0 && (
-        <div>
-          <h2 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text)', marginBottom: '16px' }}>
+        <section aria-labelledby="past-heading">
+          <h2 id="past-heading" className="mb-4 text-[18px] font-extrabold text-slate-900">
             🗂️ Geçmiş Etkinlikler
           </h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div className="space-y-2.5">
             {myPast.map((event) => {
-              const attended = attendedEventIds.includes(event.id);
+              const attended = ATTENDED_IDS.includes(event.id);
               return (
-                <Link key={event.id} href={`/etkinlikler/${event.slug}`} style={{ textDecoration: 'none' }}>
-                  <article
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '16px',
-                      padding: '14px 20px',
-                      background: '#fff',
-                      borderRadius: 'var(--radius-lg)',
-                      border: '1.5px solid var(--border)',
-                      opacity: 0.8,
-                      transition: 'var(--transition)',
-                    }}
-                    className="card"
-                  >
-                    <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 700, color: 'var(--text)', fontSize: '14px', marginBottom: '3px' }}>{event.title}</div>
-                      <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{formatDate(event.date)} · {event.type}</div>
+                <Link
+                  key={event.id}
+                  href={`/etkinlikler/${event.slug}`}
+                  className="card flex items-center gap-4 rounded-xl px-5 py-3.5 opacity-80 no-underline hover:opacity-100"
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[14px] font-bold text-slate-900">{event.title}</div>
+                    <div className="mt-0.5 text-[12px] text-slate-500">
+                      {formatDate(event.date)} · {event.type}
                     </div>
-                    <span style={{
-                      padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: 700,
-                      background: attended ? '#DCFCE7' : '#F3F4F6',
-                      color: attended ? '#15803D' : '#6B7280',
-                      flexShrink: 0,
-                    }}>
-                      {attended ? '✓ Katıldım' : 'Katılmadım'}
-                    </span>
-                  </article>
+                  </div>
+                  <span
+                    className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold ${
+                      attended
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-slate-100 text-slate-500'
+                    }`}
+                  >
+                    {attended ? '✓ Katıldım' : 'Katılmadım'}
+                  </span>
                 </Link>
               );
             })}
           </div>
-        </div>
+        </section>
       )}
+
     </div>
   );
 }

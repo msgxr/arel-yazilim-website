@@ -1,9 +1,6 @@
 import type { NextConfig } from 'next';
 
-const isProd = process.env.NODE_ENV === 'production' || !!process.env.GITHUB_ACTIONS;
-
 const nextConfig: NextConfig = {
-  
   // Strict React mode
   reactStrictMode: true,
 
@@ -13,18 +10,14 @@ const nextConfig: NextConfig = {
 
   // Static export for GitHub Pages
   output: 'export',
-  // Disable App Router lint errors for static export if any
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
 
-  // Image optimization
+  // Image optimization — unoptimized required for static export
   images: {
-    unoptimized: true, // Required for Next.js static export
+    unoptimized: true,
   },
 
-  // Note: headers() and redirects() have been removed because they are not supported
-  // with 'output: export' (they require a Node.js server to run).
-  // GitHub Pages is a static host.
+  // Note: headers() and redirects() not supported with 'output: export'.
+  // GitHub Pages is a static host — no Node.js runtime.
 };
 
 export default nextConfig;

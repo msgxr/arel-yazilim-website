@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Section, { SectionHeader } from '@/components/ui/Section';
 import { siteConfig, faqItems } from '@/content/site';
+import MembershipForm from '@/features/membership/MembershipForm';
 
 export const metadata: Metadata = {
   title: 'Üyelik Başvurusu',
@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/uyelik' },
 };
 
-const benefits = [
+/* ── Benefits data ─────────────────────────────────────────── */
+const BENEFITS = [
   {
     icon: '🚀',
     title: 'Gerçek Projelerde Yer Al',
@@ -40,25 +41,51 @@ const benefits = [
     title: 'Sosyal Topluluk',
     description: 'Aynı ilgi alanlarını paylaşan yüzlerce öğrenciyle bağlantı kur.',
   },
-];
+] as const;
 
+/* ── Stats ── */
+const STATS = [
+  { value: '250+', label: 'Aktif Üye'   },
+  { value: '40+',  label: 'Etkinlik'    },
+  { value: '%100', label: 'Ücretsiz'    },
+  { value: '2022', label: 'Kuruluş'     },
+] as const;
+
+/* ─────────────────────────────────────────────────────────────── */
 export default function UyelikPage() {
   return (
     <>
+      {/* ── HERO + FORM ─────────────────────────────────────── */}
       <Section aria-labelledby="uyelik-heading">
         <div className="container-site">
-          <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-            {/* Content */}
+          <div className="grid gap-16 lg:grid-cols-[1fr_480px]">
+
+            {/* ── Left: info ── */}
             <div>
               <SectionHeader
                 label="Başvuru"
                 title={<>Aramıza <span className="text-brand-DEFAULT">Katıl</span></>}
-                description="Üyelik tamamen ücretsiz ve tüm İstanbul Arel Üniversitesi öğrencilerine açıktır."
+                description="Üyelik tamamen ücretsiz ve tüm İstanbul Arel Üniversitesi öğrencilerine açıktır. Başvurun 1–3 iş günü içinde değerlendirilir."
                 id="uyelik-heading"
               />
+
+              {/* Stats bar */}
+              <div className="mb-10 grid grid-cols-4 divide-x divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white">
+                {STATS.map(({ value, label }) => (
+                  <div key={label} className="py-5 text-center">
+                    <div className="text-[22px] font-black text-brand-DEFAULT">{value}</div>
+                    <div className="mt-0.5 text-[11px] font-semibold text-slate-500">{label}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Benefits grid */}
               <div className="grid gap-4 sm:grid-cols-2">
-                {benefits.map((b) => (
-                  <div key={b.title} className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md">
+                {BENEFITS.map((b) => (
+                  <div
+                    key={b.title}
+                    className="flex gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-DEFAULT/30 hover:shadow-md"
+                  >
                     <span className="shrink-0 text-2xl" aria-hidden="true">{b.icon}</span>
                     <div>
                       <div className="mb-1 font-bold text-slate-800">{b.title}</div>
@@ -69,39 +96,15 @@ export default function UyelikPage() {
               </div>
             </div>
 
-            {/* Sidebar CTA */}
-            <aside aria-label="Üyelik Başvurusu">
-              <div className="sticky top-24 rounded-2xl border border-brand-DEFAULT/30 bg-brand-soft p-8">
-                <div className="mb-4 text-4xl" aria-hidden="true">🎓</div>
-                <h2 className="mb-3 text-2xl font-extrabold text-slate-800">
-                  Hemen Başvur
-                </h2>
-                <p className="mb-6 text-sm leading-relaxed text-slate-600">
-                  E-posta ile başvurunu gönder. Yönetim ekibimiz en kısa sürede seninle iletişime geçecek.
-                </p>
-                <a
-                  href={`mailto:${siteConfig.email}?subject=Üyelik Başvurusu&body=Merhaba, üyelik başvurusunda bulunmak istiyorum.%0A%0AAdım:%0ABölüm:%0ASınıf:%0AMotivasyonum:`}
-                  className="mb-5 flex w-full items-center justify-center gap-2.5 rounded-md bg-brand-DEFAULT px-6 py-4 text-base font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-vibrant hover:shadow-brand-lg"
-                >
-                  E-posta ile Başvur
-                </a>
-                <p className="text-center text-xs text-slate-400">veya</p>
-                <Link
-                  href="/iletisim"
-                  className="mt-5 flex w-full items-center justify-center gap-2.5 rounded-md border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 transition-all hover:border-brand-DEFAULT"
-                >
-                  İletişim Formu
-                </Link>
-                <div className="mt-6 rounded-lg bg-white/70 p-4 text-center text-xs text-slate-500">
-                  📅 Yanıt süresi: 1–3 iş günü
-                </div>
-              </div>
-            </aside>
+            {/* ── Right: form ── */}
+            <div className="lg:sticky lg:top-24 lg:self-start">
+              <MembershipForm />
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* FAQ */}
+      {/* ── FAQ ─────────────────────────────────────────────── */}
       <Section variant="alt" aria-labelledby="faq-heading">
         <div className="container-site">
           <SectionHeader
@@ -123,7 +126,7 @@ export default function UyelikPage() {
                     className="h-5 w-5 shrink-0 text-slate-400 transition-transform group-open:rotate-180"
                     aria-hidden="true"
                   >
-                    <path d="m6 9 6 6 6-6"/>
+                    <path d="m6 9 6 6 6-6" />
                   </svg>
                 </summary>
                 <div className="border-t border-slate-100 px-5 pb-5 pt-4 text-sm leading-7 text-slate-600">

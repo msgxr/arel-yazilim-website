@@ -14,7 +14,12 @@ export default function MarketingLayout({
       <ScrollProgress />
       <UniversityBar />
       <Navbar />
-      <main id="main-content" tabIndex={-1} className="pt-[72px]">
+      {/* pt accounts for fixed UniversityBar (--unibar-h) + Navbar (--nav-h) */}
+      <main
+        id="main-content"
+        tabIndex={-1}
+        style={{ paddingTop: 'calc(var(--nav-h) + var(--unibar-h))' }}
+      >
         {children}
       </main>
       <Footer />

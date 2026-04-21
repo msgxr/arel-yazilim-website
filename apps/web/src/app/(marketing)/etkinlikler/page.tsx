@@ -112,13 +112,25 @@ function EventCard({ event }: { event: (typeof events)[number] }) {
           >
             Detay
           </Link>
-          <Link
-            href="/uyelik"
-            className="inline-flex items-center gap-1.5 rounded-md bg-brand-DEFAULT px-5 py-2 text-[13px] font-bold text-white transition-all hover:bg-brand-vibrant"
-          >
-            Kayıt Ol
-          </Link>
+          {event.registrationUrl ? (
+            <a
+              href={event.registrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md bg-brand-DEFAULT px-5 py-2 text-[13px] font-bold text-white transition-all hover:bg-brand-vibrant"
+            >
+              Kayıt Ol ↗
+            </a>
+          ) : (
+            <Link
+              href="/iletisim"
+              className="inline-flex items-center gap-1.5 rounded-md bg-brand-DEFAULT px-5 py-2 text-[13px] font-bold text-white transition-all hover:bg-brand-vibrant"
+            >
+              Bilgi Al
+            </Link>
+          )}
         </div>
+
       </div>
     </article>
   );

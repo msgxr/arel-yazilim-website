@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://arelsoftwareclub.github.io';
+  const base = 'https://arelsoftwareclub.github.io/website';
   const now = new Date();
 
   const staticRoutes = [
@@ -18,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/kariyer', priority: 0.7 },
     { url: '/ari-lab', priority: 0.8 },
     { url: '/kurumsal', priority: 0.7 },
-    // New pages
     { url: '/blog', priority: 0.8 },
     { url: '/topluluk', priority: 0.85 },
     { url: '/topluluk/ai', priority: 0.7 },
@@ -27,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/topluluk/data', priority: 0.7 },
     { url: '/topluluk/mobile', priority: 0.7 },
     { url: '/sponsorlar', priority: 0.75 },
-    // Legal
     { url: '/gizlilik', priority: 0.3 },
     { url: '/yonetmelik', priority: 0.3 },
   ];

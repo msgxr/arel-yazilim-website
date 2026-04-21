@@ -168,9 +168,21 @@ export default async function EtkinlikDetayPage({ params }: Props) {
                 </div>
               )}
               {event.status === 'upcoming' ? (
-                <Link href="/uyelik" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Kayıt Ol
-                </Link>
+                event.registrationUrl ? (
+                  <a
+                    href={event.registrationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                    style={{ width: '100%', justifyContent: 'center' }}
+                  >
+                    Kayıt Ol ↗
+                  </a>
+                ) : (
+                  <Link href="/iletisim" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+                    Bilgi Al / Kayıt
+                  </Link>
+                )
               ) : (
                 <div style={{ padding: '12px', background: '#F3F4F6', borderRadius: 'var(--radius-md)', textAlign: 'center', fontSize: '13px', color: 'var(--text-muted)', fontWeight: 600 }}>
                   Bu etkinlik sona erdi

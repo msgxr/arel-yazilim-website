@@ -1,59 +1,47 @@
 import type { Metadata } from 'next';
+import { MOCK_USER } from '@/lib/mock-user';
 
 export const metadata: Metadata = { title: 'Profilim | Üye Paneli' };
 
+/* ─────────────────────────────────────────────────────────────── */
 export default function ProfilimPage() {
-  const mockUser = {
-    name: 'Örnek Üye',
-    initials: 'ÖÜ',
-    email: 'ornek.uye@istanbularel.edu.tr',
-    role: 'Üye',
-    faculty: 'Yazılım Mühendisliği',
-    year: '2. Sınıf',
-    joinedAt: 'Ekim 2024',
-    github: 'github.com/ornek-uye',
-    linkedin: 'linkedin.com/in/ornek-uye',
-    bio: 'Full-stack geliştirme ve makine öğrenmesi ilgi alanlarım. Web Ekibi üyesi.',
-    interests: ['Web Geliştirme', 'Yapay Zeka', 'Open Source'],
-    skills: ['React', 'TypeScript', 'Python', 'Node.js'],
-  };
+  const u = MOCK_USER;
 
   return (
-    <div>
-      <h1 style={{ fontSize: '24px', fontWeight: 900, color: 'var(--text)', marginBottom: '8px', letterSpacing: '-0.5px' }}>
-        Profilim
-      </h1>
-      <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '28px' }}>
-        Profil bilgilerini görüntüle ve düzenle.
-      </p>
+    <div className="space-y-8">
 
-      <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: '24px' }}>
-        {/* Profile card */}
-        <div>
-          <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', overflow: 'hidden', marginBottom: '16px' }}>
-            <div style={{ height: '80px', background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)' }} />
-            <div style={{ padding: '0 24px 24px', marginTop: '-28px' }}>
-              <div
-                style={{
-                  width: '56px', height: '56px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-v) 100%)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '18px', fontWeight: 900, color: '#fff',
-                  border: '3px solid #fff', marginBottom: '12px',
-                }}
-              >
-                {mockUser.initials}
+      {/* ── Page title ── */}
+      <div>
+        <h1 className="mb-1.5 text-2xl font-black tracking-tight text-slate-900">Profilim</h1>
+        <p className="text-sm text-slate-500">Profil bilgilerini görüntüle ve düzenle.</p>
+      </div>
+
+      {/* ── Two-column grid ── */}
+      <div className="grid gap-6 lg:grid-cols-[300px_1fr]">
+
+        {/* ── Sidebar ── */}
+        <div className="space-y-4">
+
+          {/* Avatar + info card */}
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+            {/* Cover gradient */}
+            <div className="h-20 bg-gradient-to-br from-brand-DEFAULT to-brand-vibrant" />
+            <div className="px-6 pb-6" style={{ marginTop: '-28px' }}>
+              {/* Avatar */}
+              <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full border-[3px] border-white bg-gradient-to-br from-brand-DEFAULT to-brand-vibrant text-lg font-black text-white shadow-md">
+                {u.initials}
               </div>
-              <div style={{ fontWeight: 900, color: 'var(--text)', fontSize: '18px', marginBottom: '2px' }}>{mockUser.name}</div>
-              <div style={{ fontSize: '13px', color: 'var(--brand)', fontWeight: 600, marginBottom: '12px' }}>{mockUser.role}</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div className="text-[18px] font-black text-slate-900">{u.name}</div>
+              <div className="mb-4 text-[13px] font-semibold text-brand-DEFAULT">{u.role}</div>
+              <div className="space-y-2">
                 {[
-                  { icon: '🎓', label: mockUser.faculty },
-                  { icon: '📚', label: mockUser.year },
-                  { icon: '📅', label: `Üyelik: ${mockUser.joinedAt}` },
+                  { icon: '🎓', label: u.faculty    },
+                  { icon: '📚', label: u.year       },
+                  { icon: '📅', label: `Üyelik: ${u.joinedAt}` },
                 ].map(({ icon, label }) => (
-                  <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-2)' }}>
-                    <span>{icon}</span>{label}
+                  <div key={label} className="flex items-center gap-2 text-[13px] text-slate-600">
+                    <span aria-hidden="true">{icon}</span>
+                    {label}
                   </div>
                 ))}
               </div>
@@ -61,38 +49,60 @@ export default function ProfilimPage() {
           </div>
 
           {/* Social links */}
-          <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', padding: '20px' }}>
-            <div style={{ fontWeight: 800, color: 'var(--text)', fontSize: '13px', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '14px' }}>
+          <div className="rounded-xl border border-slate-200 bg-white p-5">
+            <div className="mb-4 text-[11px] font-extrabold uppercase tracking-[1.5px] text-slate-500">
               Sosyal
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <a href={`https://${mockUser.github}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-2)', textDecoration: 'none', fontWeight: 600 }}>
-                🐙 {mockUser.github}
+            <div className="space-y-2.5">
+              <a
+                href={`https://${u.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[13px] font-semibold text-slate-700 hover:text-brand-DEFAULT"
+              >
+                {/* GitHub icon */}
+                <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49v-1.71c-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 7.4c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.27 10.27 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+                </svg>
+                {u.github}
               </a>
-              <a href={`https://${mockUser.linkedin}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'var(--text-2)', textDecoration: 'none', fontWeight: 600 }}>
-                💼 {mockUser.linkedin}
+              <a
+                href={`https://${u.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[13px] font-semibold text-slate-700 hover:text-brand-DEFAULT"
+              >
+                {/* LinkedIn icon */}
+                <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.55V9H7.12v11.45Z"/>
+                </svg>
+                {u.linkedin}
               </a>
             </div>
           </div>
         </div>
 
-        {/* Details */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        {/* ── Main content ── */}
+        <div className="space-y-4">
+
           {/* Bio */}
-          <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', padding: '24px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-              <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)' }}>Hakkımda</h2>
+          <div className="rounded-xl border border-slate-200 bg-white p-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-base font-extrabold text-slate-900">Hakkımda</h2>
               <button className="btn btn-ghost btn-sm">Düzenle</button>
             </div>
-            <p style={{ fontSize: '14px', color: 'var(--text-2)', lineHeight: 1.7 }}>{mockUser.bio}</p>
+            <p className="text-[14px] leading-7 text-slate-600">{u.bio}</p>
           </div>
 
           {/* Interests */}
-          <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', padding: '24px' }}>
-            <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)', marginBottom: '14px' }}>İlgi Alanları</h2>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {mockUser.interests.map((interest) => (
-                <span key={interest} style={{ padding: '6px 14px', borderRadius: '999px', background: 'var(--brand-soft)', color: 'var(--brand)', fontSize: '13px', fontWeight: 600, border: '1px solid rgba(37,99,235,0.15)' }}>
+          <div className="rounded-xl border border-slate-200 bg-white p-6">
+            <h2 className="mb-4 text-base font-extrabold text-slate-900">İlgi Alanları</h2>
+            <div className="flex flex-wrap gap-2">
+              {u.interests.map((interest) => (
+                <span
+                  key={interest}
+                  className="rounded-full border border-brand-DEFAULT/15 bg-brand-soft px-3.5 py-1.5 text-[13px] font-semibold text-brand-DEFAULT"
+                >
                   {interest}
                 </span>
               ))}
@@ -100,34 +110,40 @@ export default function ProfilimPage() {
           </div>
 
           {/* Skills */}
-          <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', padding: '24px' }}>
-            <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)', marginBottom: '14px' }}>Beceriler</h2>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {mockUser.skills.map((skill) => (
-                <span key={skill} style={{ padding: '6px 14px', borderRadius: 'var(--radius-md)', background: '#F3F4F6', color: 'var(--text)', fontSize: '13px', fontWeight: 600 }}>
+          <div className="rounded-xl border border-slate-200 bg-white p-6">
+            <h2 className="mb-4 text-base font-extrabold text-slate-900">Beceriler</h2>
+            <div className="flex flex-wrap gap-2">
+              {u.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-lg bg-slate-100 px-3.5 py-1.5 text-[13px] font-semibold text-slate-700"
+                >
                   {skill}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Contact */}
-          <div style={{ background: '#fff', borderRadius: 'var(--radius-lg)', border: '1.5px solid var(--border)', padding: '24px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
-              <h2 style={{ fontSize: '16px', fontWeight: 800, color: 'var(--text)' }}>Hesap Bilgileri</h2>
+          {/* Account info */}
+          <div className="rounded-xl border border-slate-200 bg-white p-6">
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-base font-extrabold text-slate-900">Hesap Bilgileri</h2>
               <button className="btn btn-ghost btn-sm">Düzenle</button>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                <span style={{ color: 'var(--text-muted)' }}>E-posta</span>
-                <span style={{ fontWeight: 600, color: 'var(--text)' }}>{mockUser.email}</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                <span style={{ color: 'var(--text-muted)' }}>Üyelik Tarihi</span>
-                <span style={{ fontWeight: 600, color: 'var(--text)' }}>{mockUser.joinedAt}</span>
-              </div>
-            </div>
+            <dl className="space-y-3">
+              {[
+                { term: 'E-posta',        value: u.email    },
+                { term: 'Üyelik Tarihi',  value: u.joinedAt },
+                { term: 'Bölüm',          value: u.department },
+              ].map(({ term, value }) => (
+                <div key={term} className="flex justify-between text-[13px]">
+                  <dt className="text-slate-500">{term}</dt>
+                  <dd className="font-semibold text-slate-900">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
+
         </div>
       </div>
     </div>

@@ -1,4 +1,16 @@
-// ── Type Definitions ──────────────────────────────────────────
+/**
+ * @file content/team.ts
+ * @description Yönetim kadrosu ve departman verileri.
+ *
+ * Kullanım:
+ *   - `managementTeam`  → Ana sayfa hero + /ekip sayfası
+ *   - `departments`     → /ekip sayfası departman listesi
+ *
+ * Auth sistemi devreye girdiğinde bu statik veri API'dan çekilecek.
+ */
+
+// ── Type Definitions ───────────────────────────────────────────
+
 export interface Member {
   id: string;
   name: string;

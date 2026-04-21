@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import ScrollProgress from '@/components/ui/ScrollProgress';
+import BackToTop from '@/components/ui/BackToTop';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,7 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://arelsoftwareclub.github.io'),
+  metadataBase: new URL('https://arelsoftwareclub.github.io/website'),
   title: {
     default: 'Arel Yazılım Kulübü | İstanbul Arel Üniversitesi',
     template: '%s | Arel Yazılım Kulübü',
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
-    url: 'https://arelsoftwareclub.github.io',
+    url: 'https://arelsoftwareclub.github.io/website',
     siteName: 'Arel Yazılım Kulübü',
     title: 'Arel Yazılım Kulübü | İstanbul Arel Üniversitesi',
     description:
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://arelsoftwareclub.github.io',
+    canonical: 'https://arelsoftwareclub.github.io/website',
   },
 };
 
@@ -79,12 +81,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
-      <body className={`${inter.variable} antialiased`}>
-        <a href="#main-content" className="skip-to-content">
+      <body className={`${inter.variable} antialiased font-sans`}>
+        <a href="#main-content" className="skip-to-content focus:not-sr-only">
           Ana içeriğe geç
         </a>
-        <div id="progress-bar" aria-hidden="true" />
-        {children}
+        <ScrollProgress />
+        <main id="main-content">
+          {children}
+        </main>
+        <BackToTop />
         <div id="toast-container" role="alert" aria-live="polite" />
       </body>
     </html>

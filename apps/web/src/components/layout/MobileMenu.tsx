@@ -20,9 +20,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       firstLinkRef.current?.focus();
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = 'auto'; };
+    return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
   return (
@@ -31,24 +31,15 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Mobil Menü"
-      style={{
-        position: 'fixed',
-        left: 0, right: 0, top: 'var(--nav-h)',
-        bottom: 0,
-        zIndex: 100,
-        background: 'rgba(255,255,255,0.98)',
-        backdropFilter: 'blur(10px)',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '24px',
-        transition: 'all 0.3s ease',
-        opacity: isOpen ? 1 : 0,
-        visibility: isOpen ? 'visible' : 'hidden',
-        transform: isOpen ? 'translateY(0)' : 'translateY(-10px)',
-      }}
+      className={`fixed left-0 right-0 bottom-0 z-40 flex flex-col bg-white/98 backdrop-blur-xl transition-all duration-300 ${
+        isOpen
+          ? 'opacity-100 visible translate-y-0'
+          : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+      }`}
+      style={{ top: 'calc(var(--nav-h) + var(--unibar-h))' }}
     >
-      <nav aria-label="Mobil Navigasyon" style={{ flex: 1 }}>
-        <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      <nav aria-label="Mobil Navigasyon" className="flex-1 p-6">
+        <ul className="flex flex-col gap-2">
           {NAV_LINKS.map((link, index) => {
             const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
             return (
@@ -57,16 +48,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   ref={index === 0 ? firstLinkRef : undefined}
                   href={link.href}
                   onClick={onClose}
-                  style={{
-                    display: 'block',
-                    padding: '16px',
-                    borderRadius: '12px',
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    color: active ? 'var(--brand)' : 'var(--text)',
-                    background: active ? 'var(--brand-soft)' : 'transparent',
-                    textDecoration: 'none',
-                  }}
+                  className={`block rounded-xl px-4 py-4 text-lg font-bold transition-all ${
+                    active
+                      ? 'bg-brand-soft text-brand-DEFAULT'
+                      : 'text-slate-800 hover:bg-slate-50 hover:text-brand-DEFAULT'
+                  }`}
+                  aria-current={active ? 'page' : undefined}
                 >
                   {link.label}
                 </Link>
@@ -75,12 +62,12 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           })}
         </ul>
       </nav>
-      <div style={{ marginTop: 'auto', paddingTop: '24px', borderTop: '1px solid var(--border)' }}>
+
+      <div className="mt-auto border-t border-slate-100 p-6">
         <Link
           href="/uyelik"
           onClick={onClose}
-          className="btn btn-primary btn-lg"
-          style={{ width: '100%', justifyContent: 'center' }}
+          className="btn btn-primary btn-lg flex w-full items-center justify-center"
         >
           Üye Ol Hemen →
         </Link>

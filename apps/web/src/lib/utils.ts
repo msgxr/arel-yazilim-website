@@ -1,14 +1,30 @@
+/**
+ * @file lib/utils.ts
+ * @description Proje genelinde kullanılan yardımcı fonksiyonlar.
+ *
+ *   - `cn`             → Tailwind sınıf birleştirici (clsx + tailwind-merge)
+ *   - `formatDate`     → Türkçe tarih formatlayıcı
+ *   - `formatEventDate`→ Etkinlik başlığı için üst büyük harf ay + yıl
+ *   - `truncate`       → Metin kısaltma
+ *   - `getInitials`    → İsimden baş harf üretimi
+ */
+
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
+/** Tailwind sınıflarını birleştir ve çakışmaları çöz. */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 /**
- * Format a date string to Turkish locale
+ * Verilen ISO tarih dizesini Türkçe locale'de formatlar.
+ * @example formatDate('2026-04-15')  → "15 Nisan 2026"
  */
-export function formatDate(dateStr: string, options?: Intl.DateTimeFormatOptions): string {
+export function formatDate(
+  dateStr: string,
+  options?: Intl.DateTimeFormatOptions,
+): string {
   const date = new Date(dateStr);
   return date.toLocaleDateString('tr-TR', {
     day: 'numeric',
@@ -19,7 +35,8 @@ export function formatDate(dateStr: string, options?: Intl.DateTimeFormatOptions
 }
 
 /**
- * Format a date to uppercase Turkish month + year (e.g. "NİSAN 2026")
+ * Etkinlik kartları için kısa tarih etiketi üretir (üst büyük harf).
+ * @example formatEventDate('2026-04-15')  → "NİSAN 2026"
  */
 export function formatEventDate(dateStr: string): string {
   const date = new Date(dateStr);
@@ -29,7 +46,8 @@ export function formatEventDate(dateStr: string): string {
 }
 
 /**
- * Truncate text to a max length with ellipsis
+ * Metni belirtilen uzunlukta keser, sonuna elipsis ekler.
+ * @example truncate('Merhaba dünya', 8)  → "Merhaba…"
  */
 export function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
@@ -37,12 +55,15 @@ export function truncate(text: string, maxLength: number): string {
 }
 
 /**
- * Generate initials from a full name
+ * Tam isimden baş harfleri üretir (maks 2 harf).
+ * @example getInitials('Kerim Can Karadağ')  → "KCK" → ilk iki sözcük: "KC"
  */
 export function getInitials(name: string): string {
   return name
-    .split(' ')
-    .map((n) => n[0])
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((n) => n[0] ?? '')
     .join('')
     .toUpperCase()
     .slice(0, 3);

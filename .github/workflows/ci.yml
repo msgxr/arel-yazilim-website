@@ -31,16 +31,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # Lint MUST pass before build
       - name: Lint
         run: pnpm --filter @arel/web lint
         env:
           CI: "true"
 
+      # Type check MUST pass before build
       - name: Type check
         run: pnpm --filter @arel/web type-check
 
+      # Build only runs if lint and type-check succeed
       - name: Build
         run: pnpm --filter @arel/web build
         env:
           GITHUB_ACTIONS: "true"
           NODE_ENV: production
+

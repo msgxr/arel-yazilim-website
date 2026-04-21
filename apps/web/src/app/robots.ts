@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next';export const dynamic = 'force-static';
-
+import type { MetadataRoute } from 'next';
+export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://arelsoftwareclub.github.io/sitemap.xml',
+    sitemap: 'https://arelsoftwareclub.github.io/website/sitemap.xml',
   };
 }
