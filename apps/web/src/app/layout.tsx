@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import { SessionProvider } from '@/components/providers/SessionProvider';
 import './globals.css';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import BackToTop from '@/components/ui/BackToTop';
+import { Toaster } from 'sonner';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -85,15 +87,27 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <body className={`${inter.variable} antialiased font-sans bg-slate-50 text-slate-900`}>
-        <a href="#main-content" className="skip-to-content">
-          Ana içeriğe geç
-        </a>
-        <ScrollProgress />
-        <main id="main-content" tabIndex={-1}>
-          {children}
-        </main>
-        <BackToTop />
-        <div id="toast-container" role="alert" aria-live="polite" />
+        <SessionProvider>
+          <a href="#main-content" className="skip-to-content">
+            Ana içeriğe geç
+          </a>
+          <ScrollProgress />
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
+          <BackToTop />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: '#1e293b',
+                color: '#fff',
+                border: '1px solid #334155',
+                borderRadius: '12px',
+              },
+            }}
+          />
+        </SessionProvider>
       </body>
     </html>
   );

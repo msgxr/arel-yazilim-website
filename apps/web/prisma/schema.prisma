@@ -1,0 +1,269 @@
+// Prisma Schema for Arel Software Club Platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────────────────────
+// USER & AUTH
+// ─────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  password      String
+  image         String?
+  role          String    @default("USER")
+  department    String?
+  year          String?
+  studentId     String?
+  bio           String?
+  linkedin      String?
+  github        String?
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLogin     DateTime?
+
+  // Relations
+  memberships    Membership[]
+  attendances    Attendance[]
+  tasks          Task[]
+  announcements  Announcement[]
+  events         Event[]
+  applications   Application[]
+}
+
+// ─────────────────────────────────────────────────────────────
+// MEMBERSHIP
+// ─────────────────────────────────────────────────────────────
+
+model Membership {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role        String   @default("MEMBER")
+  status      String   @default("ACTIVE")
+  memberSince DateTime @default(now())
+  memberUntil DateTime?
+  position    String?
+  notes       String?
+}
+
+// ─────────────────────────────────────────────────────────────
+// APPLICATION (Membership Applications)
+// ─────────────────────────────────────────────────────────────
+
+model Application {
+  id           String   @id @default(cuid())
+  userId       String?
+  user         User?    @relation(fields: [userId], references: [id])
+  fullName     String
+  email        String
+  phone       String
+  department   String
+  year         String
+  studentId    String?
+  motivation   String
+  experience   String?
+  source       String?
+  status       String   @default("PENDING")
+  reviewedBy   String?
+  reviewNotes  String?
+  reviewedAt   DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([status])
+  @@index([email])
+}
+
+// ─────────────────────────────────────────────────────────────
+// EVENTS
+// ─────────────────────────────────────────────────────────────
+
+model Event {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  longDescription String?
+  type        String
+  location    String
+  isOnline    Boolean  @default(false)
+  meetingUrl  String?
+  capacity    Int?
+  date        DateTime
+  endDate     DateTime?
+  registrationDeadline DateTime?
+  status      String   @default("DRAFT")
+  featured    Boolean  @default(false)
+  tags        String?
+  creatorId   String
+  creator     User     @relation(fields: [creatorId], references: [id])
+  agenda      String?
+  registrationUrl String?
+  requirements String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  attendances Attendance[]
+
+  @@index([status])
+  @@index([date])
+}
+
+// ─────────────────────────────────────────────────────────────
+// ATTENDANCE
+// ─────────────────────────────────────────────────────────────
+
+model Attendance {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eventId     String
+  event       Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  status      String   @default("REGISTERED")
+  checkedIn   Boolean  @default(false)
+  checkedInAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([userId, eventId])
+}
+
+// ─────────────────────────────────────────────────────────────
+// ANNOUNCEMENTS
+// ─────────────────────────────────────────────────────────────
+
+model Announcement {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  summary     String?
+  type        String   @default("GENERAL")
+  priority    String   @default("NORMAL")
+  isPinned    Boolean  @default(false)
+  isPublished Boolean  @default(true)
+  slug        String   @unique
+  metaTitle   String?
+  metaDesc    String?
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([isPublished])
+  @@index([publishedAt])
+}
+
+// ─────────────────────────────────────────────────────────────
+// PROJECTS
+// ─────────────────────────────────────────────────────────────
+
+model Project {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  longDescription String?
+  status      String   @default("IDEATION")
+  isFeatured  Boolean  @default(false)
+  techStack   String?
+  githubUrl   String?
+  liveUrl     String?
+  demoUrl     String?
+  teamName    String?
+  stars       Int      @default(0)
+  forks       Int      @default(0)
+  contributors Int     @default(0)
+  highlights  String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([status])
+}
+
+// ─────────────────────────────────────────────────────────────
+// SPONSORS
+// ─────────────────────────────────────────────────────────────
+
+model Sponsor {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  logoUrl     String?
+  website     String
+  tier        String
+  industry    String?
+  benefit     String?
+  since       Int?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([tier])
+}
+
+// ─────────────────────────────────────────────────────────────
+// TASKS (Gamification)
+// ─────────────────────────────────────────────────────────────
+
+model Task {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  status      String   @default("TODO")
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  eventId     String?
+  points      Int      @default(10)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([status])
+  @@index([userId])
+}
+
+// ─────────────────────────────────────────────────────────────
+// NOTIFICATIONS
+// ─────────────────────────────────────────────────────────────
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  title     String
+  message   String
+  link      String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime  @default(now())
+
+  @@index([userId, isRead])
+}
+
+// ─────────────────────────────────────────────────────────────
+// CONTACT MESSAGES
+// ─────────────────────────────────────────────────────────────
+
+model Contact {
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  subject    String?
+  message    String
+  isRead    Boolean  @default(false)
+  ipAddress  String?
+  createdAt  DateTime  @default(now())
+
+  @@index([isRead])
+}
