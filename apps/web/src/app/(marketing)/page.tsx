@@ -208,32 +208,59 @@ await community.join();`}</code>
             </div>
           </div>
         </div>
+      {/* ── PARTNERS SECTION (NEW) ─────────────────────────────────── */}
+      <section className="bg-slate-50 border-y border-slate-200 py-12 overflow-hidden">
+        <div className="container-site text-center">
+          <span className="mb-8 block text-[11px] font-bold uppercase tracking-[2px] text-slate-400">
+            Resmi İş Birliklerimiz & Partnerlerimiz
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-12 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            {/* Placeholder for university logo */}
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-slate-200 animate-pulse" />
+              <span className="text-lg font-black text-slate-400">AREL UNIV</span>
+            </div>
+            {/* Other partners */}
+            <div className="text-xl font-bold text-slate-400">GOOGLE CLOUD</div>
+            <div className="text-xl font-bold text-slate-400">MICROSOFT AZURE</div>
+            <div className="text-xl font-bold text-slate-400">AWS EDU</div>
+            <div className="text-xl font-bold text-slate-400">GITHUB CAMPUS</div>
+          </div>
+        </div>
       </section>
 
       {/* ── VALUES SECTION ─────────────────────────────────────────── */}
-      <section className="bg-white py-20" aria-labelledby="values-heading">
+      <section className="bg-white py-24" aria-labelledby="values-heading">
         <div className="container-site">
-          <div className="mb-12 max-w-2xl">
-            <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-600">
+          <div className="mb-16 text-center">
+            <span className="mb-3 block text-xs font-bold uppercase tracking-[2px] text-blue-600">
               Neden Katılmalısın?
             </span>
-            <h2 id="values-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-slate-900">
+            <h2 id="values-heading" className="text-[clamp(32px,4.5vw,48px)] font-black tracking-tighter text-slate-900">
               Sadece <span className="text-blue-600">Üye</span> Değil, <span className="text-blue-600">Gelecek</span> Kur
             </h2>
+            <div className="mx-auto mt-4 h-1.5 w-20 rounded-full bg-blue-600/10" />
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((item, i) => (
               <div 
                 key={item.title}
-                className="group relative rounded-2xl border border-slate-100 bg-slate-50/50 p-6 transition-all hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl hover:shadow-blue-500/5"
+                className="group relative rounded-2xl border border-slate-200 bg-slate-50/30 p-8 transition-all hover:-translate-y-2 hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/20 transition-transform group-hover:scale-110">
                   <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-slate-900">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-500">{item.description}</p>
+                <h3 className="mb-3 text-xl font-extrabold text-slate-900">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-500 font-medium">{item.description}</p>
+                
+                {/* Subtle indicator */}
+                <div className="absolute bottom-6 right-8 opacity-0 transition-opacity group-hover:opacity-100">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-4 w-4 text-blue-400">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
               </div>
             ))}
           </div>
@@ -457,61 +484,96 @@ await community.join();`}</code>
 
       {/* ── ANNOUNCEMENTS ─────────────────────────────────────────── */}
       {featuredAnnouncements.length > 0 && (
-        <section className="bg-slate-50 py-20" aria-labelledby="ann-heading">
+        <section className="bg-slate-50/80 py-24" aria-labelledby="ann-heading">
           <div className="container-site">
             <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <span className="mb-3 block text-xs font-bold uppercase tracking-[1.5px] text-blue-600">
-                  Güncel
+                <span className="mb-3 block text-xs font-bold uppercase tracking-[2px] text-blue-600">
+                  Topluluktan Haberler
                 </span>
-                <h2 id="ann-heading" className="text-[clamp(28px,4vw,42px)] font-black tracking-tight text-slate-900">
+                <h2 id="ann-heading" className="text-[clamp(32px,4.5vw,48px)] font-black tracking-tighter text-slate-900">
                   Son <span className="text-blue-600">Duyurular</span>
                 </h2>
               </div>
-              <Link href="/duyurular" className="btn btn-ghost btn-sm">
+              <Link href="/duyurular" className="btn btn-ghost btn-sm font-bold">
                 Tümünü Gör →
               </Link>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               {featuredAnnouncements.map((ann, i) => (
                 <Link
                   key={ann.id}
                   href={ann.url ?? '/duyurular'}
-                  className={`group flex items-start gap-5 rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg ${
-                    i === 0 ? 'border-l-4 border-l-blue-500' : ''
+                  className={`group flex items-start gap-6 rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:border-blue-300 hover:shadow-2xl ${
+                    i === 0 ? 'border-l-8 border-l-blue-600' : ''
                   }`}
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-500 group-hover:text-white">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all group-hover:bg-blue-600 group-hover:text-white">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-7 w-7">
                       <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
                       <path d="M13.73 21a2 2 0 0 1-3.46 0" />
                     </svg>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="mb-2 flex flex-wrap items-center gap-2">
-                      <AnnouncementBadge category={ann.category as 'Üyelik' | 'Yarışma' | 'Workshop' | 'Etkinlik' | 'Genel'} />
-                      <span className="text-xs text-slate-400">{formatDate(ann.date)}</span>
+                    <div className="mb-3 flex flex-wrap items-center gap-3">
+                      <AnnouncementBadge category={ann.category as any} />
+                      <span className="text-xs font-bold text-slate-400">{formatDate(ann.date)}</span>
                       {ann.deadline && (
-                        <span className="text-xs font-bold text-blue-600">
-                          Son Başvuru: {formatDate(ann.deadline)}
+                        <span className="rounded-full bg-red-50 px-3 py-1 text-[10px] font-black uppercase text-red-600">
+                          ⏳ Son Başvuru: {formatDate(ann.deadline)}
                         </span>
                       )}
                     </div>
-                    <div className="mb-1 font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <div className="mb-2 text-lg font-black text-slate-900 group-hover:text-blue-600 transition-colors">
                       {ann.title}
                     </div>
-                    <div className="text-sm leading-relaxed text-slate-500">{ann.summary}</div>
+                    <div className="text-sm font-medium leading-relaxed text-slate-500 line-clamp-2">{ann.summary}</div>
                   </div>
-                  <span className="shrink-0 text-sm font-semibold text-blue-600 transition-transform group-hover:translate-x-1">
-                    Detay →
-                  </span>
+                  <div className="ml-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-100 text-blue-600 transition-all group-hover:bg-blue-600 group-hover:text-white">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="h-4 w-4">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </Link>
               ))}
             </div>
           </div>
         </section>
       )}
+
+      {/* ── NEWSLETTER SECTION (NEW) ────────────────────────────────── */}
+      <section className="bg-white py-24 border-t border-slate-100">
+        <div className="container-site">
+          <div className="relative overflow-hidden rounded-[32px] bg-slate-900 p-8 md:p-16">
+            {/* Background elements */}
+            <div className="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-blue-600/20 to-transparent" />
+            <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-[80px]" />
+            
+            <div className="relative z-10 grid gap-12 lg:grid-cols-2 lg:items-center">
+              <div>
+                <h2 className="mb-4 text-[clamp(28px,4vw,42px)] font-black tracking-tight text-white">
+                  Gelişmelerden <span className="text-blue-400">Haberdar</span> Ol
+                </h2>
+                <p className="text-lg text-slate-400">
+                  Yeni etkinlikler, proje çağrıları ve teknoloji dünyasından seçmeler her hafta e-posta kutunda.
+                </p>
+              </div>
+              
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <input 
+                  type="email" 
+                  placeholder="E-posta adresin"
+                  className="flex-1 rounded-xl border border-slate-700 bg-slate-800/50 px-6 py-4 text-white outline-none transition-all focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10"
+                />
+                <button className="rounded-xl bg-blue-600 px-8 py-4 font-black text-white transition-all hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/20 active:scale-95">
+                  Abone Ol
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── CTA SECTION ───────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 py-24" aria-labelledby="cta-heading">

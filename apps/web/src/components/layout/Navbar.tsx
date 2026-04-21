@@ -20,19 +20,22 @@ export default function Navbar() {
 
   useEffect(() => { setOpen(false); }, [pathname]);
 
+  const isHomePage = pathname === '/';
+  const shouldBeTransparent = isHomePage && !scrolled && !open;
+
   return (
     <>
       <header
         id="navbar"
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/95 shadow-lg shadow-black/5 backdrop-blur-md'
-            : 'bg-transparent'
+          shouldBeTransparent
+            ? 'bg-transparent'
+            : 'bg-white/95 shadow-lg shadow-black/5 backdrop-blur-md'
         }`}
         style={{ 
           height: 'var(--nav-h)',
-          top: scrolled ? 0 : 'var(--unibar-h)',
-          borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : 'none'
+          top: shouldBeTransparent ? 'var(--unibar-h)' : 0,
+          borderBottom: shouldBeTransparent ? 'none' : '1px solid rgba(0,0,0,0.06)'
         }}
         aria-label="Ana Navigasyon"
       >
@@ -43,10 +46,10 @@ export default function Navbar() {
               <span className="text-sm font-black text-white">A</span>
             </div>
             <div className="flex flex-col leading-none">
-              <span className={`text-[15px] font-black tracking-[-0.02em] transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
+              <span className={`text-[15px] font-black tracking-[-0.02em] transition-colors ${!shouldBeTransparent ? 'text-slate-900' : 'text-white'}`}>
                 AREL YAZILIM
               </span>
-              <span className={`text-[9px] font-semibold tracking-[0.08em] transition-colors ${scrolled ? 'text-slate-500' : 'text-white/60'}`}>
+              <span className={`text-[9px] font-semibold tracking-[0.08em] transition-colors ${!shouldBeTransparent ? 'text-slate-500' : 'text-white/60'}`}>
                 SOFTWARE CLUB
               </span>
             </div>
@@ -64,7 +67,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`nav-link relative px-4 py-2 text-[13px] font-semibold transition-all ${
-                    active ? 'text-brand-DEFAULT' : scrolled ? 'text-slate-600 hover:text-brand-DEFAULT' : 'text-white/80 hover:text-white'
+                    active ? 'text-brand-DEFAULT' : !shouldBeTransparent ? 'text-slate-600 hover:text-brand-DEFAULT' : 'text-white/80 hover:text-white'
                   }`}
                   aria-current={active ? 'page' : undefined}
                 >
@@ -82,7 +85,7 @@ export default function Navbar() {
             <Link 
               href="/uyelik" 
               className={`hidden-mobile btn btn-sm font-semibold transition-all ${
-                scrolled ? 'btn-primary' : 'bg-white text-brand-DEFAULT hover:bg-slate-50'
+                !shouldBeTransparent ? 'btn-primary' : 'bg-white text-brand-DEFAULT hover:bg-slate-50'
               }`}
             >
               Üye Ol
@@ -94,7 +97,7 @@ export default function Navbar() {
               aria-controls="mobile-menu"
               aria-label={open ? 'Menüyü kapat' : 'Menüyü aç'}
               className={`show-mobile flex flex-col justify-center gap-[5px] rounded-lg p-2 transition-colors ${
-                scrolled ? 'hover:bg-slate-100' : 'hover:bg-white/10'
+                !shouldBeTransparent ? 'hover:bg-slate-100' : 'hover:bg-white/10'
               }`}
               style={{ minWidth: '44px', minHeight: '44px' }}
             >
@@ -110,7 +113,7 @@ export default function Navbar() {
               />
               <span
                 className={`block h-0.5 rounded-sm transition-all duration-300 ${
-                  scrolled ? 'bg-slate-700' : 'bg-white'
+                  !shouldBeTransparent ? 'bg-slate-700' : 'bg-white'
                 } ${open ? 'w-5 rotate-45 -translate-y-1.5' : 'w-3'}`}
               />
             </button>

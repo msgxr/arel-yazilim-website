@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-bg-dark px-6 text-center">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-dark px-6 text-center">
       {/* Background Glows */}
       <div className="absolute left-[-10%] top-[-10%] h-[500px] w-[500px] rounded-full bg-brand-DEFAULT/20 blur-[120px]" aria-hidden="true" />
       <div className="absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-brand-vibrant/10 blur-[120px]" aria-hidden="true" />

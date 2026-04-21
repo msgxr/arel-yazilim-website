@@ -41,10 +41,15 @@ jobs:
       - name: Type check
         run: pnpm --filter @arel/web type-check
 
+      # Generate Prisma client (needed for build even without a live DB)
+      - name: Generate Prisma client
+        run: pnpm --filter @arel/web db:generate
+
       # Build only runs if lint and type-check succeed
       - name: Build
         run: pnpm --filter @arel/web build
         env:
           GITHUB_ACTIONS: "true"
           NODE_ENV: production
+          DATABASE_URL: "file:./dev.db"
 

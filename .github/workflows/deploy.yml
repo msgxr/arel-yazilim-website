@@ -40,11 +40,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Generate Prisma client
+        run: pnpm --filter @arel/web db:generate
+        env:
+          DATABASE_URL: "file:./prisma/dev.db"
+
       - name: Build with Next.js
         run: pnpm --filter @arel/web build
         env:
           NEXT_PUBLIC_FORMSPREE_CONTACT_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_CONTACT_ID }}
           NEXT_PUBLIC_FORMSPREE_MEMBERSHIP_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_MEMBERSHIP_ID }}
+          DATABASE_URL: "file:./prisma/dev.db"
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
