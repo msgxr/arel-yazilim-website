@@ -295,7 +295,7 @@ export default function MembershipForm() {
                 <a href="/gizlilik" className="font-bold text-slate-700 underline hover:text-blue-600">
                   KVKK Metni
                 </a>
-                'ni okudum ve verilerimin üyelik işlemleri için işlenmesini onaylıyorum.
+                &apos;ni okudum ve verilerimin üyelik işlemleri için işlenmesini onaylıyorum.
               </span>
             </div>
             {touched.kvkk && errors.kvkk && <p className="text-[12px] font-bold text-red-500">{errors.kvkk}</p>}

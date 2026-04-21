@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import MobileMenu from './MobileMenu';
 import { navLinks as NAV_LINKS } from '@/content/site';

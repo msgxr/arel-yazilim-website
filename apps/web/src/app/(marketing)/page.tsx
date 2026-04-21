@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import { AnnouncementBadge } from '@/components/ui/Badge';
 import { siteConfig } from '@/content/site';
 import { announcements } from '@/content/announcements';
@@ -109,7 +108,7 @@ export default function HomePage() {
               </h1>
 
               <p className="mb-8 text-lg leading-[1.75] text-slate-300 max-w-xl">
-                İstanbul Arel Üniversitesi'nin lider yazılım topluluğu. 
+                İstanbul Arel Üniversitesi&apos;nin lider yazılım topluluğu. 
                 Yapay zeka, web ve veri bilimi alanında gerçek projeler üretiyor, 
                 kariyerine yön vermek isteyen öğrencileri bir araya getiriyoruz.
               </p>

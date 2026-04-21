@@ -64,7 +64,7 @@ export default function SponsorlarPage() {
             Sponsorlar & <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Partnerler</span>
           </h1>
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-slate-300">
-            Türkiye'nin en aktif üniversite yazılım topluluklarından biriyle iş birliği yapın. 
+            Türkiye&apos;nin en aktif üniversite yazılım topluluklarından biriyle iş birliği yapın. 
             Yetkin yazılım geliştirici adaylarına ulaşın, markanızı genç teknoloji ekosistemine tanıtın.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -176,7 +176,7 @@ export default function SponsorlarPage() {
 
                     <div className="flex items-center justify-between border-t border-slate-100 pt-4">
                       <span className="text-xs text-slate-400">
-                        {sponsor.industry} · {sponsor.since}'den beri
+                        {sponsor.industry} · {sponsor.since}&apos;den beri
                       </span>
                       <span 
                         className="text-sm font-semibold transition-transform group-hover:translate-x-1"
